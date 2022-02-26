@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'integrated';
+  src:  url('../fonts/integrated.eot?');
+  src:  url('../fonts/integrated.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/integrated.ttf?') format('truetype'),
+        url('../fonts/integrated.woff?') format('woff'),
+        url('../fonts/integrated.woff2?') format('woff2'),
+        url('../fonts/integrated.svg?#integrated') format('svg');
+}
+
+.icon-Int:before {
+  content: "\e900";
+}

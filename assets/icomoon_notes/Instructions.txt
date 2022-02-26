@@ -1,0 +1,18 @@
+Creating own fonts like fontawesome fonts - directions here:
+https://stackoverflow.com/a/41288167/996205
+
+
+<link rel="stylesheet" href="some relative or web location">
+
+
+HTML
+<span class="icon-Integrated"></span>
+
+CSS
+
+.icon-Integrated:before {
+  content: "\e900";
+}
+
+HTML Entity
+&#xe900;
