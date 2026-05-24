@@ -1,0 +1,44 @@
+# Thom Ives, Ph.D.
+
+> Full-Stack AI Applications Architect and Data Scientist with 30+ years across consulting, enterprise R&D, and founder-owned ventures. Currently a Senior AI Consultant at Unify Consulting on Microsoft's Account-Based Marketing AI team. Founder of PostalDataPI (agent-native postal-code API) and Director of Technology at Fungaia Coffee Company. Open to consulting engagements and senior architect / principal roles.
+
+## About
+
+- **Name:** Thom Ives, Ph.D.
+- **Location:** Eagle, Idaho
+- **Tenure:** 30+ years in AI / Data Science / Machine Learning / Multi-physics R&D
+- **Education:** Ph.D., Texas A&M (Hybrid Electric Vehicle Power Plant Modeling + Neural Network Application); M.S. Texas A&M; B.S. University of Texas at Austin
+- **Patents:** 25+ US patents from Hewlett-Packard era
+- **Email:** thom.ives@gmail.com
+
+## Current Engagements
+
+- [Senior AI Consultant at Unify Consulting](https://www.linkedin.com/in/thomives/) — partnering with the Microsoft ABM AI team on the analytics layer for Microsoft's account-based seller recommendation engine. Building reusable analytical infrastructure: Spark/PySpark notebooks against the recommendation-outcomes Delta lakehouse table, a curated knowledge base that compounds across sprints, and a Microsoft Fabric tool that classifies free-text seller dispositions against a canonical taxonomy via Fabric AI Functions (gpt-4.1-mini). Stack: Python, Microsoft Fabric, Azure DevOps.
+
+## Ventures
+
+- [PostalDataPI](https://postaldatapi.com) — global postal-code validation and enrichment API covering 246 countries + territories (1M+ postal codes) at sub-5ms response. Founder and owner. Built agent-native from day one: first-party Python, Node, and MCP SDKs, OpenAPI 3.0, and `llms.txt` for direct AI-agent consumption. Self-hosted Node 22 / Next.js 15 API surface with in-memory cache; Vercel for marketing site, account dashboard, OAuth, and Stripe webhooks; Neon PostgreSQL with Drizzle ORM. Transparent single-tier pricing at $0.000028/query.
+- [Fungaia Coffee Company](https://fungaiacoffeeco.com) — functional-mushroom coffee and cacao D2C brand based in Boise, Idaho. Part Owner and Director of Technology. Own the full Next.js e-commerce stack on Vercel, integrating Square (payments, orders, inventory), Shippo (real-time shipping rates), Resend (transactional email), and Printful (print-on-demand merch). Advise on unit economics and channel strategy beyond engineering.
+- Integrated Machine Learning & AI (2018–2022) — founded; grew worldwide mentoring community to 65K+ followers via blog posts, bi-weekly tech chats, keynote talks, and ML book reviews for Packt. Continuing lighter-touch mentorship since shifting primary focus to consulting and PostalDataPI.
+
+## Additional Background
+
+- Series 6 and Series 63 securities licenses
+- Certified Life Underwriter
+- Top-producing life / auto / home insurance sales
+- Active real estate investor (16-plex plus single family homes) as licensed Realtor
+- Quantitative financial modeling — investment-planning spreadsheets circulated by peers as exemplars
+
+## Open to
+
+- **Consulting engagements** in AI / Data Science / Machine Learning, and possibly multi-physics system design or predictive modeling of physical systems
+- **Senior architect / principal-level roles** as an artisan AI applications developer — craft, care, end-to-end ownership
+- **Higher-paying roles** that fully use the multi-physics + AI/ML + operator-depth range
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/thomives)
+- [GitHub](https://github.com/ThomIves)
+- [PostalDataPI](https://postaldatapi.com)
+- [Fungaia Coffee Company](https://fungaiacoffeeco.com)
+- [Resume PDF](/resume.pdf)
