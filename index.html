@@ -31,6 +31,12 @@
 			body.dark #search form input[type="text"]::placeholder,
 			body.dark #sidebar input[type="text"]::placeholder { color: #6e7479; }
 			body.dark #search form:before { color: #6e7479; }
+			/* The .alt wrapper paints a light-gray background on the search section;
+			   darken it in dark mode so the search block matches the sidebar. */
+			body.dark #sidebar > .inner > .alt,
+			body.dark #sidebar .alt {
+				background-color: #14171a;
+			}
 			body.dark #sidebar #menu ul li a { color: #c8ced3; }
 			body.dark #sidebar #menu ul li a:hover { color: #f56a6a; }
 			body.dark #sidebar #menu header h2 { color: #e8edf0; }
