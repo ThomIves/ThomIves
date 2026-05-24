@@ -22,10 +22,15 @@
 			body.dark #main > .inner { background: #1a1d20; }
 			body.dark #sidebar { background: #14171a; border-right: 1px solid #2a2e33; }
 			body.dark #sidebar .inner { background: #14171a; }
+			body.dark #search form input[type="text"],
 			body.dark #sidebar input[type="text"] {
-				background: #22262b; color: #c8ced3; border-color: #3a3f45;
+				background: #22262b;
+				color: #c8ced3;
+				border: solid 1px #3a3f45;
 			}
+			body.dark #search form input[type="text"]::placeholder,
 			body.dark #sidebar input[type="text"]::placeholder { color: #6e7479; }
+			body.dark #search form:before { color: #6e7479; }
 			body.dark #sidebar #menu ul li a { color: #c8ced3; }
 			body.dark #sidebar #menu ul li a:hover { color: #f56a6a; }
 			body.dark #sidebar #menu header h2 { color: #e8edf0; }
