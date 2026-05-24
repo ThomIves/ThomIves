@@ -10,8 +10,77 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* Dark mode overrides (default-on; toggle via #theme-toggle button) */
+			body.dark { background: #1a1d20; color: #c8ced3; }
+			body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 { color: #e8edf0; }
+			body.dark strong, body.dark b { color: #ffffff; }
+			body.dark code { background: rgba(255,255,255,0.08); color: #f1d398; }
+			body.dark blockquote { border-left-color: #555; color: #b0b6bb; }
+			body.dark hr { border-top-color: #444; }
+			body.dark #wrapper { background: #1a1d20; }
+			body.dark #main > .inner { background: #1a1d20; }
+			body.dark #sidebar { background: #14171a; border-right: 1px solid #2a2e33; }
+			body.dark #sidebar .inner { background: #14171a; }
+			body.dark #sidebar input[type="text"] {
+				background: #22262b; color: #c8ced3; border-color: #3a3f45;
+			}
+			body.dark #sidebar input[type="text"]::placeholder { color: #6e7479; }
+			body.dark #sidebar #menu ul li a { color: #c8ced3; }
+			body.dark #sidebar #menu ul li a:hover { color: #f56a6a; }
+			body.dark #sidebar #menu header h2 { color: #e8edf0; }
+			body.dark #footer { color: #6e7479; }
+			body.dark #footer a { color: #9aa1a7; }
+			body.dark .button {
+				background: transparent; color: #e8edf0 !important; border-color: #555;
+				box-shadow: inset 0 0 0 1px #555;
+			}
+			body.dark .button:hover {
+				background: rgba(245,106,106,0.08);
+				color: #f56a6a !important;
+				box-shadow: inset 0 0 0 1px #f56a6a;
+			}
+			body.dark header.major:after { background: #444; }
+			body.dark table tbody tr { border-color: #2a2e33; }
+			body.dark table tbody tr:nth-child(2n + 1) { background: rgba(255,255,255,0.02); }
+			body.dark #header .icons li a { color: #c8ced3; }
+			body.dark #header .icons li a:hover { color: #f56a6a; }
+			body.dark .features article { border-color: #2a2e33; background: rgba(255,255,255,0.02); }
+
+			/* Theme toggle button (fixed top-right) */
+			#theme-toggle {
+				position: fixed;
+				top: 1em;
+				right: 1em;
+				width: 2.6em;
+				height: 2.6em;
+				border-radius: 50%;
+				background: rgba(255,255,255,0.06);
+				color: #c8ced3;
+				border: 1px solid #3a3f45;
+				cursor: pointer;
+				font-size: 1.1em;
+				z-index: 1000;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+				padding: 0;
+			}
+			#theme-toggle:hover { background: rgba(245,106,106,0.12); color: #f56a6a; border-color: #f56a6a; }
+			body:not(.dark) #theme-toggle {
+				background: rgba(0,0,0,0.04);
+				color: #3d4449;
+				border-color: #d1d5d9;
+			}
+			body:not(.dark) #theme-toggle:hover { background: rgba(245,106,106,0.08); color: #f56a6a; border-color: #f56a6a; }
+		</style>
 	</head>
-	<body class="is-preload">
+	<body class="is-preload dark">
+
+		<button id="theme-toggle" aria-label="Toggle dark / light mode" title="Toggle dark / light mode">
+			<span id="theme-toggle-icon" class="icon solid fa-sun"></span>
+		</button>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -69,7 +138,7 @@
 											<br><br>
 											<em>Currently open to consulting engagements and senior architect / principal roles.</em></p>
 										<ul class="actions">
-											<li><a href="resume.pdf"
+											<li><a href="Thom_Ives_Resume.pdf"
 												class="button big" target="_blank">Download Resume (PDF)</a></li>
 											<li><a href="https://www.linkedin.com/in/thomives/"
 												class="button big" target="_blank">LinkedIn Profile</a></li>
@@ -98,6 +167,24 @@
 											<div class="content">
 												<h3>Fungaia Coffee Company</h3>
 												<p>Functional-mushroom coffee and cacao D2C brand based in Boise, Idaho. As <strong>Director of Technology and part owner</strong>, I own the full Next.js e-commerce stack on Vercel &mdash; Square (payments, orders, inventory), Shippo (real-time shipping), Resend (transactional email), and Printful (print-on-demand merch) &mdash; and advise on unit economics and channel strategy beyond engineering. <a href="https://fungaiacoffeeco.com" target="_blank">fungaiacoffeeco.com</a></p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Senior AI Consultant at Unify Consulting &mdash; Microsoft ABM AI team (current)</h3>
+												<p>Partnering with the Microsoft Account-Based Marketing AI team on the analytics layer for Microsoft's account-based seller recommendation engine. Building reusable analytical infrastructure: Spark/PySpark notebooks against the recommendation-outcomes Delta lakehouse, a curated knowledge base of data snapshots and business references that compounds across sprints, and a <strong>self-contained Microsoft Fabric reporting tool</strong> that classifies free-text seller dispositions against a canonical taxonomy via <strong>Fabric AI Functions (gpt-4.1-mini)</strong> over millions of rows. Developed and documented a local-first / Fabric-validated working pattern to keep iteration speed high without sacrificing production rigor.</p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Integrated Machine Learning &amp; AI (2018&ndash;2022) &mdash; Founder</h3>
+												<p>Founded and grew a worldwide mentoring community to <strong>65K+ followers</strong> through technical and mentoring blog posts, bi-weekly tech chats where I helped data scientists work through detailed technical questions, frequent keynote talks, and ML book reviews for Packt. Starting data science communities inside the companies I've worked for is a pattern, not an accident.</p>
+											</div>
+										</article>
+										<article>
+											<div class="content">
+												<h3>Echo Global Logistics &mdash; Outlook AI Add-In for single-shipment quotes (Senior Data Scientist)</h3>
+												<p>Sales reps were receiving <strong>30,000+ single-shipment quote requests per day</strong> via email &mdash; not managed accounts, so each request consumed sales-rep time for little profit. The software dev team was not available for front-end work, so I developed the full stack: an Outlook Add-In LLM-based AI Web App. <strong>Quote-request handling dropped from 5+ minutes to 15 seconds.</strong> Meaningful margin recovery for the company and compensation lift for the reps in the field.</p>
 											</div>
 										</article>
 										<article>
@@ -310,6 +397,25 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				(function() {
+					var body = document.body;
+					var btn = document.getElementById('theme-toggle');
+					var icon = document.getElementById('theme-toggle-icon');
+					var stored = null;
+					try { stored = localStorage.getItem('theme'); } catch (e) {}
+					if (stored === 'light') {
+						body.classList.remove('dark');
+						icon.className = 'icon solid fa-moon';
+					}
+					btn.addEventListener('click', function() {
+						body.classList.toggle('dark');
+						var isDark = body.classList.contains('dark');
+						icon.className = isDark ? 'icon solid fa-sun' : 'icon solid fa-moon';
+						try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+					});
+				})();
+			</script>
 
 	</body>
 </html>
