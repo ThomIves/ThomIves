@@ -41,4 +41,4 @@
 - [GitHub](https://github.com/ThomIves)
 - [PostalDataPI](https://postaldatapi.com)
 - [Fungaia Coffee Company](https://fungaiacoffeeco.com)
-- [Resume PDF](/resume.pdf)
+- [Resume PDF](/Thom_Ives_Resume.pdf)
