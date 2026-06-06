@@ -97,6 +97,32 @@
 			.section-hero img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
 			body.dark .section-hero img { box-shadow: 0 2px 16px rgba(0,0,0,0.4); }
 			.section-hero figcaption { font-size: 0.85em; opacity: 0.75; margin-top: 0.6em; text-align: center; font-style: italic; }
+
+			/* Hero block layout (text left, headshot right; stacks on mobile) */
+			.hero-wrap {
+				display: flex;
+				gap: 2.5em;
+				align-items: flex-start;
+				margin-top: 0.5em;
+			}
+			.hero-text { flex: 1; min-width: 0; }
+			.hero-image { flex: 0 0 220px; }
+			.hero-image img {
+				width: 100%;
+				height: auto;
+				border-radius: 50%;
+				border: 3px solid #f56a6a;
+				background: #fff;
+				padding: 4px;
+				box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+				display: block;
+			}
+			body.dark .hero-image img { box-shadow: 0 4px 18px rgba(0,0,0,0.45); }
+
+			@media screen and (max-width: 736px) {
+				.hero-wrap { flex-direction: column-reverse; gap: 1.5em; }
+				.hero-image { flex: 0 0 auto; align-self: center; width: 180px; }
+			}
 		</style>
 	</head>
 	<body class="is-preload dark">
@@ -128,17 +154,24 @@
 									</header>
 
 									<!-- Hero block -->
-									<p class="hero-tagline">Senior AI Architect and Multi-Physics Engineer.</p>
+									<div class="hero-wrap">
+										<div class="hero-text">
+											<p class="hero-tagline">Senior AI Architect and Multi-Physics Engineer.</p>
 
-									<p>Three kinds of work:</p>
+											<p>Three kinds of work:</p>
 
-									<ul class="hero-bullets">
-										<li><strong>AI Applications</strong> &mdash; full-stack design and delivery, production-grade</li>
-										<li><strong>Multi-Physics Modeling</strong> &mdash; design and predictive modeling of physical systems before they're prototyped</li>
-										<li><strong>The Hybrid</strong> &mdash; AI integrated into the design, modeling, and controls of physical systems</li>
-									</ul>
+											<ul class="hero-bullets">
+												<li><strong>AI Applications</strong> &mdash; full-stack design and delivery, production-grade</li>
+												<li><strong>Multi-Physics Modeling</strong> &mdash; design and predictive modeling of physical systems before they're prototyped</li>
+												<li><strong>The Hybrid</strong> &mdash; AI integrated into the design, modeling, and controls of physical systems</li>
+											</ul>
 
-									<p class="credentials-line">Mech-Eng PhD &middot; 26 patents from 16 years of multi-physics R&amp;D at HP &middot; modern AI work for Microsoft, Amazon, Echo &middot; founder of <a href="https://postaldatapi.com" target="_blank">PostalDataPI</a> and <a href="https://www.fungaiacoffeeco.com" target="_blank">Fungaia Coffee Company</a>.</p>
+											<p class="credentials-line">Mech-Eng PhD &middot; 26 patents from 16 years of multi-physics R&amp;D at HP &middot; modern AI work for Microsoft, Amazon, Echo &middot; founder of <a href="https://postaldatapi.com" target="_blank">PostalDataPI</a> and <a href="https://www.fungaiacoffeeco.com" target="_blank">Fungaia Coffee Company</a>.</p>
+										</div>
+										<div class="hero-image">
+											<img src="../images/ThomHead.jpg" alt="Thom Ives, Ph.D.">
+										</div>
+									</div>
 
 									<hr class="major" />
 
