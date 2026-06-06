@@ -76,6 +76,27 @@
 			.pricing-line { font-style: italic; opacity: 0.8; margin-top: 0.6em; font-size: 0.95em; }
 			.agent-quote { margin: 1.4em 0; padding: 1em 1.4em; border-left: 3px solid #f56a6a; font-style: italic; background: rgba(255,255,255,0.02); }
 			body.dark .agent-quote { background: rgba(255,255,255,0.04); }
+
+			/* Image gallery (small images in a grid, e.g., bond graphs) */
+			.image-gallery {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 1em;
+				margin: 1.5em 0;
+				padding: 1em;
+				border-radius: 6px;
+				background: rgba(255,255,255,0.02);
+			}
+			body.dark .image-gallery { background: rgba(255,255,255,0.03); }
+			.image-gallery figure { margin: 0; text-align: center; }
+			.image-gallery img { max-width: 100%; height: auto; border-radius: 3px; background: #fff; padding: 8px; }
+			.image-gallery figcaption { font-size: 0.85em; opacity: 0.75; margin-top: 0.4em; }
+
+			/* Section hero (single wide image anchoring a section) */
+			.section-hero { margin: 1.5em 0 2em; }
+			.section-hero img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+			body.dark .section-hero img { box-shadow: 0 2px 16px rgba(0,0,0,0.4); }
+			.section-hero figcaption { font-size: 0.85em; opacity: 0.75; margin-top: 0.6em; text-align: center; font-style: italic; }
 		</style>
 	</head>
 	<body class="is-preload dark">
@@ -107,36 +128,41 @@
 									</header>
 
 									<!-- Hero block -->
-									<p class="hero-tagline">Senior AI architect and multi-physics engineer.</p>
+									<p class="hero-tagline">Senior AI Architect and Multi-Physics Engineer.</p>
 
 									<p>Three kinds of work:</p>
 
 									<ul class="hero-bullets">
-										<li><strong>AI applications</strong> &mdash; full-stack design and delivery, production-grade</li>
-										<li><strong>Multi-physics modeling</strong> &mdash; design and predictive modeling of physical systems before they're prototyped</li>
-										<li><strong>The hybrid</strong> &mdash; AI integrated into the design, modeling, and controls of physical systems</li>
+										<li><strong>AI Applications</strong> &mdash; full-stack design and delivery, production-grade</li>
+										<li><strong>Multi-Physics Modeling</strong> &mdash; design and predictive modeling of physical systems before they're prototyped</li>
+										<li><strong>The Hybrid</strong> &mdash; AI integrated into the design, modeling, and controls of physical systems</li>
 									</ul>
 
 									<p class="credentials-line">Mech-Eng PhD &middot; 26 patents from 16 years of multi-physics R&amp;D at HP &middot; modern AI work for Microsoft, Amazon, Echo &middot; founder of <a href="https://postaldatapi.com" target="_blank">PostalDataPI</a> and <a href="https://www.fungaiacoffeeco.com" target="_blank">Fungaia Coffee Company</a>.</p>
 
 									<hr class="major" />
 
-									<h2>Three kinds of work</h2>
+									<h2>Three Kinds of Work</h2>
 
-									<h3>AI applications</h3>
+									<h3>AI Applications</h3>
 
 									<p>Full-stack AI applications built end-to-end by a senior practitioner. Architecture, build, deployment &mdash; handled. One person + AI-augmented methodology ships what otherwise needs a much larger team.</p>
+
+									<figure class="section-hero">
+										<img src="images/PostalDataPI_flow.png" alt="PostalDataPI architecture — agent-native global postal-code API">
+										<figcaption>PostalDataPI architecture &mdash; multi-source country data flowing into an in-memory hot path serving human developers and AI agents side-by-side</figcaption>
+									</figure>
 
 									<p><strong>Recent examples:</strong></p>
 
 									<ul>
 										<li><strong><a href="https://postaldatapi.com" target="_blank">PostalDataPI</a></strong> &mdash; global postal-code validation and enrichment API; 240+ countries and territories; sub-5ms response; agent-native from day one with first-party Python, Node, and MCP SDKs</li>
-										<li><strong>Microsoft Fabric AI Functions</strong> work for Microsoft's Account-Based Marketing AI team (via Unify Consulting) &mdash; classification of millions of free-text records into a useful taxonomy</li>
+										<li><strong>Microsoft Fabric work</strong> for Microsoft's Account-Based Marketing AI team (via Unify Consulting) &mdash; built a curated knowledge base (team coding history, data schemas with examples, meeting intelligence) that compounded across sprints, enabling fast delivery of analyses and tools including PySpark notebooks against the recommendation-outcomes Delta lakehouse and a Fabric AI Functions classifier over millions of free-text records</li>
 										<li><strong>Outlook AI Add-In</strong> for high-volume sales-rep email workflows &mdash; per-request handling compressed from 5+ minutes to under 15 seconds across 30,000+ daily requests</li>
 										<li><strong><a href="https://www.fungaiacoffeeco.com" target="_blank">Fungaia Coffee Company</a></strong> &mdash; functional-mushroom coffee and cacao D2C brand (Boise, Idaho); full Next.js e-commerce stack on Vercel integrating Square (payments), Shippo (shipping), Resend (email), and Printful (print-on-demand). Part Owner and Director of Technology.</li>
 									</ul>
 
-									<h3>Multi-physics modeling</h3>
+									<h3>Multi-Physics Modeling</h3>
 
 									<p>Predictive modeling and design of physical systems before they exist in prototype form. Mechanical, thermal, electrical, optical, and controls &mdash; modeled as they interact, before metal gets cut. The result: better design choices earlier, fewer prototype iterations, faster concept-to-working-product.</p>
 
@@ -144,7 +170,24 @@
 
 									<p><strong>Background:</strong> Mechanical Engineering Ph.D. focused on multi-physics predictive modeling and controls (Texas A&amp;M, 1997). Sixteen years at Hewlett-Packard across Disk Arrays, MEMS R&amp;D, Color Imaging, and Laser Cartridges &mdash; <strong>26 US Patents</strong> as named inventor. Adjunct teaching in Control Systems Design (Boise State, five semesters) and Design of Experiments (University of Idaho, visiting professor).</p>
 
-									<h3>The hybrid</h3>
+									<div class="image-gallery">
+										<figure>
+											<img src="../research/dissertation/Engine_with_Elements.png" alt="Engine subsystem element decomposition">
+											<figcaption>Engine subsystem &mdash; element decomposition</figcaption>
+										</figure>
+										<figure>
+											<img src="../research/dissertation/Bond_Graph_of_Engine_Full.png" alt="Internal Combustion Engine bond graph (full)">
+											<figcaption>Internal Combustion Engine &mdash; full bond graph</figcaption>
+										</figure>
+										<figure>
+											<img src="../research/dissertation/Bond_Graph_of_Induction_Motor.png" alt="Induction Motor bond graph">
+											<figcaption>Induction Motor &mdash; bond graph</figcaption>
+										</figure>
+									</div>
+
+									<p style="font-size: 0.9em; opacity: 0.75; margin-top: -0.5em;"><em>Bond-graph diagrams from Ph.D. dissertation work (Texas A&amp;M, 1997) &mdash; multi-domain dynamic-system modeling for hybrid vehicle power plants.</em></p>
+
+									<h3>The Hybrid</h3>
 
 									<p>Where modern AI meets multi-physics engineering. AI surrogates that replace expensive simulations; AI-driven optimization across multi-physics design spaces; AI integrated into real-time controls of physical products; AI that guides which prototype experiments to run and which to skip.</p>
 
@@ -152,9 +195,14 @@
 
 									<p><strong>Typical engagement:</strong> a client is building a product with real physics in it and wants AI to make the design, modeling, or controls smarter. The output is an AI-augmented system your engineering and AI teams can both work with and extend.</p>
 
+									<figure class="section-hero">
+										<img src="images/3D_CAD_Research.png" alt="3D CAD research — browser-based AI-assisted design environment">
+										<figcaption>Personal research: a browser-based 3D CAD system &mdash; exploring how mechanical design tooling can grow in this latest age</figcaption>
+									</figure>
+
 									<hr class="major" />
 
-									<h2>How I work</h2>
+									<h2>How I Work</h2>
 
 									<p>The methodology comes from years of practice &mdash; turning AI agents into reliable engineering partners rather than fast-but-flaky generators. I won't lay out the recipe.</p>
 
@@ -168,7 +216,7 @@
 
 									<hr class="major" />
 
-									<h2>What engaging looks like</h2>
+									<h2>What Engaging Looks Like</h2>
 
 									<p>Three phases. You can stop at any phase boundary; you only commit to the next when both sides agree it makes sense.</p>
 
@@ -187,12 +235,12 @@
 									<div class="phase-card">
 										<h3>Phase 2 &mdash; Maintain &amp; Improve</h3>
 										<p>Optional but strongly recommended. <strong>The same engagement team that built the system stays with it</strong> &mdash; no knowledge transfer cost, no replacement project commissioned 18 months later.</p>
-										<p class="pricing-line"><strong>Pricing:</strong> monthly availability retainer (bounded SLA for issue response) + line-item fees for specific improvements + $250/hour for meetings when requested.</p>
+										<p class="pricing-line"><strong>Pricing:</strong> monthly availability retainer (I'm on call for issues with a contracted response window) + line-item fees for specific improvements + $250/hour for meetings when requested.</p>
 									</div>
 
 									<hr class="major" />
 
-									<h2>Get in touch</h2>
+									<h2>Get in Touch</h2>
 
 									<p>Email <a href="mailto:thom.ives@gmail.com"><strong>thom.ives@gmail.com</strong></a> with a sentence or two about what you're working on, and we'll find a time to talk.</p>
 
