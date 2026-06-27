@@ -1,0 +1,1214 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Training · PG&E MIDA · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">PG&E MIDA</a> &raquo; <span>Training</span></div>
+                <p class="page-meta">Combined training reference · Last updated 2026-06-26</p>
+
+    <details class="toc">
+        <summary>Jump to section</summary>
+        <ul>
+            <li><a href="#part-1-what-mida-actually-is-from-awaiss-call">Part 1 · What MIDA actually is</a></li>
+            <li><a href="#part-2-epic-4-22-the-broader-program-context">Part 2 · EPIC 4.22 context</a></li>
+            <li><a href="#part-3-computer-vision-metrics-deep-dive">Part 3 · CV metrics deep dive</a></li>
+            <li><a href="#part-4-interview-prep-notes-from-adams-intel">Part 4 · Interview prep notes</a></li>
+            <li><a href="#part-5-question-bank-with-conceptual-answers">Part 5 · Question bank</a></li>
+        </ul>
+    </details>
+
+<h1 id="pge-mida--combined-training-doc">PG&amp;E MIDA · Combined
+Training Doc</h1>
+<p class="page-meta">Combined from Awais Agha call (2026-06-26), EPIC 4.22 program doc, interview prep notes, question bank, and the Gemini CV metrics deep-dive. Last updated 2026-06-26.</p>
+
+<h2 id="what-this-doc-is">What this doc is</h2>
+<p>This is your single comprehensive study reference for the PG&amp;E
+MIDA opportunity. It's organized so you can read it end-to-end (about
+60-75 minutes) or jump to a specific section. All domain terms are
+surrounded with plain-English explanations and analogies.</p>
+<p>The five sources combined here:</p>
+<ol type="1">
+<li><strong>What MIDA actually is</strong> — from Awais Agha's call
+transcript on 2026-06-26</li>
+<li><strong>What EPIC 4.22 is</strong> — from Adam Ansari's onboarding
+document</li>
+<li><strong>Computer Vision metrics deep-dive</strong> — mAP, IoU,
+precision/recall (from Thom's Gemini research)</li>
+<li><strong>Interview prep notes</strong> — Round 1 phone screen + Round
+2 panel structure</li>
+<li><strong>Question bank</strong> — likely questions with lingo +
+conceptual + experience anchors</li>
+</ol>
+<hr />
+<h2 id="part-1-what-mida-actually-is-from-awaiss-call">Part 1: What MIDA
+actually is (from Awais's call)</h2>
+<h3 id="the-60-second-framing">The 60-second framing</h3>
+<p><strong>MIDA = Multi-modal Inspection Data Annotation platform, built
+within Palantir Foundry.</strong></p>
+<p>What it does: takes imagery from drones, helicopters, and satellites
+— and identifies electric assets (poles, transformers, splices,
+circuits, attachments to the pole) within those images. Then annotates
+them so human inspectors can review faster.</p>
+<p>The point is <strong>not</strong> to replace the inspector —
+utilities are regulated and decisions stay human. The point is to do the
+time-consuming first pass (find the asset, draw the bounding box,
+suggest the tag) so the human inspector can focus on the judgment
+calls.</p>
+<h3 id="the-current-model-approach-from-awais-directly">The current
+model approach (from Awais directly)</h3>
+<blockquote>
+<p><em>"It is a zero-shot model, but we configured the parameters in a
+way that they are performing like 89 to 90% of the time with accuracy
+... We were using Gemini 2.5, 3.1, and it is giving us — we are proudly
+using Gemini 3.1, and it improved like about 30% from the last month,
+last update from Google."</em></p>
+</blockquote>
+<p><strong>What this means in plain terms:</strong></p>
+<ul>
+<li><strong>Zero-shot model</strong> — A model that can identify a new
+object class <em>without being explicitly trained on it</em>. You give
+it a description ("a pole-mounted electrical splice") and the model
+tries to find one in an image. Compare to traditional supervised models
+that need thousands of labeled examples per class.</li>
+<li><strong>Gemini 3.1</strong> — Google's current frontier Vision
+Language Model. Multimodal: it sees images AND produces language
+responses. Same family as GPT-4V, Claude with vision, etc.</li>
+<li><strong>Parameter configuration</strong> — Even with a zero-shot
+model, the prompt structure, image preprocessing, confidence thresholds,
+and post-processing all matter. They're not training the model; they're
+tuning <em>how it's used</em>.</li>
+<li><strong>89-90% accuracy</strong> — Strong for zero-shot. The
+remaining 10-11% is where the team is iterating.</li>
+</ul>
+<h3 id="the-golden-pipeline-pattern">The Golden Pipeline pattern</h3>
+<p>Foundry engineers built a <em>template-based pipeline</em> — instead
+of replicating the same code for each asset type (splice, transformer,
+pole, etc.), they have a single configurable template where an inspector
+or business person can choose which asset to detect, adjust prompts, and
+run.</p>
+<p><strong>Analogy:</strong> Think of it like a customizable photo
+filter that knows which kind of object you're looking for. You don't
+write a new filter for every object class; you choose from a dropdown
+and tune a few parameters.</p>
+<h3 id="two-complementary-model-families">Two complementary model
+families</h3>
+<p>Per Awais's framing, MIDA uses <strong>both</strong> Vision Language
+Models (VLMs like Gemini) <strong>and</strong> traditional trained
+Computer Vision models (like CNNs — Convolutional Neural Networks).</p>
+<p><strong>Why both:</strong></p>
+<ul>
+<li><strong>VLMs are great for general detection.</strong> "Is there a
+splice in this image? Where?" — VLMs handle the broad identification
+well because they've seen many things during pre-training.</li>
+<li><strong>Traditional CV models go deeper.</strong> Once you've found
+the splice, <em>is it corroded? Is there a crack? Is the pole
+leaning?</em> — these specific condition-assessments need models trained
+on labeled examples of corrosion, cracks, and lean. VLMs can do this,
+but accuracy drops; specialized models do better.</li>
+</ul>
+<p>The team handling traditional CV models is called
+<strong>Waldo</strong> — PG&amp;E's internal team of data scientists
+working on customized models. Per Awais, <em>"they can go very deep in
+that. Like from VLM, there is a cut off, you know, part where VLM
+saying, okay, I can do this, but I cannot go in more details. That's
+where those trained models come in."</em></p>
+<h3 id="what-the-work-would-actually-be">What the work would actually
+be</h3>
+<p>If Thom takes the role: <strong>backfilling someone from the Waldo
+team</strong> so that person can shift onto MIDA / EPIC work. The
+shape:</p>
+<blockquote>
+<p><em>"Bring someone senior who can be a SME [Subject Matter Expert] of
+the computer vision model, but not just a computer vision model — like a
+data scientist who can also do some kind of machine learning ops ...
+help the team put things through from concept to production."</em></p>
+</blockquote>
+<p>Translation: <strong>production CV experience + MLOps
+fluency</strong> is the bullseye combination. The Streak Test
+Auto-Detector story Thom built for the panel presentation maps cleanly
+to this — production CV deployed under release-cycle discipline.</p>
+<h3 id="two-named-use-cases-driving-urgency">Two named use cases driving
+urgency</h3>
+<p><strong>Use case 1: Splice and transformer detection for safety
+risk.</strong> PG&amp;E discovered <strong>60,000 splices that weren't
+known to PG&amp;E</strong> through this kind of imagery analysis.
+Splices near schools, gas stations, or fire-prone vegetation are
+hazardous. Finding and tracking them was previously a manual inspection
+problem.</p>
+<p><strong>Use case 2: Overhead Inspector / Unauthorized Attachments (AI
+Accelerator-funded).</strong> Communication companies (AT&amp;T,
+Verizon, cable TV) attach lines to PG&amp;E poles. Authorized
+attachments require permits. Unauthorized attachments incur CPUC
+penalties of <span class="math inline">500−</span>1,000 each. Estimated
+<strong>20,000 unauthorized attachments</strong> in PG&amp;E's territory
+— at <span
+class="math inline">1, 000<em>e</em><em>a</em><em>c</em><em>h</em>, <em>t</em><em>h</em><em>a</em><em>t</em>′<em>s</em> * *</span>20M
+of recoverable revenue.**</p>
+<p>MIDA is the platform that surfaces these — both safety hazards and
+revenue recovery — from imagery.</p>
+<h3 id="the-sherlock-system-context">The Sherlock system context</h3>
+<p>Inspectors currently use a tool called <strong>Sherlock</strong>
+(part of SAP-based platform). Workflow:</p>
+<ol type="1">
+<li>Imagery arrives in Sherlock</li>
+<li>Inspector reviews, draws bounding boxes</li>
+<li>Inspector tags assets with severity (A through F):
+<ul>
+<li><strong>A</strong> = immediate dispatch required</li>
+<li><strong>B</strong> = within 24 hours</li>
+<li><strong>C, D, E, F</strong> = future-scheduled</li>
+</ul></li>
+<li>Inspector adds description ("crack in insulator," "corrosion on
+insulator," etc.)</li>
+</ol>
+<p><strong>The problem MIDA addresses:</strong> inspectors often
+misclassify A and B severity (overcalling), which triggers expensive
+rapid-response dispatch for what turns out to be a non-issue ("oh, it's
+just a shadow on the insulator"). Conversely, sometimes they miss real
+A/B cases. AI-assisted classification helps inspectors review faster AND
+more consistently.</p>
+<h3 id="decision-making-boundary">Decision-making boundary</h3>
+<p><strong>Critical:</strong> Awais explicitly stated <em>"It's still in
+the human loop, there's no decision making because it's a utility and
+regulated, so there's no decision making through AI, it's only
+identification."</em></p>
+<p>This is the same boundary as MIDA's stated principle: "Assistive, not
+autonomous." When you talk about this work, the framing is always
+<em>"AI surfaces candidates; human decides."</em></p>
+<hr />
+<h2 id="part-2-epic-422--the-broader-program-context">Part 2: EPIC 4.22
+— the broader program context</h2>
+<p>EPIC = Electric Program Investment Charge. EPIC 4.22 is a
+<strong>CPUC-funded demonstration program</strong> for Computer Vision
+in electric asset management at PG&amp;E.</p>
+<h3 id="how-epic-422-relates-to-mida">How EPIC 4.22 relates to MIDA</h3>
+<p>Per the program doc: <strong>MIDA is an AI Accelerator-funded
+adjacent program</strong> (led by Charles, operated by Vera and Awais)
+with EPIC's role formalized as milestone-level touchpoints rather than
+sprint-level tracking. Three contribution pillars from MIDA to EPIC:</p>
+<ol type="1">
+<li>Shared taxonomy / labeling</li>
+<li>Model coverage mapping (~200 tasks)</li>
+<li>Benchmarking based on PoC results</li>
+</ol>
+<p><strong>Plain English:</strong> EPIC 4.22 is the larger CPUC-funded
+research program for CV at PG&amp;E; MIDA is a related operational
+program (funded separately by an AI Accelerator initiative) that shares
+taxonomy and benchmarking work with EPIC.</p>
+<h3 id="the-three-epic-422-tasks">The three EPIC 4.22 tasks</h3>
+<ol type="1">
+<li><strong>Task 1: CV Model Library</strong> — providing models for
+inspections and asset registry. Leading vendor: GE Vernova (not yet
+confirmed as of May 2026).</li>
+<li><strong>Task 2: CV Inference Platform</strong> — eSmart Systems
+(confirmed). The platform that runs the models at scale.</li>
+<li><strong>Task 3: Model Development Acceleration Toolkit</strong> —
+Encord (workflow tools, auto-labeling, zero/few-shot, SAM-based
+labeling) + Prime Technologies (physics-based synthetic data
+generation), both confirmed.</li>
+</ol>
+<h3 id="why-this-matters-for-the-interview">Why this matters for the
+interview</h3>
+<p>Charles Coma is likely the most technical interviewer. If he asks how
+Thom would fit into the EPIC ecosystem, the right framing is:</p>
+<blockquote>
+<p><em>"EPIC is the larger research demonstration with three vendor
+tracks — model library, inference platform, acceleration tooling. MIDA
+shares taxonomy, labeling, and benchmarking with EPIC. The work I'd be
+doing on the Waldo backfill is most closely tied to the
+model-development side — production CV models that go deeper than the
+VLM layer, with the MLOps discipline to get them from concept into
+production."</em></p>
+</blockquote>
+<h3 id="important-program-facts-to-know">Important program facts to
+know</h3>
+<ul>
+<li><strong>Board mandate</strong>: at least one Asset Registry model
+must be in production by end of 2026.</li>
+<li><strong>BPE (Baseline Performance Evaluation) result</strong>: of
+234 out-of-box models from 14 vendors, only 21 (9%) hit the F1 &gt; 0.8
+deployment bar. <em>Off-the-shelf models alone don't satisfy PG&amp;E's
+needs.</em></li>
+<li><strong>MPE (Model Performance Evaluation) result after
+fine-tuning</strong>: inventory models reached 59% deployment-grade;
+condition/damage models reached only 9%. <em>Condition assessment is
+fundamentally harder than inventory detection.</em></li>
+<li><strong>Adjacent platforms</strong>: Sherlock (inspection workflow),
+Waldo (PG&amp;E's internal CV inference platform), eSmart (selected
+vendor platform), Esri (Asset Registry).</li>
+</ul>
+<hr />
+<h2 id="part-3-computer-vision-metrics-deep-dive">Part 3: Computer
+Vision Metrics Deep Dive</h2>
+<p>This section is the technical depth that Charles Coma will most
+likely probe. From Thom's Gemini research and standard practice.</p>
+<h3 id="the-four-metrics-that-matter-most">The four metrics that matter
+most</h3>
+<ol type="1">
+<li><p><strong>Precision</strong> — <em>Of the things the model said
+were positive, how many actually were?</em></p>
+<ul>
+<li>Formula: TP / (TP + FP)</li>
+<li>High precision = few false alarms</li>
+</ul></li>
+<li><p><strong>Recall</strong> — <em>Of all the things that actually
+were positive, how many did the model catch?</em></p>
+<ul>
+<li>Formula: TP / (TP + FN)</li>
+<li>High recall = few missed cases</li>
+</ul></li>
+<li><p><strong>F1 Score</strong> — <em>The harmonic mean of precision
+and recall.</em></p>
+<ul>
+<li>F1 = 2 × (Precision × Recall) / (Precision + Recall)</li>
+<li>The F1 &gt; 0.8 deployment bar that EPIC uses is asking: is the
+model both precise AND complete enough to actually use?</li>
+</ul></li>
+<li><p><strong>mAP (mean Average Precision)</strong> — <em>The
+gold-standard object-detection metric.</em></p>
+<ul>
+<li>Not just "did you find it," but <em>"did you find it AND did you put
+the box around it correctly?"</em></li>
+</ul></li>
+</ol>
+<h3 id="intersection-over-union-iou">Intersection over Union (IoU)</h3>
+<p><strong>IoU</strong> measures how well the predicted bounding box
+overlaps with the ground-truth bounding box.</p>
+<p><strong>Analogy:</strong> Think of two overlapping rectangles. The
+intersection is the area they share; the union is the total area they
+cover together. IoU = intersection / union. A perfect prediction has IoU
+= 1.0 (boxes match exactly). A complete miss has IoU = 0 (no
+overlap).</p>
+<p>Common IoU thresholds:</p>
+<ul>
+<li><strong>IoU ≥ 0.5</strong> — lenient; "close enough"</li>
+<li><strong>IoU ≥ 0.75</strong> — strict; "tight match"</li>
+<li><strong>IoU 0.5:0.95 averaged</strong> — used in COCO benchmarks;
+averages across thresholds</li>
+</ul>
+<h3 id="how-map-is-calculated">How mAP is calculated</h3>
+<ol type="1">
+<li><strong>Plot the precision-recall curve</strong> for each object
+class. As confidence threshold drops, recall goes up but precision
+drops.</li>
+<li><strong>Average Precision (AP)</strong> = area under that curve for
+one class.</li>
+<li><strong>Mean Average Precision (mAP)</strong> = average of AP across
+all classes.</li>
+</ol>
+<h3 id="two-common-map-variants">Two common mAP variants</h3>
+<ul>
+<li><strong><a href="mailto:mAP@0.5">mAP@0.5</a> (or mAP50)</strong> —
+Calculated at lenient IoU threshold of 0.5. "Did the model find the
+general location?"</li>
+<li><strong><a href="mailto:mAP@0.5">mAP@0.5</a>:0.95</strong> —
+Stricter; averages mAP across IoU thresholds from 0.5 to 0.95 in steps
+of 0.05. "Was the bounding box precise?"</li>
+</ul>
+<h3 id="why-map-for-object-detection-not-just-accuracy">Why mAP for
+object detection (not just accuracy)</h3>
+<p>An image can have dozens of objects of different classes. Simple
+accuracy ("% of predictions correct") fails because:</p>
+<ul>
+<li>An image with no splice and no transformer that the model correctly
+says "no splice, no transformer" has 100% accuracy — but it told you
+nothing useful.</li>
+<li>A model that's great on common classes (poles) and terrible on rare
+ones (splices) can look 95% accurate overall while being useless for
+what you care about.</li>
+</ul>
+<p>mAP measures both <strong>classification correctness AND localization
+precision</strong> across all classes, weighted toward what you're
+actually trying to find.</p>
+<h3
+id="practical-interview-answer-for-what-metrics-would-you-use">Practical
+interview answer for "what metrics would you use?"</h3>
+<blockquote>
+<p><em>"For classification tasks: precision, recall, F1, confusion
+matrix for per-class behavior. For object detection specifically: mAP at
+multiple IoU thresholds. For PG&amp;E's safety-critical context, I'd
+also track per-class recall at fixed precision to make sure we're not
+trading off rare-class detection for aggregate scores — missing a real
+fault is much worse than a false alarm in a utility setting."</em></p>
+</blockquote>
+<h3 id="the-validation-set-design-trap-the-adam-flagged-one">The
+validation-set design trap (the Adam-flagged one)</h3>
+<p><strong>The trap:</strong> observation-level random splits when video
+frames are correlated.</p>
+<p><strong>Why it matters:</strong> Neighboring video frames are nearly
+identical. If you randomly split frames into train and test, the model
+can essentially memorize the train data and look great on test — but
+it'll fail on new video.</p>
+<p><strong>The fix:</strong> Split at higher grains — first by
+<strong>time</strong> (no leakage across acquisition periods), then by
+<strong>physical asset</strong> and <strong>camera</strong> if possible.
+This forces honest evaluation.</p>
+<p><strong>Synthetic data thread:</strong> For rare target classes,
+synthetic / AI-generated training data can balance the training
+distribution. Keep the validation set clean of synthetic data. Test set
+mirrors production conditions — weather, season, time of day.</p>
+<h3 id="vision-language-models-vlms--vllms--what-they-are">Vision
+Language Models (VLMs / VLLMs) — what they are</h3>
+<p><strong>VLMs</strong> = Vision Language Models.
+<strong>VLLMs</strong> = Vision Large Language Models (same thing,
+larger).</p>
+<p>These are multimodal foundation models that can both see images and
+produce language. Examples:</p>
+<ul>
+<li>Gemini 3.1 (Google) — what MIDA currently uses</li>
+<li>GPT-4V / GPT-4 with vision (OpenAI)</li>
+<li>Claude with vision (Anthropic)</li>
+</ul>
+<p><strong>How they differ from traditional CV models:</strong></p>
+<ul>
+<li><strong>Pre-trained on enormous multimodal data</strong> — they've
+seen billions of image-text pairs and learned general visual
+concepts.</li>
+<li><strong>Zero-shot / few-shot capable</strong> — you don't have to
+train them on your specific use case to get useful results.</li>
+<li><strong>Naturally support structured outputs</strong> — they can
+return JSON, categories, descriptions.</li>
+<li><strong>Trade-offs</strong>: cost per query, latency, accuracy
+ceiling for specialized tasks, lack of fine-tunability.</li>
+</ul>
+<p><strong>When you'd use a traditional CNN instead of a
+VLM:</strong></p>
+<ul>
+<li>Need very high accuracy on a narrow task (e.g., distinguishing types
+of insulator corrosion)</li>
+<li>Need to run at extremely high volume where VLM cost would be
+prohibitive</li>
+<li>Need on-edge deployment (drone-based real-time inference)</li>
+<li>Have a large labeled dataset and the VLM accuracy ceiling isn't high
+enough</li>
+</ul>
+<h3 id="the-mida-specific-picture">The MIDA-specific picture</h3>
+<p><strong>Detection / first-pass (VLMs):</strong> "Is there a splice in
+this image? Where? What's the rough condition?" — Gemini 3.1 with prompt
+engineering.</p>
+<p><strong>Deep condition assessment (traditional CV via
+Waldo):</strong> "Is this splice corroded? How severe?" — CNNs trained
+on labeled examples of corrosion severity.</p>
+<p><strong>Production discipline (Thom's lane):</strong> evaluation
+scaffolding, structured outputs, cost / latency management, retraining
+feedback loops, MLOps. This is where the Microsoft Fabric + ON Semi
+credentials carry forward.</p>
+<hr />
+<h2 id="part-4-interview-prep-notes-from-adams-intel">Part 4: Interview
+Prep Notes (from Adam's intel)</h2>
+<h1 id="pge-mida-computer-vision--interview-prep-notes">PG&amp;E MIDA
+Computer Vision — Interview Prep Notes</h1>
+<h3
+id="based-on-intel-from-adam-thoms-friend-who-landed-this-same-teams-process">Based
+on intel from Adam (Thom's friend, who landed this same team's
+process)</h3>
+<p>This doc captures specific, named intel Adam shared about the two
+interview rounds. Use as a working reference, not a script.</p>
+<hr />
+<h2 id="round-1--phone-screen-with-erin">Round 1 — Phone Screen with
+Erin</h2>
+<p><strong>Erin's profile (per Adam):</strong></p>
+<ul>
+<li>Young technical manager at PG&amp;E's "storied computer vision
+team"</li>
+<li>Highly technical, not a data scientist herself</li>
+<li>Cadence is speedy / rushed — felt stressful for Adam during a short
+call</li>
+<li>She means well; just operates at high tempo</li>
+<li>15 minutes total — fast and tight</li>
+</ul>
+<p><strong>Posture implication:</strong> Answer crisply. Don't ramble.
+Land the technical point, then stop. Let her drive cadence. Don't try to
+fill space with depth she didn't ask for.</p>
+<h3
+id="question-1--what-metrics-would-you-use-to-evaluate-classification--computer-vision-models">Question
+1 — "What metrics would you use to evaluate classification / computer
+vision models?"</h3>
+<p>Adam's "good answers": <strong>Precision, Recall, F1, Intersection
+over Union (IoU), Avg Precision, Mean Avg Precision (mAP)</strong></p>
+<p>Your tight answer (~20 seconds spoken):</p>
+<blockquote>
+<p>"For classification, precision, recall, and F1 — and depending on
+class balance, the confusion matrix to look at per-class performance.
+For object detection specifically, mAP at multiple IoU thresholds is
+standard. If the application is high-consequence — and at PG&amp;E
+that's nearly everything — I'd also want to look at per-class recall at
+fixed precision to make sure we're not trading off rare-class detection
+for aggregate scores."</p>
+</blockquote>
+<p>The bracketed addition shows mission-critical thinking without being
+preachy.</p>
+<p><strong>General conceptual terminology version (if the room prefers
+intuition over lingo):</strong></p>
+<blockquote>
+<p>"It depends on what 'wrong' looks like. Precision asks 'when I sound
+the alarm, am I right?' Recall asks 'of the alarms I should have
+sounded, how many did I catch?' For utility infrastructure, missing an
+actual issue is usually worse than a false alarm, so I'd weight toward
+recall and watch precision as the budget constraint. For object
+detection, I'd add the overlap-between-prediction-and-truth measure
+averaged across the categories we care about."</p>
+</blockquote>
+<p>The conceptual version lands well if Erin signals she wants intuition
+first or if the conversation has been moving fast and you want to reset
+to fundamentals.</p>
+<h3
+id="question-2--how-would-you-design-a-validation-set-for-computer-vision-with-a-target">Question
+2 — "How would you design a validation set for computer vision with a
+target?"</h3>
+<p>Adam's key insight: <strong>split on higher grains than
+observation-level</strong> — time, video, camera. Plus synthetic data is
+a good thread to pull.</p>
+<p>Your tight answer (~30 seconds spoken):</p>
+<blockquote>
+<p>"The biggest trap is observation-level splits when frames are
+correlated. For PG&amp;E scale, I'd split on time (no leakage across
+acquisition periods), then on physical asset and camera if possible — so
+the model isn't memorizing a particular camera's angle or lighting. For
+sparse target classes, synthetic augmentation and AI-generated images
+become real options to balance the training distribution while keeping
+the validation set clean of synthetic data. I'd want a held-out test set
+that mirrors production conditions exactly — weather, season, time of
+day."</p>
+</blockquote>
+<p>Three signals this drops cleanly:</p>
+<ul>
+<li>You know the time / video / camera grain trap (Adam's exact
+point)</li>
+<li>Synthetic data awareness (an "interesting space to chat about")</li>
+<li>Production-condition mirroring (utility / mission-critical
+posture)</li>
+</ul>
+<p><strong>General conceptual terminology version (if the room prefers
+intuition over lingo):</strong></p>
+<blockquote>
+<p>"The data split is like a tasting panel. You don't want the same dish
+judged by people who saw each other's scores. With video frames,
+neighboring frames are nearly identical — so a random split lets the
+model peek at the test set. Splitting by when the images were captured,
+then by physical asset, then by camera, forces honest evaluation. For
+rare events, generated training data can fill the training side; the
+test set has to stay real and mirror what the camera will actually see —
+weather, season, time of day."</p>
+</blockquote>
+<p>The tasting-panel analogy lands particularly well if Erin or Sylva
+asks "why does that matter?" — it makes the leakage problem visceral
+without requiring the listener to think in CV jargon.</p>
+<h3 id="question-3--behavioral-teamwork-question-some-form">Question 3 —
+Behavioral teamwork question (some form)</h3>
+<p>Adam noted this was asked in every interview with a different angle
+each time. <strong>Have 2-3 stories loaded</strong> so you can pick the
+angle.</p>
+<p><strong>Recommended stories (30-45 sec each, BAR shape):</strong></p>
+<p><strong>Story A — HP mentoring 3 PhD graduate students:</strong></p>
+<blockquote>
+<p>"At HP, the Color Pipeline group was building Python data-science
+tools for halftone reproduction quality. I was the senior practitioner
+on the team and three PhD graduate students were rotating through. I
+mentored them on data-science methodology — not just toolkit, but how to
+think about validation, evaluation, and production deployment. Two of
+them landed permanent positions afterward. What I learned was that
+mentoring isn't about teaching tools; it's about transferring
+judgment."</p>
+</blockquote>
+<p><strong>Story B — Echo data science team into containerized serving
+patterns:</strong></p>
+<blockquote>
+<p>"At Echo, I led the data science team through a transition from
+notebook-based prototyping to containerized FastAPI / Streamlit / Docker
+serving patterns. The team was hesitant — they were used to the notebook
+flow. I built the first reference deployment myself, then paired with
+each engineer to convert their workflow. The team ended up with a shared
+serving architecture and faster iteration cycles. Lesson: technical
+transitions land when you build the reference first, then pair, then
+step back."</p>
+</blockquote>
+<p><strong>Story C — Microsoft ABM AI team partnership
+(current):</strong></p>
+<blockquote>
+<p>"Right now I partner directly with Microsoft's ABM AI team. The team
+needed a Fabric AI Functions classifier for free-text seller
+dispositions at million-row scale. The challenge wasn't the classifier
+itself — it was getting alignment on the canonical taxonomy across
+stakeholders who each used the data differently. I ran small sessions
+with each stakeholder to surface their actual use cases before fixing
+the taxonomy. Lesson: production AI in cross-functional teams is more
+about taxonomy alignment than it is about model accuracy."</p>
+</blockquote>
+<hr />
+<h2 id="round-2--panel-with-erin--sylva-lead-data-scientist">Round 2 —
+Panel with Erin + Sylva (Lead Data Scientist)</h2>
+<p><strong>Sylva's profile (per Adam):</strong></p>
+<ul>
+<li>Standard introverted engineer shape</li>
+<li>Not afraid to ask hard-hitting questions</li>
+<li>Reserved during interview</li>
+<li>No real complaints from Adam — fair-minded</li>
+</ul>
+<p><strong>1 hour total, 3 parts:</strong></p>
+<h3
+id="part-1--project-presentation-with-slides-target-20-30-min-including-qa">Part
+1 — Project Presentation with Slides (target 20-30 min including
+Q&amp;A)</h3>
+<p>Adam's key insight: <strong>prepare ~10 min of content but invite
+Q&amp;A at natural break points to fill the 20-30 min budget</strong>.
+The next two questions are short (10-15 min combined), so this part
+deserves real time.</p>
+<p><strong>Recommended project to present:</strong> Your
+<strong>Microsoft Fabric AI Functions classifier</strong> for free-text
+seller dispositions.</p>
+<p>Why this project:</p>
+<ul>
+<li>It's current production work (recency matters)</li>
+<li>It maps directly to MIDA — multimodal foundation model
+(gpt-4.1-mini) doing classification at production scale</li>
+<li>It demonstrates the evaluation-loop + structured-output +
+cost/latency discipline they'll need on VLLM-based auto-labeling</li>
+<li>It shows you operating inside a real team (Microsoft) on real
+production work</li>
+<li>Natural Q&amp;A points: signal taxonomy design, evaluation
+methodology, cost/latency tradeoffs, structured output validation</li>
+</ul>
+<p><strong>Slide outline (10 min content + breakpoints):</strong></p>
+<ol type="1">
+<li><p><strong>The problem</strong> (1 slide, 1 min) — Microsoft ABM AI
+team needed structured classification of free-text seller dispositions
+against a canonical taxonomy at million-record scale. [Q&amp;A
+breakpoint: "what was the canonical taxonomy?"]</p></li>
+<li><p><strong>Why a multimodal foundation model was the right
+tool</strong> (1-2 slides, 2 min) — alternatives considered (fine-tuned
+BERT, rule-based, etc.), why gpt-4.1-mini won on the deploy-velocity /
+accuracy / cost-at-scale tradeoff. <strong>Bridge to MIDA: same lineage
+as VLLMs.</strong> [Q&amp;A breakpoint: "how did you evaluate the
+alternatives?"]</p></li>
+<li><p><strong>The evaluation scaffolding</strong> (1-2 slides, 2 min) —
+evaluation loops, structured-output validation, per-row cost / latency
+management. The production-grade scaffolding that makes a
+foundation-model classifier deployable. [Q&amp;A breakpoint: "what does
+the evaluation loop actually look like?"]</p></li>
+<li><p><strong>Production deployment pattern</strong> (1 slide, 2 min) —
+the local-first / Fabric-validated working pattern. How you keep
+iteration speed high without sacrificing production rigor.</p></li>
+<li><p><strong>Results + what's next</strong> (1 slide, 2 min) — what
+shipped, what compounding value the knowledge base of PySpark notebooks
+is producing across sprints.</p></li>
+<li><p><strong>Direct bridge to MIDA</strong> (1 slide, 1 min) —
+explicit: the multimodal foundation model + production scaffolding shape
+is exactly what a VLLM-based detection / auto-labeling pipeline needs.
+You're not learning this lane on the job; you're already operating in
+it.</p></li>
+</ol>
+<p><strong>Q&amp;A discipline:</strong> Pause naturally at the end of
+slides 1, 2, 3. Invite a question. If they don't have one, move on. The
+pauses are the conversation hooks.</p>
+<h3 id="part-2--two-questions">Part 2 — Two Questions</h3>
+<p><strong>Question A — "Tell me about a time..."
+(behavioral)</strong></p>
+<p>Use one of the three behavioral stories above that you didn't use in
+the phone screen. Keep to 30-45 seconds. Don't pad.</p>
+<p><strong>Question B — Technical: "How would you solve our internal CV
+problem [stated vaguely]?"</strong></p>
+<p>Adam's key insight: <strong>the secret is asking for deeper context
+to figure out what they want. They start vague to test your ability to
+gather requirements.</strong></p>
+<p>Your posture: don't jump to a solution. Ask 3-4 clarifying questions
+FIRST, then propose an approach.</p>
+<p><strong>Clarifying questions to ask (in order):</strong></p>
+<ol type="1">
+<li>"What does success look like for this detection / labeling problem
+at the program level?" (gets at the business outcome)</li>
+<li>"What's the data volume and acquisition cadence — are we talking
+real-time camera feeds, batch image archives, or both?" (gets at the
+system architecture)</li>
+<li>"What's the current state — is there a labeling pipeline in place
+that we're augmenting, or is this greenfield?" (gets at the inheritance
+/ displacement question)</li>
+<li>"What's the consequence shape of a wrong answer — what kind of
+misses are most expensive?" (gets at the precision / recall tradeoff
+context)</li>
+</ol>
+<p>After they've answered, <strong>then</strong> propose a structured
+approach:</p>
+<ul>
+<li><strong>Foundation model selection</strong> — which VLLM (Claude
+with vision, GPT-4V, Gemini Vision) based on cost / latency / accuracy
+on representative samples</li>
+<li><strong>Structured-output design</strong> — schema for the
+auto-labels with confidence and reasoning fields</li>
+<li><strong>Evaluation scaffolding</strong> — held-out golden set with
+appropriate grain splits (time / asset / camera), precision / recall /
+F1 + mAP for any detection component</li>
+<li><strong>Human-in-the-loop architecture</strong> — at what confidence
+threshold do human reviewers see the prediction, how their corrections
+flow back into the system</li>
+<li><strong>Production observability</strong> — drift detection, cost /
+latency monitoring, error case analysis</li>
+</ul>
+<p>The clarifying questions PLUS the structured approach demonstrates
+exactly what they're testing for — requirements gathering AND solution
+structuring.</p>
+<h3 id="part-3--questions-you-have-for-them">Part 3 — Questions You Have
+for Them</h3>
+<p>Have 3-4 ready. These are grounded in what we know about MIDA:</p>
+<ol type="1">
+<li><strong>"What's the current state of the MIDA project — are we
+operating on a v0 pipeline, or is this earlier than that?"</strong>
+(positions you as a partner, not a candidate)</li>
+<li><strong>"What VLLM(s) is the team currently using or evaluating —
+Claude with vision, GPT-4V, Gemini Vision, or something more
+specialized?"</strong> (signals technical engagement)</li>
+<li><strong>"What does the labeling pipeline look like end-to-end — how
+do human reviewers fit in, and where are the failure modes you'd want to
+address first?"</strong> (signals systems thinking)</li>
+<li><strong>"How does MIDA connect to PG&amp;E's broader asset
+inspection or maintenance program — is the team measured on
+labels-produced or on downstream operational outcomes?"</strong>
+(signals altitude awareness)</li>
+</ol>
+<p>Use 1-2, not all 4. The "biggest unknown" closer also works:
+<strong>"What's the question you'd want a candidate to help you
+answer?"</strong> (Adam-pattern — gives them room to talk about what
+actually worries them.)</p>
+<hr />
+<h2 id="what-not-to-do">What NOT to do</h2>
+<ul>
+<li><strong>Don't talk too much in the phone screen with Erin.</strong>
+She moves fast. Match her cadence. Crisp answers, then stop.</li>
+<li><strong>Don't lead with the operator / real estate stuff.</strong>
+This team cares about CV depth and production AI delivery. Real estate
+is irrelevant to MIDA and would dilute focus.</li>
+<li><strong>Don't lead with the multi-physics PhD in the phone
+screen.</strong> Mention it in passing on the panel if natural; don't
+lead with it on the phone.</li>
+<li><strong>Don't pretend you've used a specific PG&amp;E-internal CV
+pipeline.</strong> You haven't. The shape-of-work familiarity is the
+bridge, not specific tool experience.</li>
+<li><strong>Don't pile credentials.</strong> They have your resume.
+Surface specifics only when asked.</li>
+</ul>
+<hr />
+<h2 id="pre-call-logistics">Pre-call logistics</h2>
+<ul>
+<li>Confirm the channel (Google Meet / Zoom / phone)</li>
+<li>Test your camera and audio 5 min before</li>
+<li>Have your resume + the MIDA project description from Andres open in
+a side window for reference</li>
+<li>Have a glass of water nearby (Erin's pace will dry you out)</li>
+<li>For the panel: have the slide deck ready to share on cue, NOT
+pre-shared (so you control the timing)</li>
+</ul>
+<p>Good luck. The intel from Adam is real — use it.</p>
+<hr />
+<h2 id="part-5-question-bank-with-conceptual-answers">Part 5: Question
+Bank (with conceptual answers)</h2>
+<h1 id="pge-mida-interview--question-bank-with-layered-answers">PG&amp;E
+MIDA Interview — Question Bank with Layered Answers</h1>
+<h3 id="each-answer-in-three-layers-lingo--conceptual--anchor">Each
+answer in three layers: Lingo · Conceptual · Anchor</h3>
+<p>The goal: walk in with concise, multi-layered answers ready. Use the
+<strong>lingo</strong> version when the room wants technical depth
+(Erin's metrics question, Sylva's depth probes). Use the
+<strong>conceptual</strong> version when plain English lands better
+(analogies, when you sense the listener wants intuition). Always anchor
+each answer in <strong>specific past work</strong> so the answer feels
+like recall, not theory.</p>
+<p><strong>Length discipline:</strong> Phone-screen answers target 15-25
+seconds spoken. Panel behavioral stories target 30-45 seconds. Panel
+technical answers target 60-90 seconds with breakpoints for Q&amp;A.</p>
+<hr />
+<h2 id="quick-acronym-reference">Quick acronym reference</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Plain meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CV</strong></td>
+<td>Computer Vision — software that interprets images or video</td>
+</tr>
+<tr class="even">
+<td><strong>VLM / VLLM</strong></td>
+<td>Vision Large Language Model — a foundation model like GPT-4V, Claude
+with vision, or Gemini Vision that can both see images and produce
+structured language responses</td>
+</tr>
+<tr class="odd">
+<td><strong>Precision</strong></td>
+<td>When the model says "yes, that's a defect," how often is it
+right?</td>
+</tr>
+<tr class="even">
+<td><strong>Recall</strong></td>
+<td>Of all the actual defects, how many did the model catch?</td>
+</tr>
+<tr class="odd">
+<td><strong>F1</strong></td>
+<td>The harmonic mean of precision and recall — penalizes you for being
+weak on either side</td>
+</tr>
+<tr class="even">
+<td><strong>mAP</strong></td>
+<td>Mean Average Precision — the standard detection metric; averages
+performance across classes</td>
+</tr>
+<tr class="odd">
+<td><strong>IoU</strong></td>
+<td>Intersection over Union — how much the predicted box overlaps with
+the truth box</td>
+</tr>
+<tr class="even">
+<td><strong>MIDA</strong></td>
+<td>The PG&amp;E project name — VLM-based detection / auto-labeling</td>
+</tr>
+<tr class="odd">
+<td><strong>Auto-labeling</strong></td>
+<td>Using a model to suggest labels, with humans reviewing rather than
+labeling from scratch</td>
+</tr>
+<tr class="even">
+<td><strong>HITL</strong></td>
+<td>Human-in-the-loop — the human review step that catches model
+errors</td>
+</tr>
+<tr class="odd">
+<td><strong>Drift</strong></td>
+<td>When the input data starts to differ from what the model was trained
+on (new weather, new camera, new season)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1
+id="section-1-cv-technical-questions-erins-phone-screen--sylvas-panel-depth">Section
+1: CV Technical Questions (Erin's phone screen + Sylva's panel
+depth)</h1>
+<h2
+id="q1--what-metrics-would-you-use-to-evaluate-classification--computer-vision-models">Q1
+— "What metrics would you use to evaluate classification / computer
+vision models?"</h2>
+<p><strong>Lingo (20 sec):</strong></p>
+<blockquote>
+<p>"For classification, precision, recall, F1, and the confusion matrix
+for per-class behavior. For detection specifically, mAP at multiple IoU
+thresholds — mAP50 for permissive overlap, mAP50-95 averaged across
+stricter thresholds. For high-consequence applications, I look at
+per-class recall at fixed precision so we don't trade off rare-class
+detection for aggregate scores."</p>
+</blockquote>
+<p><strong>Conceptual (20 sec):</strong></p>
+<blockquote>
+<p>"It depends on what wrong looks like. Precision asks 'when I sound
+the alarm, am I right?' Recall asks 'of the alarms I should have
+sounded, how many did I catch?' For utility infrastructure, missing an
+actual issue is usually worse than a false alarm, so I'd weight toward
+recall and watch precision as the budget constraint."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>ON Semi production ML for image defect detection on imaging die —
+the same precision/recall/F1 + confusion matrix discipline at
+semiconductor-line scale</li>
+<li>Current Microsoft Fabric AI Functions classifier — evaluation loops
+with structured output validation, per-row cost / latency
+management</li>
+</ul>
+<hr />
+<h2
+id="q2--how-would-you-design-a-validation-set-for-computer-vision-with-a-target">Q2
+— "How would you design a validation set for computer vision with a
+target?"</h2>
+<p><strong>Lingo (30 sec):</strong></p>
+<blockquote>
+<p>"The biggest trap is observation-level random splits when frames are
+correlated. I'd split at higher grains — time first, so no temporal
+leakage across acquisition periods; then asset and camera if possible,
+so the model isn't memorizing a particular camera's angle or lighting.
+For sparse target classes, synthetic augmentation and AI-generated
+training data balance the training distribution while keeping the
+validation set clean of synthetic. The held-out test set should mirror
+production conditions — weather, season, time of day, sensor angle."</p>
+</blockquote>
+<p><strong>Conceptual (25 sec):</strong></p>
+<blockquote>
+<p>"The data split is like a tasting panel. You don't want the same dish
+judged by people who saw each other's scores. With video frames,
+neighboring frames are nearly identical, so a random split lets the
+model peek. Splitting on time, asset, and camera forces honest
+evaluation. For rare events, synthetic data can fill the training side;
+the test set has to stay real."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>ON Semi production CV — 3-week release cycle with pre-release code
+test program required validation discipline that survived
+manufacturing-grade scrutiny</li>
+<li>Texas A&amp;M M.S. computer-image-controlled robotics — validated
+against simulated AND real-robot measurements (the same train-on-synth,
+validate-on-real pattern modern CV uses)</li>
+</ul>
+<hr />
+<h2 id="q3--how-do-you-handle-class-imbalance-in-detection">Q3 — "How do
+you handle class imbalance in detection?"</h2>
+<p><strong>Lingo (25 sec):</strong></p>
+<blockquote>
+<p>"Several levers depending on context. Data side: targeted
+augmentation for the rare class, synthetic generation for hard examples,
+undersampling the dominant class with care. Loss side: focal loss for
+detection, class-weighted cross-entropy for classification. Sampling:
+balanced batches during training. Architecture: for very rare events,
+consider an anomaly-detection framing rather than a direct
+classification target. And the evaluation metric must reflect the
+imbalance — accuracy will mislead you."</p>
+</blockquote>
+<p><strong>Conceptual (20 sec):</strong></p>
+<blockquote>
+<p>"If 99% of your training data is healthy power lines, the model can
+score 99% accuracy by predicting 'healthy' every time and miss every
+real fault. The fix is making sure the rare cases get attention — by
+adding more of them, by weighting their mistakes more heavily during
+training, or by reframing the problem as anomaly detection where rarity
+is the whole point."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>ON Semi imaging die defects — defects are rare by design; production
+ML had to handle the imbalance with discipline</li>
+<li>HP statistical ML for cartridge wear — degradation events are rare;
+same general shape</li>
+</ul>
+<hr />
+<h2
+id="q4--tell-me-about-vlm-choice-for-auto-labeling--how-do-you-pick">Q4
+— "Tell me about VLM choice for auto-labeling — how do you pick?"</h2>
+<p><strong>Lingo (40 sec):</strong></p>
+<blockquote>
+<p>"Evaluation on a representative held-out set, not on benchmarks. I'd
+compare GPT-4V, Claude with vision, and Gemini Vision on a few hundred
+labeled examples that mirror production conditions — comparing accuracy
+on the actual label schema, structured-output reliability under your
+output format, latency, cost per call, and rate-limit behavior at
+expected volume. Then I'd weight those against the practical operational
+constraints — data residency requirements, vendor risk diversity,
+contract leverage. The right model often isn't the highest-scoring one;
+it's the one with the best landed-cost / quality ratio at your
+operational scale."</p>
+</blockquote>
+<p><strong>Conceptual (25 sec):</strong></p>
+<blockquote>
+<p>"Same principle as picking a tool for a manufacturing line. The
+shiniest tool isn't always the best. Test the candidate models on real
+samples that look like what they'll see in production, watch cost and
+latency at the scale you actually run, and pick the one that's reliable
+under load. The benchmarks tell you who's good in the lab; your
+evaluation set tells you who's good for your problem."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>Current Microsoft Fabric AI Functions — chose gpt-4.1-mini against
+alternatives by running on representative seller-disposition data with
+full evaluation scaffolding</li>
+<li>PostalDataPI — single-handed production decisions on stack across
+246 countries; this kind of selection-under-constraint thinking is
+daily</li>
+</ul>
+<hr />
+<h2
+id="q5--how-would-you-architect-a-human-in-the-loop-labeling-pipeline">Q5
+— "How would you architect a human-in-the-loop labeling pipeline?"</h2>
+<p><strong>Lingo (50 sec):</strong></p>
+<blockquote>
+<p>"Confidence-tiered routing. The VLM outputs label plus calibrated
+confidence. Above a tunable threshold, the label goes straight to
+production with sampled audit. Between two thresholds, the example goes
+to junior human review. Below the lower threshold, escalation to senior
+reviewer or domain expert. The reviewer interface shows the model's
+reasoning along with the label so humans can correct based on rationale,
+not just guess. Corrections flow back into a continuously updated golden
+set, which drives both retraining triggers and threshold recalibration.
+Drift detection on the confidence distribution itself — if the model's
+confidence pattern shifts, something upstream changed and we need to
+look."</p>
+</blockquote>
+<p><strong>Conceptual (30 sec):</strong></p>
+<blockquote>
+<p>"The model and the human are partners, not a sequence. The model says
+'I'm confident here' or 'I'm not sure here,' and the humans get routed
+by where their attention is most useful. The high-confidence stuff
+doesn't need a human; the low-confidence stuff needs the senior eye. The
+middle is where junior reviewers learn. Every correction the humans make
+becomes training signal for tomorrow's model."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>Current Microsoft Fabric work uses the same evaluation-loop pattern
+— structured output + per-row cost / latency management with
+human-validated golden set</li>
+<li>ON Semi 3-week release cycle had a similar tiered review structure
+for manufacturing release decisions</li>
+</ul>
+<hr />
+<h2 id="q6--how-do-you-detect-drift-in-a-vlm-based-system">Q6 — "How do
+you detect drift in a VLM-based system?"</h2>
+<p><strong>Lingo (35 sec):</strong></p>
+<blockquote>
+<p>"Multiple signals in parallel. First, distribution shifts on the
+model's confidence outputs — if average confidence drops on a fixed
+input class, something changed. Second, human override rate — if
+reviewers start correcting more, drift is operational, not statistical.
+Third, input-side drift detection on image features — embedding distance
+between current inputs and the training distribution. Fourth, on the
+rare-class side, a fixed canary set replayed regularly to catch silent
+regressions. Alerting tied to thresholds with rate-limited paging so the
+team isn't drowned by noisy signals."</p>
+</blockquote>
+<p><strong>Conceptual (20 sec):</strong></p>
+<blockquote>
+<p>"Drift is when the world starts looking different than the training
+data — new weather, new equipment, new season. We watch for three
+signals: the model getting less confident on familiar things, humans
+correcting it more, or the input images looking statistically different.
+Any one of those firing means something upstream changed."</p>
+</blockquote>
+<p><strong>Experience anchor:</strong></p>
+<ul>
+<li>ON Semi production ML — same drift discipline on a manufacturing
+line where input conditions shift over equipment cycles</li>
+<li>HP LaserJet supplies warehouse storage condition modeling —
+predictive models of environmental variation impact (the same shape as
+drift detection over time / conditions)</li>
+</ul>
+<hr />
+<h1
+id="section-2-behavioral-questions-one-per-round-different-angles">Section
+2: Behavioral Questions (one per round, different angles)</h1>
+<h2
+id="have-these-5-loaded--pick-the-one-that-fits-the-variant-of-the-question">Have
+these 5 loaded — pick the one that fits the variant of the question</h2>
+<h3 id="story-1--mentoring-teaching-transferable-judgment-hp">Story 1 —
+Mentoring teaching transferable judgment (HP)</h3>
+<blockquote>
+<p>"At HP's Color Pipeline group, I was the senior practitioner on
+Python data-science tooling for halftone reproduction quality across
+many printers and scanners. Three PhD graduate students rotated through.
+I mentored them on data-science methodology — not the toolkit, but the
+judgment underneath: how to validate, how to evaluate, how to deploy.
+Two of them landed permanent positions afterward. What I learned was
+that mentoring isn't about teaching tools; it's about transferring
+judgment."</p>
+</blockquote>
+<p><strong>Angle this fits:</strong> "Tell me about a time you mentored
+someone" / "Tell me about teaching others."</p>
+<hr />
+<h3 id="story-2--leading-a-team-transition-echo">Story 2 — Leading a
+team transition (Echo)</h3>
+<blockquote>
+<p>"At Echo Global Logistics, I led the data science team through a
+transition from notebook-based prototyping to containerized FastAPI /
+Streamlit / Docker serving. The team was hesitant — they were used to
+notebooks. I built the first reference deployment myself, then paired
+with each engineer to convert their own workflow. The team ended up with
+a shared serving architecture and faster iteration. The lesson:
+technical transitions land when you build the reference first, then
+pair, then step back."</p>
+</blockquote>
+<p><strong>Angle this fits:</strong> "Tell me about a time you drove
+technical change" / "Tell me about leading a team through new
+tooling."</p>
+<hr />
+<h3
+id="story-3--stakeholder-alignment-in-production-ai-microsoft-current">Story
+3 — Stakeholder alignment in production AI (Microsoft, current)</h3>
+<blockquote>
+<p>"Right now I partner with Microsoft's ABM AI team. They needed a
+Fabric AI Functions classifier for free-text seller dispositions at
+million-row scale. The challenge wasn't the classifier — it was getting
+alignment on the canonical taxonomy across stakeholders who each used
+the data differently. I ran small sessions with each stakeholder to
+surface their actual use cases before fixing the taxonomy. Once we had
+alignment, the classifier landed clean. Lesson: production AI in
+cross-functional teams is more about taxonomy alignment than model
+accuracy."</p>
+</blockquote>
+<p><strong>Angle this fits:</strong> "Tell me about cross-functional
+work" / "Tell me about disagreement / aligning different views."</p>
+<hr />
+<h3
+id="story-4--delivery-under-operational-pressure-echo-carrier-optimization">Story
+4 — Delivery under operational pressure (Echo carrier optimization)</h3>
+<blockquote>
+<p>"At Echo, the sales side was bleeding margin on certain
+carrier-routing decisions. I built a carrier-cost optimization tool that
+delivered double-digit margin recovery for sales operations within the
+quarter — cost-to-serve analytics tied to carrier sourcing and
+shipment-level economics. The pressure was real: sales managers wanted
+answers weekly. What worked was making the underlying logic visible to
+the sales side so they trusted the recommendations rather than
+overriding them. The lesson: under pressure, transparency beats
+sophistication."</p>
+</blockquote>
+<p><strong>Angle this fits:</strong> "Tell me about delivering under
+pressure" / "Tell me about a high-stakes project."</p>
+<hr />
+<h3
+id="story-5--recovery-from-a-failed-or-ambiguous-start-hp-mems-test-apparatus">Story
+5 — Recovery from a failed or ambiguous start (HP MEMS test
+apparatus)</h3>
+<blockquote>
+<p>"Early in the HP Atomic Resolution Storage MEMS work, we needed a
+vacuum test apparatus to characterize device dynamics. The available
+off-the-shelf systems didn't meet our requirements. I had to specify,
+design, and build it from scratch — vacuum chamber, vibration isolation,
+laser-doppler vibrometer system, LabView integration. The first
+iteration didn't measure cleanly; the second design corrected the
+vibration coupling. What I learned was that complex measurement systems
+require iteration, and the willingness to scrap version one is part of
+the cost of doing the work properly."</p>
+</blockquote>
+<p><strong>Angle this fits:</strong> "Tell me about a project that
+didn't go as planned" / "Tell me about recovery from a setback."</p>
+<hr />
+<h1 id="section-3-the-vague-technical-question-sylvas-panel">Section 3:
+The Vague Technical Question (Sylva's panel)</h1>
+<h2
+id="how-would-you-solve-our-internal-cv-problem-intentionally-vague">"How
+would you solve our internal CV problem [intentionally vague]?"</h2>
+<p><strong>Adam's key insight: they go vague to test your requirements
+gathering. Don't jump to a solution.</strong></p>
+<h3 id="step-1--ask-3-4-clarifying-questions-first-60-90-seconds">Step 1
+— Ask 3-4 clarifying questions FIRST (60-90 seconds)</h3>
+<blockquote>
+<p>"Before I propose anything, let me understand a few things. First —
+what does success look like at the program level? Is the team measured
+on labels-produced, on downstream operational outcomes, on inspector
+time saved? Second — what's the data volume and acquisition cadence? Are
+we talking real-time camera feeds, batch image archives from drone or
+helicopter inspection, or both? Third — what's the current state? Is
+there a v0 labeling pipeline in place that we're augmenting, or is this
+greenfield? Fourth — what's the consequence shape of a wrong answer?
+Which kind of miss is most expensive — false positives that waste
+inspector time or false negatives that miss a real fault?"</p>
+</blockquote>
+<h3 id="step-2--acknowledge-what-they-tell-you-5-10-seconds">Step 2 —
+Acknowledge what they tell you (5-10 seconds)</h3>
+<blockquote>
+<p>"Okay — so it sounds like [reflect back their answer]. With that in
+mind, here's how I'd structure an approach."</p>
+</blockquote>
+<h3 id="step-3--propose-a-structured-solution-60-90-seconds">Step 3 —
+Propose a structured solution (60-90 seconds)</h3>
+<blockquote>
+<p>"Five components. <strong>One — VLM selection.</strong> Run a few
+hundred labeled examples through GPT-4V, Claude with vision, and Gemini
+Vision to compare accuracy, structured-output reliability, latency, and
+cost on your specific label schema. Pick on landed-cost / quality, not
+on benchmark. <strong>Two — structured output schema.</strong> Each
+prediction includes label, confidence, and reasoning so humans can
+review rationale, not just guess. <strong>Three — evaluation
+scaffolding.</strong> Held-out golden set with appropriate-grain splits
+— time, asset, camera. Precision / recall / F1 plus mAP for any
+detection component. <strong>Four — human-in-the-loop
+architecture.</strong> Confidence-tiered routing — high-confidence
+straight through with sampled audit, mid-confidence to junior review,
+low-confidence to senior review. Corrections flow back to the golden
+set. <strong>Five — production observability.</strong> Drift detection
+on confidence distribution, override rate, and input-side embedding
+distance. Alerting tied to actionable thresholds."</p>
+</blockquote>
+<h3 id="why-this-structure-wins">Why this structure wins</h3>
+<ul>
+<li>Step 1 shows you gather requirements before solving</li>
+<li>Step 2 shows you actually listened</li>
+<li>Step 3 shows you have a working architecture in your head, not just
+talking points</li>
+</ul>
+<hr />
+<h1
+id="section-4-project-presentation-10-min--qa-breakpoints-panel-only">Section
+4: Project Presentation (10 min + Q&amp;A breakpoints, panel only)</h1>
+<h2
+id="recommended-project--current-microsoft-fabric-ai-functions-classifier">Recommended
+project — current Microsoft Fabric AI Functions classifier</h2>
+<p>Already outlined in <code>interview_prep_notes.md</code>. Key talking
+points:</p>
+<ol type="1">
+<li><p><strong>The bridge to MIDA in one sentence:</strong> <em>"The
+Microsoft Fabric AI Functions classifier uses gpt-4.1-mini — the same
+multimodal foundation model lineage that VLLMs sit in. The production
+scaffolding I built around it — evaluation loops, structured-output
+validation, per-row cost / latency management — is exactly what an
+auto-labeling pipeline needs to land reliably."</em></p></li>
+<li><p><strong>Natural Q&amp;A breakpoints (use these as conversation
+hooks):</strong></p>
+<ul>
+<li>After the problem statement: "what was the canonical taxonomy?"</li>
+<li>After the model selection: "how did you evaluate the
+alternatives?"</li>
+<li>After the evaluation scaffolding: "what does the evaluation loop
+look like in practice?"</li>
+</ul></li>
+<li><p><strong>What NOT to surface in this presentation:</strong> real
+estate operator background, financial services credentials, IMLAI
+community. None of these matter to a CV team. Stay in lane.</p></li>
+</ol>
+<hr />
+<h1 id="section-5-questions-for-them-pick-1-2-only">Section 5: Questions
+for Them (Pick 1-2 only)</h1>
+<ol type="1">
+<li><p><strong>"What's the current state of the MIDA project — are we
+operating on a v0 pipeline, or is this earlier than that?"</strong> —
+Positions you as a partner, not a candidate.</p></li>
+<li><p><strong>"What VLM(s) is the team currently using or evaluating —
+Claude with vision, GPT-4V, Gemini Vision, or something more
+specialized?"</strong> — Signals technical engagement.</p></li>
+<li><p><strong>"What does the labeling pipeline look like end-to-end —
+how do human reviewers fit in, and where are the failure modes you'd
+want to address first?"</strong> — Signals systems thinking.</p></li>
+<li><p><strong>"How does MIDA connect to PG&amp;E's broader asset
+inspection or maintenance program — is the team measured on
+labels-produced or on downstream operational outcomes?"</strong> —
+Signals altitude awareness.</p></li>
+<li><p><strong>(Closer)</strong> <em>"What's the biggest unknown for
+this role right now — the question you'd want a candidate to help you
+answer?"</em> — Generous, partner-shape, gives them room to talk about
+what actually worries them.</p></li>
+</ol>
+<hr />
+<h1 id="posture-reminders">Posture reminders</h1>
+<ul>
+<li><strong>Phone screen with Erin:</strong> Match her speed. Crisp
+answers, then stop. Don't fill silence with more depth than she asked
+for.</li>
+<li><strong>Panel with Sylva:</strong> Slower cadence is fine. He's
+introverted — give him space to ask, then answer fully.</li>
+<li><strong>Don't pile credentials.</strong> They have your resume.
+Surface specifics only when asked.</li>
+<li><strong>Anchor every technical answer in a specific past
+project.</strong> It moves the answer from theoretical to
+demonstrated.</li>
+<li><strong>For the vague technical question — ASK FIRST, PROPOSE
+SECOND.</strong> This is Adam's gold insight; don't forget it under
+pressure.</li>
+<li><strong>For Erin's behavioral question — pick ONE story, deliver
+tight, stop at 45 sec.</strong></li>
+</ul>
+<p>Good luck.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>

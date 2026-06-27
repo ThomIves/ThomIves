@@ -1,0 +1,42 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Slide 4 · What I Built — Iterative Robust Regression for Streak Defect Detection · prep · thomives.com</title>
+            <link rel="stylesheet" href="../../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../../index.html">Prep</a> &raquo; <a href="../index.html">PG&E MIDA</a> &raquo; <a href="index.html">Presentation</a> &raquo; <span>Slide 4</span></div>
+                <div class="slide-nav">
+            <a href="slide-03.html">&larr; Prev</a>
+            <span class="counter">Slide 4 of 8</span>
+            <a href="slide-05.html">Next &rarr;</a>
+        </div>
+        <div class="slide-container">
+            <h1>What I Built — Iterative Robust Regression for Streak Defect Detection</h1>
+<ul><li>Parametric illumination model — 5th-degree bivariate polynomial surface fit to the imaging system's background dome</li><li>Residual map = actual pixels − model — defects live in the residuals</li><li>Iterative outlier suppression with refit until convergence:<ul><li>Identify pixels outside N standard deviations from the fit</li></ul></li><li>Suppress those pixels; refit the polynomial surface on the remaining<ul><li>Find the new outliers; repeat until none remain</li></ul></li><li>Methodology lineage: iterative robust least-squares drawn from my M.S. robot-calibration research at Texas A&M</li><li>Spatial clustering / connected-component analysis on the residual anomaly map (size + density thresholds from related cluster-defect tests)</li><li>Engineering constraint: Python 2.5 + numpy only (no SciPy) — numerical routines written from scratch</li></ul>
+
+            <details class="speaker-notes">
+                <summary></summary>
+                <div class="speaker-notes-body"><p>LOAD-BEARING SENTENCE TO MEMORIZE THE SHAPE OF:</p><p>"I built a defect detector based on a parametric illumination model — a 5th-degree bivariate polynomial surface fit to the imaging system's background dome. Defects live in the residual map between the model and the actual pixels. I iterated robust regression — fit, suppress outliers, refit — until convergence, then ran spatial clustering on the residual anomalies with size and density thresholds borrowed from related cluster-defect tests."</p><p>Then expand naturally:</p><p>"A practical note on why this approach was possible — the iterative robust-least-squares machinery came from my graduate work on robot calibration at Texas A&M. We used iteratively refined least-squares fits with outlier suppression to calibrate production robots against sensor measurements. The same statistical methodology applied to the Streak Test image surface twenty years later. Different physical system, same machinery."</p><p>"On the iteration itself — fitting a polynomial surface once is easy. The engineering insight is that one fit is not enough when defects bias the fit. Iterating fit-suppress-refit until convergence lets the model find the true background even when defects are present in the image. That iteration is what makes the detector robust."</p><p>"One engineering-constraint note — the test system was stuck on Python 2.5 with numpy, no SciPy. So I wrote the linear-algebra and statistical routines I needed from scratch in numpy. It became a personal predictive-modeler war story. The discipline came with the constraint."</p><p>Q&A CUE: "Any questions on the modeling approach or the iterative refinement?"</p></div>
+            </details>
+
+        </div>
+        <div class="slide-nav">
+            <a href="slide-03.html">&larr; Prev</a>
+            <span class="counter">Slide 4 of 8</span>
+            <a href="slide-05.html">Next &rarr;</a>
+        </div>
+            </div>
+            <script src="../../prep.js"></script>
+        </body>
+        </html>

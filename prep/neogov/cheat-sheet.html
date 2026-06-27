@@ -1,0 +1,132 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Cram Cheat Sheet · NEOGOV · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">NEOGOV</a> &raquo; <span>Cheat Sheet</span></div>
+                <h1 id="10-minute-neogov-cram-cheat-sheet">10-Minute NEOGOV Cram Cheat
+Sheet</h1>
+<p>The five load-bearing things to absorb if you only have 10 minutes
+before the next conversation.</p>
+<hr />
+<h2 id="1-the-behavior-change-framing-is-the-gravitational-center">1.
+The behavior-change framing is the gravitational center</h2>
+<p>The JD's phrase <strong>"changed behaviors and direct pipeline
+impact, NOT output volume"</strong> is what every strategic answer
+should anchor to. Translation: the system is judged by whether sellers
+act differently because of it — not by how many briefs we ship.</p>
+<p><strong>One-line answer for the "how do you measure success"
+question:</strong></p>
+<blockquote>
+<p><em>"Pre-registered measurement plan that ties artifact
+instrumentation through Outreach and Salesforce telemetry to
+causal-inference cohort design, with explicit kill-switch criteria.
+Layered: lead behavioral indicators (action sheet open rate,
+time-to-touch on recommended accounts) → cohort comparison →
+account-level lift. And the honesty layer — we tell the CFO what we
+can't prove."</em></p>
+</blockquote>
+<hr />
+<h2 id="2-the-five-layer-whiteboard-architecture">2. The five-layer
+whiteboard architecture</h2>
+<p>Memorize the sketch:</p>
+<ol type="1">
+<li><strong>Source connectors / CDC</strong> — Salesforce, Outreach,
+Gong, 6Sense, Pursuit, Starbridge, Tableau</li>
+<li><strong>Bronze landing zone</strong> — raw schemas preserved with
+lineage</li>
+<li><strong>Silver conformed layer</strong> — revenue entity model
+(Account, Opportunity, Contact, Engagement, Signal)</li>
+<li><strong>Gold marts</strong> — one purpose-built mart per artifact
+(CRO / Director / seller / Marketing)</li>
+<li><strong>AI intelligence layer</strong> — reads from gold, retrieves
+from Gong vectors, runs structured-output LLM passes, writes to delivery
+layer</li>
+</ol>
+<p><strong>Plus:</strong> orchestration plane (Dagster/Airflow/Fabric),
+eval harness beside the LLM, HITL checkpoints on high-stakes artifacts,
+monthly signal pack as its own batch pipeline.</p>
+<hr />
+<h2 id="3-shared-substrate--per-artifact-composers">3. Shared substrate
++ per-artifact composers</h2>
+<p>For "how do you produce four different artifacts from the same data
+without four pipelines or one mega-prompt":</p>
+<blockquote>
+<p><em>"Shared deterministic substrate does the heavy lifting once —
+pull Salesforce snapshot, classify Gong calls, join 6Sense, produce a
+canonical opportunity-period fact table. Then four per-artifact
+composers each take their slice with audience-specific prompts and
+structured-output schemas. Numbers come from SQL, never from the model.
+Model only writes the connective tissue."</em></p>
+</blockquote>
+<hr />
+<h2
+id="4-the-hallucination-containment-layered-defense-for-cro-brief">4.
+The hallucination containment layered defense for CRO brief</h2>
+<p>If the CRO acts on a hallucinated number, it's career-ending. Layered
+defense:</p>
+<ol type="1">
+<li><strong>Numerics pulled deterministically from SQL</strong> — never
+LLM-generated</li>
+<li><strong>Every claim cites a source ID</strong> (Salesforce opp ID,
+Gong call ID, signal row ID)</li>
+<li><strong>Cross-checking agent</strong> verifies before
+publication</li>
+<li><strong>Generate Friday → human review Friday PM → ship
+Monday</strong></li>
+<li><strong>Provenance footnotes</strong> so the CRO can click through
+to source</li>
+</ol>
+<hr />
+<h2 id="5-your-strongest-proof-points">5. Your strongest proof
+points</h2>
+<p><strong>Lead with these in any applied-LLM answer:</strong></p>
+<ul>
+<li><strong>Microsoft Fabric AI Functions classifier</strong> —
+gpt-4.1-mini at million-row scale with full evaluation scaffolding,
+structured-output validation, per-row cost / latency management.
+<em>This is the closest direct analog to NEOGOV's daily work.</em></li>
+<li><strong>PostalDataPI</strong> — agent-native MCP API in 246
+countries, single-handed concept to production. <em>This is the MCP
+credential.</em></li>
+<li><strong>Echo Outlook AI Add-Ins</strong> — 30K+ daily requests, 5+
+min → &lt;15s cycle time, sales-rep and carrier sides. <em>This is the
+marketplace-AI-in-the-tool-the-user-already-uses pattern.</em></li>
+</ul>
+<hr />
+<h2 id="what-to-downplay">What to downplay</h2>
+<ul>
+<li>Don't lead with framework names (LangGraph vs CrewAI) — junior
+tell</li>
+<li>Don't lead with model preferences (GPT vs Claude) — junior tell</li>
+<li>Don't lead with "I'd RAG it" for memory questions — junior tell</li>
+<li>Don't pretend public-sector experience you don't have</li>
+</ul>
+<hr />
+<h2 id="posture-reminders">Posture reminders</h2>
+<ul>
+<li>Listen first. Ask clarifying questions before proposing solutions
+for vague technical questions.</li>
+<li>Anchor every technical answer in a specific past project — moves the
+answer from theoretical to demonstrated.</li>
+<li>The behavior-change metric is the gravitational center. Pull
+strategic answers back to it.</li>
+</ul>
+<p>You've got this.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>

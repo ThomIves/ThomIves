@@ -1,0 +1,106 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Cram Cheat Sheet · PG&E MIDA · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">PG&E MIDA</a> &raquo; <span>Cheat Sheet</span></div>
+                <h1 id="10-minute-pge-mida-cram-cheat-sheet">10-Minute PG&amp;E MIDA
+Cram Cheat Sheet</h1>
+<p>The five load-bearing things to absorb if you only have 10 minutes
+before the next conversation.</p>
+<hr />
+<h2 id="1-what-mida-actually-is--say-this-verbatim-if-asked">1. What
+MIDA actually is — say this verbatim if asked</h2>
+<blockquote>
+<p><em>"MIDA is a Multi-modal Inspection Data Annotation platform built
+within Palantir Foundry. It uses Vision Language Models — currently
+Gemini 3.1, parameter-tuned for zero-shot — to identify electric assets
+in drone, helicopter, and satellite imagery: poles, transformers,
+splices, circuits, attachments. The platform is human-in-the-loop by
+regulatory mandate; AI surfaces candidates, the human inspector decides.
+The Golden Pipeline is the template-based architecture that lets new
+asset types be added through configuration rather than code."</em></p>
+</blockquote>
+<h2 id="2-the-split--vlms-vs-waldos-cnns">2. The split — VLMs vs Waldo's
+CNNs</h2>
+<p>VLMs (Gemini 3.1) do the first-pass general detection.
+<strong>Waldo</strong> is PG&amp;E's internal team building traditional
+trained CV models (CNNs) for the deeper condition-assessment work where
+VLMs hit their accuracy ceiling. The role would be backfilling a Waldo
+team member, working on production CV + MLOps to get models from concept
+to production.</p>
+<h2
+id="3-the-four-metrics-for-the-technical-screen-with-erin-and-probably-charles">3.
+The four metrics for the technical screen with Erin (and probably
+Charles)</h2>
+<ul>
+<li><strong>Precision</strong> = TP / (TP + FP) — "when the model says
+yes, is it right?"</li>
+<li><strong>Recall</strong> = TP / (TP + FN) — "of the real positives,
+how many did the model catch?"</li>
+<li><strong>F1</strong> = harmonic mean of precision and recall — "is
+the model both precise AND complete?"</li>
+<li><strong>mAP</strong> = mean Average Precision across IoU thresholds
+— "detection + localization combined"</li>
+</ul>
+<p>The EPIC 4.22 deployment bar is <strong>F1 &gt; 0.8</strong>. BPE
+testing found only 9% of out-of-box models hit that bar.</p>
+<h2 id="4-the-validation-set-trap-the-adam-flagged-one">4. The
+validation set trap (the Adam-flagged one)</h2>
+<p>Don't randomly split video frames — neighboring frames are nearly
+identical, model memorizes. Split by <strong>time</strong> first, then
+by <strong>physical asset</strong> and <strong>camera</strong>. For rare
+classes, synthetic / AI-generated training data is acceptable; test set
+stays real.</p>
+<h2 id="5-your-strongest-bridge-to-midas-work">5. Your strongest bridge
+to MIDA's work</h2>
+<p>The <strong>ON Semi Streak Test Auto-Detector</strong>: production CV
+defect detection on a manufacturing line under 3-week release cycles.
+Iterative robust regression — the methodology lineage from the M.S.
+robot calibration research. <em>"Auto-detector replacing the human's
+slow tuning loop is the same problem shape MIDA is solving today,
+applied to electrical asset imagery instead of imaging die."</em></p>
+<p>Plus: <strong>Microsoft Fabric AI Functions classifier</strong> with
+gpt-4.1-mini at million-row scale, evaluation scaffolding, structured
+outputs, per-row cost/latency management — same production discipline
+applied to the multimodal foundation model family that VLMs sit in.</p>
+<hr />
+<h2 id="posture-for-charles-coma">Posture for Charles Coma</h2>
+<p>Charles is the most technical interviewer. Per Awais, he'll "poke
+around a little bit more on the technical side." Be ready for:</p>
+<ul>
+<li>CV evaluation metrics (precision, recall, F1, mAP, IoU)</li>
+<li>Validation set design and the leakage trap</li>
+<li>Production deployment discipline (release cycles, drift detection,
+retraining)</li>
+<li>VLM vs CNN tradeoffs</li>
+<li>MLOps from concept to production</li>
+</ul>
+<p>Show depth. Don't pile credentials — anchor every technical answer in
+a specific past project.</p>
+<h2 id="posture-for-nick-silva">Posture for Nick Silva</h2>
+<p>Less likely to drive deep questioning; more likely to listen and ask
+focused follow-ups. He's on the Waldo team — show respect for the
+traditional-CV-model work as the deeper, harder lane.</p>
+<h2 id="posture-for-sharigay">Posture for Sharigay</h2>
+<p>Manager level; participates lightly. Treat as the room presence;
+don't ignore but don't over-orient toward.</p>
+<hr />
+<p>You've got this.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>

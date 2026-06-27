@@ -42,3 +42,13 @@
 - [PostalDataPI](https://postaldatapi.com)
 - [Fungaia Coffee Company](https://fungaiacoffeeco.com)
 - [Resume PDF](/Thom_Ives_Resume.pdf)
+
+## Private Study Materials
+
+The `/prep/` section is a private, unlisted study area for interview prep materials. Not linked from main nav;
+accessible only via direct URL.
+
+- [Prep landing](https://thomives.com/prep/) — index of role-specific prep sections
+- Each role gets: full study doc, 10-minute cram cheat sheet, "things to come back to" follow-up tracker
+- Materials are mobile-friendly, dark-mode aware, and use rich conceptual language alongside domain terminology
+
