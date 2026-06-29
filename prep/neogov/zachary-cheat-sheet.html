@@ -33,22 +33,38 @@ you operate it inside my application portfolio without breaking my
 Salesforce admin's day</em>.</p>
 <hr />
 <h2 id="2-who-zachary-actually-is">2. Who Zachary actually is</h2>
+<p><strong>He IS Director of Enterprise Applications</strong> (per Nick,
+who championed you forward). LinkedIn still shows his prior "Director of
+Help Desk" title — that's just a stale profile, which is actually a
+positive signal (he's thriving in the new role, not updating personal
+brand).</p>
+<p>The composite — <strong>Director of Enterprise Applications who came
+up through Help Desk</strong> — is a <em>more substantial</em> profile
+than either label alone:</p>
 <ul>
-<li>Public title is <strong>"Director of Help Desk,"</strong> not
-Director of Enterprise Applications (panel using a working title — don't
-mention)</li>
-<li>Came up through the help desk: Hulu → DNAM Apparel → MasterClass →
-NEOGOV (~2.5 years)</li>
-<li>B.A. Communication, not CS. Self-taught into IT leadership.</li>
-<li><strong>Identity / SSO is his deepest competency</strong> — Okta
-Certified Administrator + Professional; ran 70-app OneLogin → Okta
-migration</li>
-<li>ITIL 4 certified — believes in change control, ticketed work</li>
-<li>Every published project: SaaS-administration consolidation or
-identity-stack migration</li>
+<li>Owns the <strong>full Enterprise Applications scope</strong>:
+Salesforce platform strategy, NetSuite, RightRev, integration plane,
+Okta SSO/IAM, application portfolio, vendor management, SOC 2 posture,
+AI substrate strategy</li>
+<li>Has the <strong>help-desk-up career heritage</strong> giving him
+deep ops chops, identity mastery, ITIL discipline, automation-builder
+instincts</li>
+<li>Career arc: Hulu → DNAM Apparel → MasterClass → NEOGOV (~2.5 years,
+promoted to current scope along the way)</li>
+<li>B.A. Communication (not CS, not MBA). Self-taught into IT
+leadership.</li>
+<li><strong>Okta Certified Administrator + Professional</strong>; ITIL 4
+Foundation; Python automation</li>
 <li>Vocabulary: <strong>tickets reduced, applications consolidated,
-dollars saved, hours automated away</strong></li>
+dollars saved, hours automated away</strong> — even in the bigger
+role</li>
 </ul>
+<p><strong>Critical implication:</strong> he's making strategic
+architectural decisions about NEOGOV's application stack RIGHT NOW
+(including the AI substrate strategy for the Revenue AI work). He's not
+just evaluating whether you'll respect his processes — he's evaluating
+whether you can be a <strong>peer-partner</strong> on the architectural
+decisions he's currently owning.</p>
 <hr />
 <h2 id="3-the-strongest-single-sentence-to-have-ready">3. The strongest
 single sentence to have ready</h2>
@@ -84,17 +100,29 @@ Starbridge</strong></li>
 Workday for HRIS, Marketo for marketing automation, Snowflake for data
 warehouse.</p>
 <hr />
-<h2 id="5-his-seven-most-likely-questions">5. His seven most likely
-questions</h2>
+<h2 id="5-his-most-likely-questions">5. His most likely questions</h2>
+<p><strong>Strategic (may come early — he's actually making these
+decisions):</strong></p>
 <ol type="1">
+<li><strong>"Build vs. buy — custom on OpenAI / Anthropic, Salesforce
+Agentforce, Snowflake Cortex?"</strong> → Probably hybrid pragmatic.
+<em>"I'd expect to be a working partner with you on the substrate
+selection, not the sole architect of it. Depends on your Salesforce
+footprint, three-year roadmap, and risk posture on platform lock-in.
+Want to learn those constraints from you before I commit."</em></li>
 <li><strong>"Walk me through connecting the AI workspace to our
-Salesforce data."</strong> → Lead with service accounts, scoped read
-access, warehouse layer between Salesforce and AI, narrow writes back
-through proper provenance.</li>
+Salesforce data."</strong> → Service accounts with scoped read access on
+objects you actually need; warehouse layer between Salesforce and AI
+(governor limits, cleaner auth); narrow writes back as custom objects
+with provenance, never overwriting Stage / Amount.</li>
+</ol>
+<p><strong>Operational (his help-desk-up heritage means these carry
+intense weight):</strong></p>
+<ol start="3" type="1">
 <li><strong>"How would you handle service accounts and Okta-enforced
-access?"</strong> → Service accounts per integration, scoped to minimum
-read, auth through Okta where supported, secrets in managed vault.
-Naming convention obvious in audit.</li>
+access?"</strong> → Per integration, not per app; minimum-scope read;
+auth through Okta where supported; secrets in managed vault; naming
+convention obvious in audit.</li>
 <li><strong>"Who carries the pager when this breaks at 6 AM
 Monday?"</strong> → You for the first 90 days. Then shared on-call with
 the natural-home team, with documented runbooks for top 5 failure
@@ -102,19 +130,18 @@ modes.</li>
 <li><strong>"How do you handle change control for prompt and model
 changes?"</strong> → Prompts in version control, peer review, automated
 test set in CI, shadow → small % → full traffic, one-click rollback,
-change notifications go through THEIR notification channel.</li>
-<li><strong>"What's the audit trail?"</strong> → Every artifact has a
-unique ID pointing back to input snapshot, prompt versions, model
-version, tool calls, intermediate results. Reproducible from inputs +
-prompts + versions.</li>
+change notifications go through THEIR channel (FreshService / ServiceNow
+/ whatever).</li>
+<li><strong>"What's the audit trail?"</strong> → Every artifact has
+unique ID → input snapshot + prompt versions + model version + tool
+calls + intermediate results. Govtech audit trails matter.</li>
+</ol>
+<p><strong>Partnership / tone test:</strong></p>
+<ol start="7" type="1">
 <li><strong>"How have you worked with internal IT in past
-roles?"</strong> → Concrete story. Treat application admin team as the
-system experts; you bring AI architectural judgment; the intersection is
-where good decisions land.</li>
-<li><strong>"Build vs. buy — custom or Salesforce Einstein /
-Agentforce?"</strong> → "Depends on your Salesforce contract and
-three-year roadmap. Probably hybrid pragmatic. Want to learn the
-constraints before I commit."</li>
+roles?"</strong> → Concrete story. Treat application admin team as
+system experts; bring AI architectural judgment; intersection is where
+good decisions land.</li>
 </ol>
 <hr />
 <h2 id="6-what-to-avoid">6. What to avoid</h2>

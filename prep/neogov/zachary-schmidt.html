@@ -202,22 +202,40 @@ cowboy?"</em></p>
 <hr />
 <h2 id="who-zachary-actually-is-read-this-carefully">Who Zachary
 actually is (read this carefully)</h2>
-<p>The public record (LinkedIn, RocketReach, his portfolio site at
-<code>zacharytschmidt.com</code>) shows his current title is
-<strong>"Director of Help Desk,"</strong> not Director of Enterprise
-Applications. The panel is calling him by a scope-based working title
-that matches his de-facto reach. <strong>Do NOT mention this on the
-call</strong> — it's informational only.</p>
+<p><strong>He is the Director of Enterprise Applications at
+NEOGOV.</strong> Nick (Lynn's friend, the person who championed you
+forward) named the title directly — trust that over LinkedIn, which
+still shows his prior title of "Director of Help Desk." The profile lag
+is a positive signal: someone thriving in a new role doesn't always
+prioritize personal-brand maintenance. He's heads-down doing the
+work.</p>
+<p>The composite — <strong>Director of Enterprise Applications who came
+up through Help Desk</strong> — is a more substantial profile than
+either label alone:</p>
+<ul>
+<li>He owns the <strong>full Enterprise Applications scope:</strong>
+Salesforce platform strategy, NetSuite, RightRev, the integration plane
+between them, Okta SSO / IAM, application portfolio rationalization,
+vendor management, SOC 2 posture, and the strategic architectural
+decisions PE-accelerated NEOGOV is making about its application
+stack.</li>
+<li>He has the <strong>help-desk-up career heritage</strong>, which
+gives him deep operations chops, identity / SSO mastery, ITIL process
+discipline, and an automation-builder's instinct that pure architects
+often lack.</li>
+</ul>
 <p>His career arc: <strong>Hulu → DNAM Apparel → MasterClass →
-NEOGOV.</strong> He's been at NEOGOV roughly 2.5 years.</p>
+NEOGOV</strong> (~2.5 years; promoted to current Enterprise Applications
+scope along the way).</p>
 <p>His education is a <strong>B.A. in Communication /
-Multimedia</strong> (Buena Vista University 2012-2016). Not CS. Not MBA.
-He came up through the help desk and grew into IT leadership through
-doing the work.</p>
-<p><strong>His certifications tell you who he is:</strong></p>
+Multimedia</strong> (Buena Vista University, 2012-2016). Not CS. Not
+MBA. He came up through the help desk and grew into the senior IT leader
+he is today by <em>doing the work</em>.</p>
+<p><strong>His certifications tell you what's load-bearing in his
+thinking:</strong></p>
 <ul>
 <li><strong>Okta Certified Administrator + Professional</strong> —
-identity and SSO is his deepest competency</li>
+identity and SSO is his deepest individual competency</li>
 <li><strong>ITIL 4 Foundation</strong> — he believes in process
 discipline (change control, incident management, ticketed work)</li>
 <li><strong>Power Platform, Python automation, BetterCloud, Jamf,
@@ -260,49 +278,81 @@ he values:</strong></p>
 SaaS-administration consolidation, identity-stack migration, or workflow
 automation. He measures wins in <strong>tickets reduced, applications
 consolidated, dollars saved, hours automated away.</strong> That's his
-vocabulary.</p>
-<p>He is <strong>not</strong> an AI architect, not a software architect,
-not a builder. He is the <strong>steward of the application
-portfolio</strong>, and a builder of automation that keeps that
-portfolio sane.</p>
+vocabulary even now in the bigger role.</p>
+<p><strong>The composite identity matters for the call.</strong> He is
+not "just" a help-desk leader with a fancy title; he's a Director of
+Enterprise Applications who has unusually deep operations and identity
+heritage to draw on as he makes strategic decisions about NEOGOV's
+application portfolio. <strong>He is making strategic architectural
+decisions right now</strong> — including the AI substrate strategy for
+the Revenue AI work you'd join. You're not just being evaluated on
+whether you'll respect his processes; you're being evaluated on whether
+you can be a peer-partner with him on the architectural decisions he's
+currently owning.</p>
+<p><strong>Posture implication:</strong> Show both respect for the
+existing portfolio AND readiness to be a peer-partner on strategic
+architectural decisions. Lead with respect; layer in partnership.</p>
 <hr />
 <h2 id="what-he-will-most-care-about-for-this-role">What he will most
 care about for THIS role</h2>
-<p>Concretely, what's likely turning over in his head before the
-call:</p>
+<p>A Director of Enterprise Applications at a PE-accelerated govtech
+SaaS company is co-owning strategic architectural decisions about the
+application portfolio, not just operating it. His concerns mix the
+<em>strategic</em> and the <em>operational</em>, in this rough order of
+weight:</p>
+<h3
+id="strategic-these-may-surface-first-in-a-30-minute-conversation-with-a-senior-architect">Strategic
+(these may surface FIRST in a 30-minute conversation with a senior
+architect)</h3>
 <ol type="1">
-<li><strong>Will this AI system integrate cleanly with our existing SaaS
-stack, or will it be a parallel shadow stack?</strong> His deepest
-question. He has spent two-plus years cleaning up SaaS sprawl. He does
-not want another sprawl vector.</li>
-<li><strong>What's the identity and access model?</strong> The AI system
-will consume Salesforce, Gong, Outreach data. Which service accounts?
-What scopes? Does it auth through Okta? Who rotates credentials?</li>
-<li><strong>What's the audit trail?</strong> When the AI produces a CRO
-Brief or Seller Action Sheet, what's the lineage from raw data to
-output? If a claim is made based on Gong data, can he reconstruct who
-saw what when?</li>
-<li><strong>What's the change-control posture?</strong> If the prompt
-architecture changes and the Brief content shifts overnight, what's the
-notification path? Do you believe in ticketed changes, or in "I shipped
-it Sunday night"?</li>
-<li><strong>What's the operational reliability model?</strong> Who
-carries the pager when the AI workspace breaks at 6 AM Monday before the
-CRO meeting?</li>
-<li><strong>Will you respect our existing IT processes</strong> — ITSM,
-change windows, SOC 2 controls, vendor risk reviews — or be a
-cowboy?</li>
-<li><strong>TCO and vendor lock-in.</strong> Is this a $200K/year
-custom-build, or a $40K/year tool with thin orchestration? Where's the
-bill landing, and on whose budget?</li>
-<li><strong>How does it interact with SSO / IAM?</strong> When a sales
-rep leaves, does the AI system stop knowing about them automatically, or
-does someone have to remember to revoke?</li>
+<li><strong>AI substrate strategy — what's your view on custom-build vs.
+Salesforce Agentforce vs. Snowflake Cortex vs. hybrid?</strong> He's
+likely co-owning this decision right now. He doesn't want a candidate
+without an architectural philosophy; he also doesn't want one whose
+philosophy ignores his Salesforce contract and three-year roadmap.</li>
+<li><strong>Will this AI system integrate cleanly into the existing
+portfolio, or become a new sprawl vector?</strong> His deepest
+portfolio-stewardship question. He has spent years cleaning up SaaS
+sprawl; he doesn't want another vector.</li>
+<li><strong>What's the long-term operating model and org
+design?</strong> Is this a one-architect role, or the seed of a Revenue
+AI team? Who owns the platform in 18 months? What's the partnership
+pattern with the Salesforce admin team (which reports through Nick),
+with IT (his org), with data engineering?</li>
+<li><strong>TCO and vendor management.</strong> Custom build means
+engineering-team-months. Salesforce Einstein / Agentforce means lock-in
+to Salesforce's pricing curve. What's the three-year all-in number, and
+where's it landing?</li>
 </ol>
-<p><strong>Notice that none of these are "can Thom build the
-AI."</strong> That was Nick's question (and partly Anushka's). Zachary's
-lens is downstream of the build — it's about operating and governing it
-inside an existing application portfolio.</p>
+<h3
+id="operational-his-help-desk-up-heritage-means-these-matter-to-him-intensely">Operational
+(his help-desk-up heritage means these matter to him intensely)</h3>
+<ol start="5" type="1">
+<li><strong>Identity and access model.</strong> Which service accounts?
+What Okta scopes? Lifecycle management when sales reps leave?</li>
+<li><strong>Change control for prompt and model changes.</strong> What's
+the notification path when the CRO Brief content shifts overnight
+because of a prompt update? Ticketed changes or
+ship-it-Sunday-night?</li>
+<li><strong>Operational reliability model.</strong> Who carries the
+pager when the AI workspace breaks at 6 AM Monday? What's the runbook?
+Does Thom expect IT to operate it, or own the runbook himself?</li>
+<li><strong>Audit trail.</strong> Govtech-adjacent → SOC 2 / FedRAMP
+posture bleeds into internal practice. Can any AI artifact be
+reconstructed for an audit?</li>
+</ol>
+<h3 id="the-cowboy-concern-unspoken-but-present">The cowboy concern
+(unspoken but present)</h3>
+<ol start="9" type="1">
+<li><strong>Will this senior architect respect the existing stack and
+the architectural decisions Zachary has been making, or come in and try
+to rebuild everything?</strong></li>
+</ol>
+<p>Notice that <strong>none of these are "can Thom build the
+AI."</strong> That was Nick's question. Zachary's lens is about <em>what
+this system does to my application portfolio, and whether this senior
+architect can be a peer-partner in the strategic decisions I'm currently
+making</em>.</p>
 <hr />
 <h2 id="the-single-most-important-sentence-to-have-ready">The single
 most important sentence to have ready</h2>
@@ -339,6 +389,12 @@ verbatim — the substance is what matters.</p>
 <h2
 id="the-seven-most-likely-questions-in-rough-order-of-probability">The
 seven most likely questions, in rough order of probability</h2>
+<p>The composite identity matters here. Because he's a strategic
+Director of Enterprise Applications co-owning the AI substrate decision,
+the <strong>build-vs-buy and integration-architecture questions are
+likely to come earlier</strong>, not last. Because he came up through
+Help Desk, <strong>the operational questions (service accounts, change
+control, audit trail) carry intense personal weight</strong>.</p>
 <h3
 id="question-1--walk-me-through-how-youd-connect-the-ai-workspace-to-our-salesforce-data">Question
 1 — "Walk me through how you'd connect the AI workspace to our
@@ -447,6 +503,10 @@ respects both."</strong></p>
 id="question-7--whats-your-view-on-build-vs-buy--custom-or-salesforce-einstein--agentforce--snowflake-cortex">Question
 7 — "What's your view on build-vs-buy — custom or Salesforce Einstein /
 Agentforce / Snowflake Cortex?"</h3>
+<p><strong>This one likely comes early, not late.</strong> As a Director
+of Enterprise Applications co-owning this decision right now, he's not
+asking out of curiosity — he's testing whether you can be a peer-partner
+in the decision he's currently making.</p>
 <p><strong>Your answer in shape:</strong></p>
 <p>It depends on what NEOGOV's Salesforce contract looks like and what
 the three-year roadmap is.</p>
@@ -458,11 +518,21 @@ pricing curve and AI roadmap. Snowflake Cortex sits in the middle.</p>
 pragmatic.</strong> Ingestion and signal aggregation close to the data
 layer (Snowflake or Databricks). Agent orchestration as a thin custom
 layer over a mature framework for multi-model flexibility. MCP-style
-tool exposure so neither layer is locked in.</p>
-<p>The framing: <strong>"I have opinions, but they're contingent on what
-your Salesforce footprint supports and what your three-year AI roadmap
-looks like. I'd want to learn the constraints before I'd commit to a
+tool exposure so neither layer is locked in. That gives you provider
+portability without giving up provider-specific features where they
+materially help.</p>
+<p>The framing — and this matters because <em>he's making this
+decision</em>: <strong>"I have opinions on each direction, but I'd
+expect to be a working partner with you on the substrate selection, not
+the sole architect of it. The right answer depends on what your
+Salesforce footprint supports, what your three-year AI roadmap looks
+like, and what NEOGOV's risk posture on platform lock-in is. I'd want to
+learn those constraints from you before I'd commit to a
 direction."</strong></p>
+<p>Notice the peer-partnership signal: <em>"a working partner with
+you,"</em> <em>"learn those constraints from you."</em> He's making the
+decision; you can be in the conversation as a senior peer, not as a
+junior implementer.</p>
 <hr />
 <h2 id="closer--questions-to-ask-him">Closer — questions to ask him</h2>
 <p>Have 2-3 ready. He'll likely give you 3-5 minutes at the end.</p>
