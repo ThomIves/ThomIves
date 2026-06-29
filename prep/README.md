@@ -32,4 +32,4 @@ prep/
         └── slide-01.html ... slide-08.html
 ```
 
-Last built: 2026-06-26
+Last built: 2026-06-29

@@ -1,0 +1,547 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Zachary Schmidt Prep · NEOGOV · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">NEOGOV</a> &raquo; <span>Zachary Schmidt</span></div>
+                <p class="page-meta">Source: <code>interview_prep_zachary_schmidt_conceptual.md</code> · Last updated 2026-06-29</p>
+
+    <details class="toc" open>
+        <summary>Jump to section</summary>
+        <ul>
+            <li><a href="#acronyms-and-shorthand-defined-once">Acronyms &amp; shorthand</a></li>
+            <li><a href="#the-most-important-reframe-the-lens-shift-from-nick-to-zachary">Lens shift Nick → Zachary</a></li>
+            <li><a href="#who-zachary-actually-is-read-this-carefully">Who Zachary actually is</a></li>
+            <li><a href="#what-he-will-most-care-about-for-this-role">What he most cares about</a></li>
+            <li><a href="#the-single-most-important-sentence-to-have-ready">Strongest single sentence</a></li>
+            <li><a href="#the-seven-most-likely-questions-in-rough-order-of-probability">7 likely questions</a></li>
+            <li><a href="#closer-questions-to-ask-him">Closer — questions to ask him</a></li>
+            <li><a href="#what-not-to-do">What NOT to do</a></li>
+            <li><a href="#closing-posture">Closing posture</a></li>
+        </ul>
+    </details>
+
+<h1 id="neogov--zachary-schmidt-interview-prep">NEOGOV — Zachary Schmidt
+Interview Prep</h1>
+<h3
+id="tuesday-june-30-2026--1230-pm-mdt-230-pm-et--30-min-google-meet">Tuesday
+June 30, 2026 · 12:30 PM MDT (2:30 PM ET) · 30 min Google Meet</h3>
+<p>The same prep substance as the technical knowledge base, in everyday
+conceptual language. Read this once before the call. The goal is to walk
+in with the right lens, the right idiom, and the right posture.</p>
+<hr />
+<h2 id="acronyms-and-shorthand-defined-once">Acronyms and shorthand
+(defined once)</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Plain meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Director of Enterprise Applications</strong></td>
+<td>The IT leader who owns the company's internal SaaS application
+portfolio — Salesforce, the financial system, HR system, ticketing,
+identity layer — and the plumbing between them</td>
+</tr>
+<tr class="even">
+<td><strong>SSO / IAM</strong></td>
+<td>Single Sign-On / Identity and Access Management — the system that
+decides who can log in to what</td>
+</tr>
+<tr class="odd">
+<td><strong>Okta</strong></td>
+<td>The most common SSO platform. Zachary is Okta-certified; he ran a
+70-app Okta migration. Identity is his deepest competency.</td>
+</tr>
+<tr class="even">
+<td><strong>ITSM</strong></td>
+<td>IT Service Management — the ticketing and incident-management
+discipline (FreshService, ServiceNow, Jira Service Management)</td>
+</tr>
+<tr class="odd">
+<td><strong>ITIL</strong></td>
+<td>Information Technology Infrastructure Library — the framework that
+defines IT processes (change management, incident management, problem
+management). Zachary is ITIL 4 certified.</td>
+</tr>
+<tr class="even">
+<td><strong>Change control</strong></td>
+<td>The process for approving, scheduling, and notifying changes to
+production systems. The opposite of "I shipped it Sunday night."</td>
+</tr>
+<tr class="odd">
+<td><strong>Service account</strong></td>
+<td>A non-human account that an automated system uses to log into
+another system. Critical for AI consuming Salesforce or Gong data.</td>
+</tr>
+<tr class="even">
+<td><strong>Scope</strong></td>
+<td>What an authenticated identity is allowed to do. "Read-only Account
+scope on Salesforce" means the service account can read accounts but not
+modify them.</td>
+</tr>
+<tr class="odd">
+<td><strong>SCIM</strong></td>
+<td>The protocol for syncing user accounts across SaaS apps. When a new
+hire shows up in HR, SCIM provisions them into Salesforce, Slack, etc.
+automatically.</td>
+</tr>
+<tr class="even">
+<td><strong>TCO</strong></td>
+<td>Total Cost of Ownership — the all-in cost of running a system over
+years, including licenses, integration work, ongoing admin time, and
+switching costs</td>
+</tr>
+<tr class="odd">
+<td><strong>NetSuite</strong></td>
+<td>Oracle's financial / ERP system. Sits next to Salesforce for
+billing, accounting, revenue recognition. Confirmed in NEOGOV's
+stack.</td>
+</tr>
+<tr class="even">
+<td><strong>RightRev</strong></td>
+<td>Revenue automation software for ASC 606 (the accounting standard for
+subscription revenue). Confirmed in NEOGOV's stack.</td>
+</tr>
+<tr class="odd">
+<td><strong>Audit trail</strong></td>
+<td>A reconstructible record of who saw what and what was produced.
+Critical for govtech because customers are governments under FOIA / SOC
+2 / FedRAMP.</td>
+</tr>
+<tr class="even">
+<td><strong>Shadow IT</strong></td>
+<td>Tools that bypass the IT-managed application portfolio. Zachary's
+job is to prevent it.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2
+id="the-most-important-reframe--the-lens-shift-from-nick-to-zachary">The
+most important reframe — the lens shift from Nick to Zachary</h2>
+<p>You handled Nick's lens well. His concern was <em>"will Thom move our
+revenue motion and will he stick around long enough to deliver?"</em>
+That's a <strong>sales leader's lens</strong> — sales-motion fit and
+commitment-horizon.</p>
+<p>Zachary's lens is fundamentally different. His concern is <em>"will
+this senior architect fit cleanly into our application stack and respect
+our IT processes, or will he come in and try to rebuild
+everything?"</em> That's an <strong>application-portfolio steward's
+lens</strong> — integration fit and process respect.</p>
+<p>The technical substance you'd discuss is the same. The
+<strong>weight</strong> and <strong>vocabulary</strong> change.</p>
+<h3 id="the-translation-table">The translation table</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Nick (RevOps) cared about</th>
+<th>Zachary (Enterprise Apps) cares about</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Will it change seller behavior?</td>
+<td>Will it break my Salesforce admin's day?</td>
+</tr>
+<tr class="even">
+<td>Pipeline impact, conversion, ramp</td>
+<td>Integration reliability, uptime, audit trail</td>
+</tr>
+<tr class="odd">
+<td>Does the CRO Brief get used Monday?</td>
+<td>Does the data flow into the Brief survive a Salesforce sandbox
+refresh?</td>
+</tr>
+<tr class="even">
+<td>Are you committed to a multi-year horizon?</td>
+<td>Are you going to respect our change-control process?</td>
+</tr>
+<tr class="odd">
+<td>Can you architect the AI workspace?</td>
+<td>How will you authenticate it against Okta and what scopes do you
+need?</td>
+</tr>
+<tr class="even">
+<td>Will you work well with Matt Redden?</td>
+<td>Will you work well with my Salesforce admin team?</td>
+</tr>
+<tr class="odd">
+<td>What's the seller behavior signal?</td>
+<td>What's the audit trail when the AI gets something wrong?</td>
+</tr>
+<tr class="even">
+<td>Will the role's shape hold your attention?</td>
+<td>Will the role's shape respect our IT processes?</td>
+</tr>
+<tr class="odd">
+<td>Overqualified = will you leave for more money?</td>
+<td>Overqualified = will you bypass IT because you're senior enough to
+think you can?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Zachary's concern in one sentence:</strong> <em>"Will this
+senior architect respect our existing stack, or will he be a
+cowboy?"</em></p>
+<hr />
+<h2 id="who-zachary-actually-is-read-this-carefully">Who Zachary
+actually is (read this carefully)</h2>
+<p>The public record (LinkedIn, RocketReach, his portfolio site at
+<code>zacharytschmidt.com</code>) shows his current title is
+<strong>"Director of Help Desk,"</strong> not Director of Enterprise
+Applications. The panel is calling him by a scope-based working title
+that matches his de-facto reach. <strong>Do NOT mention this on the
+call</strong> — it's informational only.</p>
+<p>His career arc: <strong>Hulu → DNAM Apparel → MasterClass →
+NEOGOV.</strong> He's been at NEOGOV roughly 2.5 years.</p>
+<p>His education is a <strong>B.A. in Communication /
+Multimedia</strong> (Buena Vista University 2012-2016). Not CS. Not MBA.
+He came up through the help desk and grew into IT leadership through
+doing the work.</p>
+<p><strong>His certifications tell you who he is:</strong></p>
+<ul>
+<li><strong>Okta Certified Administrator + Professional</strong> —
+identity and SSO is his deepest competency</li>
+<li><strong>ITIL 4 Foundation</strong> — he believes in process
+discipline (change control, incident management, ticketed work)</li>
+<li><strong>Power Platform, Python automation, BetterCloud, Jamf,
+CompTIA A+</strong> — automation builder and SaaS administration
+operator</li>
+</ul>
+<p><strong>The portfolio projects he highlights publicly tell you what
+he values:</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>What he led</th>
+<th>What he framed as the win</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>OneLogin → Okta migration (70 apps in 2 months)</td>
+<td>Automated API-driven workflow integrated with Jira</td>
+</tr>
+<tr class="even">
+<td>Slack → Google Chat migration</td>
+<td>$100K in cost savings</td>
+</tr>
+<tr class="odd">
+<td>FreshService implementation at MasterClass</td>
+<td>800 → 80 ticket backlog</td>
+</tr>
+<tr class="even">
+<td>ServiceNow access automation</td>
+<td>1,000+ automated requests</td>
+</tr>
+<tr class="odd">
+<td>Samanage ITSM deployment</td>
+<td>80%+ of support requests ticketed</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The pattern:</strong> every published project is a
+SaaS-administration consolidation, identity-stack migration, or workflow
+automation. He measures wins in <strong>tickets reduced, applications
+consolidated, dollars saved, hours automated away.</strong> That's his
+vocabulary.</p>
+<p>He is <strong>not</strong> an AI architect, not a software architect,
+not a builder. He is the <strong>steward of the application
+portfolio</strong>, and a builder of automation that keeps that
+portfolio sane.</p>
+<hr />
+<h2 id="what-he-will-most-care-about-for-this-role">What he will most
+care about for THIS role</h2>
+<p>Concretely, what's likely turning over in his head before the
+call:</p>
+<ol type="1">
+<li><strong>Will this AI system integrate cleanly with our existing SaaS
+stack, or will it be a parallel shadow stack?</strong> His deepest
+question. He has spent two-plus years cleaning up SaaS sprawl. He does
+not want another sprawl vector.</li>
+<li><strong>What's the identity and access model?</strong> The AI system
+will consume Salesforce, Gong, Outreach data. Which service accounts?
+What scopes? Does it auth through Okta? Who rotates credentials?</li>
+<li><strong>What's the audit trail?</strong> When the AI produces a CRO
+Brief or Seller Action Sheet, what's the lineage from raw data to
+output? If a claim is made based on Gong data, can he reconstruct who
+saw what when?</li>
+<li><strong>What's the change-control posture?</strong> If the prompt
+architecture changes and the Brief content shifts overnight, what's the
+notification path? Do you believe in ticketed changes, or in "I shipped
+it Sunday night"?</li>
+<li><strong>What's the operational reliability model?</strong> Who
+carries the pager when the AI workspace breaks at 6 AM Monday before the
+CRO meeting?</li>
+<li><strong>Will you respect our existing IT processes</strong> — ITSM,
+change windows, SOC 2 controls, vendor risk reviews — or be a
+cowboy?</li>
+<li><strong>TCO and vendor lock-in.</strong> Is this a $200K/year
+custom-build, or a $40K/year tool with thin orchestration? Where's the
+bill landing, and on whose budget?</li>
+<li><strong>How does it interact with SSO / IAM?</strong> When a sales
+rep leaves, does the AI system stop knowing about them automatically, or
+does someone have to remember to revoke?</li>
+</ol>
+<p><strong>Notice that none of these are "can Thom build the
+AI."</strong> That was Nick's question (and partly Anushka's). Zachary's
+lens is downstream of the build — it's about operating and governing it
+inside an existing application portfolio.</p>
+<hr />
+<h2 id="the-single-most-important-sentence-to-have-ready">The single
+most important sentence to have ready</h2>
+<p>If Zachary asks anything that opens with <em>"how would you work with
+internal IT"</em> or <em>"what's your operating model"</em> — and he
+probably will, in the first 5 minutes — this is the answer to anchor
+in:</p>
+<blockquote>
+<p><em>"I've spent forty years building production AI inside complicated
+application stacks — semiconductor lines, freight brokerage, Microsoft's
+seller platform. The pattern that holds: the AI system has to live
+inside the existing application portfolio, not next to it. My first
+weeks would be learning your Salesforce footprint, your Okta tenancy,
+your ticketing and change-control patterns. The AI architecture comes
+second; the integration architecture and operating model come
+first."</em></p>
+</blockquote>
+<p>The load-bearing pieces of that sentence:</p>
+<ul>
+<li><strong>"Inside the existing application portfolio, not next to
+it"</strong> — direct response to his unspoken question</li>
+<li><strong>"My first weeks would be learning"</strong> — defuses the
+cowboy concern</li>
+<li><strong>"Salesforce footprint, Okta tenancy, ticketing and
+change-control patterns"</strong> — his exact vocabulary, signals you
+did your homework</li>
+<li><strong>"Integration architecture and operating model come
+first"</strong> — inverts the seniority-vs-respect tension; the senior
+judgment is <em>to put the stack first</em></li>
+</ul>
+<p>Memorize the SHAPE of that sentence. You don't need to deliver it
+verbatim — the substance is what matters.</p>
+<hr />
+<h2
+id="the-seven-most-likely-questions-in-rough-order-of-probability">The
+seven most likely questions, in rough order of probability</h2>
+<h3
+id="question-1--walk-me-through-how-youd-connect-the-ai-workspace-to-our-salesforce-data">Question
+1 — "Walk me through how you'd connect the AI workspace to our
+Salesforce data"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>Lead with the read pattern: a dedicated service account in Salesforce
+with read-only scope on the objects you actually need (Account,
+Opportunity, OpportunityHistory, OpportunityContactRole, Activity, Task)
+— not blanket admin. Auth through Okta if their setup supports it;
+otherwise OAuth with refresh tokens stored in a secrets manager.</p>
+<p>Then the data flow: nightly or near-real-time pull into a warehouse
+layer (Snowflake / BigQuery — ask what they have). The AI workspace
+reads from the warehouse, not from Salesforce directly, to avoid
+governor limits and to make the auth model cleaner.</p>
+<p>For writes back to Salesforce — if any — through a separate service
+account with narrowly-scoped write permissions and idempotency keys,
+never overwriting source-of-record fields like Stage or Amount. Signals
+get written as custom objects with provenance; recommended actions get
+written as Tasks.</p>
+<p>The framing: <strong>"I want to be a guest in your Salesforce
+instance, not a renovator."</strong></p>
+<h3
+id="question-2--how-would-you-handle-service-accounts-and-okta-enforced-access">Question
+2 — "How would you handle service accounts and Okta-enforced
+access?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>Service accounts per integration, not per application. Salesforce
+gets one. Gong gets one. Outreach gets one. Each scoped to the minimum
+read access the AI actually needs.</p>
+<p>If Okta supports it, the service accounts authenticate through Okta
+with proper lifecycle management — when a credential rotates, the AI
+system knows about it through the Okta tenant. If not, secrets in a
+managed vault with rotation cadence.</p>
+<p>Naming convention you'd follow: something like
+<code>svc-revenue-ai-salesforce-read</code> so the ownership is obvious
+in any audit.</p>
+<p>The framing: <strong>"Your IAM stack is the spine; I'd attach the AI
+through it, not around it."</strong></p>
+<h3
+id="question-3--whats-your-operating-model--who-carries-the-pager-when-this-breaks-at-6-am-monday">Question
+3 — "What's your operating model — who carries the pager when this
+breaks at 6 AM Monday?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>A senior architect operating without a runbook is a liability. You'd
+build the runbook <em>with</em> his team, not in parallel.</p>
+<p>Monitoring tied to whatever observability stack NEOGOV uses — likely
+Datadog or New Relic. Alert thresholds on the AI workspace's outputs
+(eval-score drift, cost anomalies, failed jobs), not just up/down.</p>
+<p>For the first 90 days you'd carry the pager yourself to learn the
+failure modes. After that, transition to a shared on-call model with the
+data engineering or RevOps tech team — whoever is the natural home —
+with documented runbooks for the top 5 failure modes.</p>
+<p>The framing: <strong>"The first 90 days I expect to be the operator.
+After that, the team and I decide together where it lives."</strong></p>
+<h3
+id="question-4--how-do-you-think-about-change-control-for-prompt-and-model-changes">Question
+4 — "How do you think about change control for prompt and model
+changes?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>Prompts are code. They live in version control, with peer review and
+an automated test set (golden inputs with expected output properties)
+that runs in CI before merge.</p>
+<p>Production deployment is staged: shadow mode (the new prompt runs
+alongside the old, output compared, neither shown to users) → small
+percentage of real traffic → full traffic. Rollback is one click because
+the previous version is still deployable.</p>
+<p>For visible-output changes — CRO Brief content shifting because of a
+prompt update — change notifications go through whatever notification
+channel the application team uses. If they're on FreshService or
+ServiceNow, the prompt change is a ticketed change with stakeholder
+notification.</p>
+<p>The framing: <strong>"I expect prompt and model changes to go through
+your change-notification process. I've seen what 'I shipped it Sunday
+night' costs at enterprise scale."</strong></p>
+<h3 id="question-5--whats-the-audit-trail-youd-build">Question 5 —
+"What's the audit trail you'd build?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>Every artifact (CRO Brief, Director Scorecard, Seller Action Sheet)
+carries a unique ID. That ID points back to the snapshot of input data,
+the version of every prompt used, the exact model version, every tool
+call the agent made, and the intermediate results.</p>
+<p>Given an artifact ID, anyone — a SOC 2 auditor, a customer doing a
+FOIA review, a curious CRO — can reconstruct exactly what the AI saw and
+what it produced. Reproducibility is the foundation; everything else is
+built on it.</p>
+<p>The framing: <strong>"Govtech audit trails matter. I'd build the
+lineage from raw Salesforce data through the AI output so any Brief can
+be reconstructed for an audit."</strong></p>
+<h3
+id="question-6--how-have-you-worked-with-internal-it-and-application-admin-teams-in-past-roles">Question
+6 — "How have you worked with internal IT and application admin teams in
+past roles?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>This is an open-ended question testing tone and posture. Tell a
+concrete story. The Microsoft engagement is a good one — you partner
+with the ABM AI team, which lives alongside the broader Microsoft
+application stack. You don't ask for admin rights; you partner with
+whoever owns the system you need.</p>
+<p>The framing: <strong>"The pattern I work in: I treat the application
+admin team as the system experts. I bring AI architectural judgment. The
+intersection is where we land good decisions — they tell me what's
+possible inside the stack constraints, I tell them what's possible
+inside the AI architecture constraints, and we build something that
+respects both."</strong></p>
+<h3
+id="question-7--whats-your-view-on-build-vs-buy--custom-or-salesforce-einstein--agentforce--snowflake-cortex">Question
+7 — "What's your view on build-vs-buy — custom or Salesforce Einstein /
+Agentforce / Snowflake Cortex?"</h3>
+<p><strong>Your answer in shape:</strong></p>
+<p>It depends on what NEOGOV's Salesforce contract looks like and what
+the three-year roadmap is.</p>
+<p>Custom on OpenAI or Anthropic gives maximum control and best
+observability but costs engineering-team-months. Salesforce Einstein /
+Agentforce gives faster time-to-value but locks you to Salesforce's
+pricing curve and AI roadmap. Snowflake Cortex sits in the middle.</p>
+<p>The honest answer for NEOGOV right now: <strong>probably hybrid
+pragmatic.</strong> Ingestion and signal aggregation close to the data
+layer (Snowflake or Databricks). Agent orchestration as a thin custom
+layer over a mature framework for multi-model flexibility. MCP-style
+tool exposure so neither layer is locked in.</p>
+<p>The framing: <strong>"I have opinions, but they're contingent on what
+your Salesforce footprint supports and what your three-year AI roadmap
+looks like. I'd want to learn the constraints before I'd commit to a
+direction."</strong></p>
+<hr />
+<h2 id="closer--questions-to-ask-him">Closer — questions to ask him</h2>
+<p>Have 2-3 ready. He'll likely give you 3-5 minutes at the end.</p>
+<ol type="1">
+<li><em>"What does the integration map look like today between
+Salesforce, NetSuite, and the rest of the application stack? Where are
+the brittle seams?"</em></li>
+<li><em>"What's your ITSM tool of choice at NEOGOV — FreshService,
+ServiceNow, something else?"</em> (His native question.)</li>
+<li><em>"How does IT and RevOps work together when there's a new system
+to deploy — what's the partnership pattern?"</em></li>
+<li><em>"What would success look like at six months for this role from
+your seat — not from Nick's?"</em></li>
+</ol>
+<p>The fourth one is the strongest. It invites him to articulate his
+lens explicitly and gives you actionable signal for if/when there's an
+offer to navigate.</p>
+<hr />
+<h2 id="what-not-to-do">What NOT to do</h2>
+<ul>
+<li><strong>Don't lead with AI architecture.</strong> Lead with
+integration architecture and operating model. The AI is the inner layer;
+the application stack is the outer shell. Zachary cares about the
+shell.</li>
+<li><strong>Don't critique the existing stack.</strong> Even if you
+think FreshService is the wrong choice or Salesforce CPQ is messy.
+Zachary owns this stack. Criticizing it on a first call is the cowboy
+move.</li>
+<li><strong>Don't claim deep Okta / NetSuite / RightRev
+expertise</strong> you haven't built. You've worked alongside identity
+layers and financial systems; you haven't administered them.
+<em>"Familiar paradigm, would want to ramp on your specific
+tenancy"</em> is the honest and confident answer.</li>
+<li><strong>Don't pile credentials.</strong> Zachary has your resume.
+The HP-era patent count and the Ph.D. will not move him; the
+help-desk-up arc means he's a wary consumer of senior-architect resumes.
+Stay grounded in the concrete: integration patterns, auth models,
+runbooks, change control.</li>
+<li><strong>Don't ask about salary, remote work, or side
+consulting.</strong> All three belong to later rounds. This is the
+IT-fit lens; surfacing comp or scheduling reads as off-target.</li>
+<li><strong>Don't surface Nick's overqualified concern.</strong> That
+was Nick's worry. Don't pre-defend against a question Zachary isn't
+asking. Zachary's concern is operational respect, not flight risk.</li>
+<li><strong>Don't telegraph the Unify timeline.</strong> Same rule as
+Nick.</li>
+<li><strong>Don't bring up Integrating Consulting.</strong> Same rule.
+Offer-stage conversation.</li>
+<li><strong>Don't volunteer opinions on rebuilding things.</strong> If
+asked, give a measured answer that leads with <em>"I'd want to
+understand the existing stack first."</em> Reserve build-or-buy opinions
+for the second or third question on a topic, not the first.</li>
+</ul>
+<hr />
+<h2 id="closing-posture">Closing posture</h2>
+<p>Thirty minutes is focused. Three things to demonstrate:</p>
+<ol type="1">
+<li><strong>You think in integration architecture, not just AI
+architecture</strong> — your AI system lives inside his application
+portfolio, not next to it.</li>
+<li><strong>You respect IT processes</strong> — change control,
+ticketing, audit trails, SOC 2 posture, service-account hygiene. Senior
+judgment expresses itself as <em>respect</em>, not as opinions.</li>
+<li><strong>You're a partner to his team, not a competitor for
+it</strong> — the Salesforce admin, the help desk, the IAM operator are
+people you'll collaborate with daily, not work around.</li>
+</ol>
+<p>Anushka shortlisted you. Nick green-lit the sales-motion fit. Zachary
+is the last functional gate before the offer conversation. The shape of
+this call is narrower than Nick's was — focused probing, not strategic
+discussion — but the bar is just as load-bearing.</p>
+<p>Walk in calm. Speak in his idiom. Let him stay the senior in the
+application-stack conversation. Trust that the AI architecture seniority
+lands without being asserted.</p>
+<p>You're well set up. The technical material from the Nick prep work
+covers the substance; this prep tunes the lens and idiom for Zachary's
+specific seat.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>

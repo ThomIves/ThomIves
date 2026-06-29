@@ -1,0 +1,172 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Zachary Cram Sheet · NEOGOV · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">NEOGOV</a> &raquo; <span>Zachary Cram</span></div>
+                <h1 id="10-minute-zachary-schmidt-cram-cheat-sheet">10-Minute Zachary
+Schmidt Cram Cheat Sheet</h1>
+<p>The most load-bearing things to absorb before tomorrow's call. Read
+this 30 minutes before you walk in.</p>
+<hr />
+<h2 id="1-the-lens-reframe">1. The lens reframe</h2>
+<p>You handled Nick's <em>"will Thom move our revenue motion"</em> lens
+well. Zachary's lens is different:</p>
+<blockquote>
+<p><em>"Will this senior architect fit cleanly into our application
+stack and respect our IT processes, or will he be a cowboy?"</em></p>
+</blockquote>
+<p>He's not asking <em>can you build the AI</em>. He's asking <em>will
+you operate it inside my application portfolio without breaking my
+Salesforce admin's day</em>.</p>
+<hr />
+<h2 id="2-who-zachary-actually-is">2. Who Zachary actually is</h2>
+<ul>
+<li>Public title is <strong>"Director of Help Desk,"</strong> not
+Director of Enterprise Applications (panel using a working title — don't
+mention)</li>
+<li>Came up through the help desk: Hulu → DNAM Apparel → MasterClass →
+NEOGOV (~2.5 years)</li>
+<li>B.A. Communication, not CS. Self-taught into IT leadership.</li>
+<li><strong>Identity / SSO is his deepest competency</strong> — Okta
+Certified Administrator + Professional; ran 70-app OneLogin → Okta
+migration</li>
+<li>ITIL 4 certified — believes in change control, ticketed work</li>
+<li>Every published project: SaaS-administration consolidation or
+identity-stack migration</li>
+<li>Vocabulary: <strong>tickets reduced, applications consolidated,
+dollars saved, hours automated away</strong></li>
+</ul>
+<hr />
+<h2 id="3-the-strongest-single-sentence-to-have-ready">3. The strongest
+single sentence to have ready</h2>
+<p>If he opens with <em>"how would you work with internal IT"</em> or
+<em>"what's your operating model"</em> (very likely):</p>
+<blockquote>
+<p><em>"I've spent forty years building production AI inside complicated
+application stacks — semiconductor lines, freight brokerage, Microsoft's
+seller platform. The pattern that holds: the AI system has to live
+inside the existing application portfolio, not next to it. My first
+weeks would be learning your Salesforce footprint, your Okta tenancy,
+your ticketing and change-control patterns. The AI architecture comes
+second; the integration architecture and operating model come
+first."</em></p>
+</blockquote>
+<p>Memorize the SHAPE, not the words.</p>
+<hr />
+<h2 id="4-neogovs-confirmed-stack-so-you-sound-informed">4. NEOGOV's
+confirmed stack (so you sound informed)</h2>
+<ul>
+<li><strong>Salesforce</strong> (Service Cloud, CPQ, Revenue Cloud,
+Billing, Communities, CRM Analytics)</li>
+<li><strong>NetSuite</strong> (financial ERP)</li>
+<li><strong>RightRev</strong> (revenue automation, ASC 606)</li>
+<li><strong>Okta</strong> (SSO / IAM — Zachary's lane)</li>
+<li><strong>Google Workspace</strong> (incl. Google Chat — Zachary
+migrated them off Slack)</li>
+<li><strong>Outreach, Gong, Tableau, 6Sense, Pursuit.us,
+Starbridge</strong></li>
+<li><strong>Jira</strong></li>
+</ul>
+<p>Likely but not confirmed: FreshService for ITSM (his prior pattern),
+Workday for HRIS, Marketo for marketing automation, Snowflake for data
+warehouse.</p>
+<hr />
+<h2 id="5-his-seven-most-likely-questions">5. His seven most likely
+questions</h2>
+<ol type="1">
+<li><strong>"Walk me through connecting the AI workspace to our
+Salesforce data."</strong> → Lead with service accounts, scoped read
+access, warehouse layer between Salesforce and AI, narrow writes back
+through proper provenance.</li>
+<li><strong>"How would you handle service accounts and Okta-enforced
+access?"</strong> → Service accounts per integration, scoped to minimum
+read, auth through Okta where supported, secrets in managed vault.
+Naming convention obvious in audit.</li>
+<li><strong>"Who carries the pager when this breaks at 6 AM
+Monday?"</strong> → You for the first 90 days. Then shared on-call with
+the natural-home team, with documented runbooks for top 5 failure
+modes.</li>
+<li><strong>"How do you handle change control for prompt and model
+changes?"</strong> → Prompts in version control, peer review, automated
+test set in CI, shadow → small % → full traffic, one-click rollback,
+change notifications go through THEIR notification channel.</li>
+<li><strong>"What's the audit trail?"</strong> → Every artifact has a
+unique ID pointing back to input snapshot, prompt versions, model
+version, tool calls, intermediate results. Reproducible from inputs +
+prompts + versions.</li>
+<li><strong>"How have you worked with internal IT in past
+roles?"</strong> → Concrete story. Treat application admin team as the
+system experts; you bring AI architectural judgment; the intersection is
+where good decisions land.</li>
+<li><strong>"Build vs. buy — custom or Salesforce Einstein /
+Agentforce?"</strong> → "Depends on your Salesforce contract and
+three-year roadmap. Probably hybrid pragmatic. Want to learn the
+constraints before I commit."</li>
+</ol>
+<hr />
+<h2 id="6-what-to-avoid">6. What to avoid</h2>
+<ul>
+<li><strong>Don't lead with AI architecture.</strong> Lead with
+integration and operating model. Application stack is the outer shell;
+AI is the inner layer.</li>
+<li><strong>Don't critique the existing stack.</strong> Even if you have
+opinions.</li>
+<li><strong>Don't claim deep Okta / NetSuite expertise</strong> you
+don't have. <em>"Familiar paradigm, would ramp on your specific
+tenancy"</em> is the right answer.</li>
+<li><strong>Don't pile credentials.</strong> He has your resume.
+Help-desk-up directors are wary of senior-architect resumes.</li>
+<li><strong>Don't surface Nick's "overqualified" concern.</strong>
+Different worry; don't pre-defend.</li>
+<li><strong>Don't ask about salary, remote, or side consulting.</strong>
+Wrong round.</li>
+<li><strong>Don't volunteer opinions on rebuilding things.</strong> Lead
+with <em>"I'd want to understand the existing stack first."</em></li>
+</ul>
+<hr />
+<h2 id="7-questions-to-ask-him-have-2-3-ready">7. Questions to ask him
+(have 2-3 ready)</h2>
+<ol type="1">
+<li><em>"What does the integration map look like today between
+Salesforce, NetSuite, and the rest of the stack? Where are the brittle
+seams?"</em></li>
+<li><em>"What's your ITSM tool of choice at NEOGOV — FreshService,
+ServiceNow, something else?"</em></li>
+<li><em>"How do IT and RevOps work together when there's a new system to
+deploy?"</em></li>
+<li>★ <em>"What would success look like at six months for this role from
+your seat — not from Nick's?"</em> (The strongest one — invites him to
+articulate his lens.)</li>
+</ol>
+<hr />
+<h2 id="closing-posture">Closing posture</h2>
+<p>Three things to demonstrate in 30 minutes:</p>
+<ol type="1">
+<li><strong>You think in integration architecture, not just AI
+architecture</strong></li>
+<li><strong>You respect IT processes</strong> (change control,
+ticketing, audit trails, service-account hygiene)</li>
+<li><strong>You're a partner to his team, not a competitor for
+it</strong></li>
+</ol>
+<p>Walk in calm. Speak in his idiom. Let him stay the senior in the
+application-stack conversation.</p>
+<p>You've got this.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>
