@@ -115,10 +115,12 @@ Controlled Robotics; three IEEE Transactions on Robotics &amp;
 Automation publications followed. Built production CV at ON Semi on a
 semiconductor manufacturing line — image defect detection on imaging die
 using iterative robust regression and spatial clustering on residual
-anomaly maps. Right now at Microsoft via Unify Consulting on multimodal
-foundation model production AI. The thread that ties it together is
-production CV where the cost of being wrong is high. That's what drew me
-to PG&amp;E MIDA."</em></p>
+anomaly maps. Right now at Microsoft via Unify Consulting building
+production foundation-model classification at million-row scale — Fabric
+AI Functions, gpt-4.1-mini, structured output, evaluation loops. Text
+classification, not vision. What ties it together is production AI where
+the cost of being wrong is high. That's what drew me to PG&amp;E
+MIDA."</em></p>
 </blockquote>
 <p>About <strong>50 seconds spoken.</strong> Lands three things in
 sequence:</p>
@@ -127,9 +129,10 @@ sequence:</p>
 — speaks to depth)</li>
 <li><strong>Production CV experience</strong> (ON Semi semiconductor
 line — speaks to "I've done real production CV")</li>
-<li><strong>Current VLLM-lineage work</strong> (Microsoft multimodal
-foundation model — speaks to "I'm operating in your problem space right
-now")</li>
+<li><strong>Current production foundation-model work</strong> (Microsoft
+Fabric AI Functions text classification — speaks to "the
+production-scaffolding shape transfers; the modality at MIDA is
+different")</li>
 <li><strong>Mission alignment</strong> (cost of being wrong — speaks to
 "I understand why PG&amp;E matters")</li>
 </ul>
@@ -144,9 +147,11 @@ about MIDA"</em> (very likely):</p>
 miss has downstream consequences — grid reliability, public safety,
 wildfire mitigation. That's the kind of CV work I want to be doing at
 this point. The MIDA program specifically is at the edge of what
-multimodal foundation models can do — VLLM-based auto-labeling at scale
-— which is exactly where I'm operating now with Microsoft. It
-maps."</em></p>
+multimodal foundation models can do — VLLM-based auto-labeling at scale.
+The production-scaffolding shape it needs is exactly what I'm building
+right now at Microsoft for LLM-based classification — different
+modality, same production-deployment discipline. It maps in
+shape."</em></p>
 </blockquote>
 <p>This signals: mission alignment + technical bridge + altitude
 awareness, in 30 seconds.</p>
@@ -399,29 +404,39 @@ PyTorch — used pretrained CNN backbones for study and exploration
 projects, not production deployment. My production CV at ON Semi was
 classical — the Streak Test Auto-Detector built on iterative robust
 regression and spatial clustering on the residual anomaly map. Current
-production work is on multimodal foundation models via Microsoft Fabric.
-CNN backbones I treat as a well-understood layer in any modern stack; my
-focus is the production scaffolding around the model regardless of
-what's under the hood — held-out test sets mirroring production,
-evaluation discipline, change control, observability."</em></li>
+production work at Microsoft is LLM-based classification via Fabric AI
+Functions, not vision. CNN backbones I treat as a well-understood layer
+in any modern stack; my focus is the production scaffolding around the
+model regardless of what's under the hood — held-out test sets mirroring
+production, evaluation discipline, change control,
+observability."</em></li>
 </ul>
 <h3 id="vllms--multimodal-foundation-models">VLLMs / multimodal
 foundation models</h3>
 <ul>
 <li><strong>What you actually do every day:</strong> Microsoft Fabric AI
-Functions (gpt-4.1-mini) for classification at production scale. Same
-model family as VLLMs.</li>
+Functions (gpt-4.1-mini) for <strong>text classification</strong> at
+production scale. Same provider ecosystem as VLLMs, same
+production-scaffolding discipline, <strong>different modality</strong>
+(text in, not images in).</li>
 <li><strong>What you know about VLLM-for-CV:</strong> Gemini Vision,
 GPT-4V, Claude with vision, LLaVA, InternVL. Structured-output prompting
 for auto-labels. Confidence and reasoning fields in the output schema.
 Per-image cost is the constraint.</li>
-<li><strong>Your strongest framing:</strong> "VLLMs change the labeling
-economics. You can produce thousands of structured labels before
-training a thing. The architecture question for MIDA is whether the VLLM
-stays in the production inference path or whether you use it to
-bootstrap a labeled set and then fine-tune a specialized model for
-production cost / latency, with the VLLM remaining as the human-review
-escalation tier."</li>
+<li><strong>Your honest framing:</strong> <em>"My production
+foundation-model work at Microsoft is text classification, not vision.
+What transfers cleanly to VLLM-based CV is the production scaffolding —
+structured output, evaluation loops, per-row cost and latency
+management, human-in-the-loop architecture. The vision-specific input
+handling and the vision-specific eval metrics — mAP, IoU — are where I'd
+ramp."</em></li>
+<li><strong>Your strongest architectural framing:</strong> <em>"VLLMs
+change the labeling economics. You can produce thousands of structured
+labels before training a thing. The architecture question for MIDA is
+whether the VLLM stays in the production inference path, or whether you
+use it to bootstrap a labeled set and then fine-tune a specialized model
+for production cost and latency, with the VLLM remaining as the
+human-review escalation tier."</em></li>
 </ul>
 <h3 id="segmentation-if-it-comes-up">Segmentation, if it comes up</h3>
 <ul>
@@ -437,11 +452,15 @@ map rather than dense segmentation."</li>
 </ul>
 <h3 id="the-honest-meta-frame">The honest meta-frame</h3>
 <p><strong>You are NOT pretending to be a YOLO specialist.</strong> You
-are positioning as: production CV deployment discipline + current
-multimodal foundation model production work + 40 years of statistical
-methodology depth. Charles is senior enough to see through any
-pretending. The honest "I haven't deployed YOLO myself, but the
-production scaffolding is what I bring" lands better than any
+are NOT pretending your Microsoft work is vision/VLLM work. You ARE
+positioning as: production CV deployment discipline (ON Semi Streak
+Test) + current production foundation-model deployment discipline
+(Microsoft text classification at scale) + 40 years of statistical
+methodology depth. The bridge to MIDA is the <strong>production
+scaffolding shape</strong>, not the modality. Charles is senior enough
+to see through any pretending. The honest "I haven't deployed YOLO
+myself, my Microsoft work is text not vision, but the production
+scaffolding discipline is what I bring" lands better than any
 name-drop.</p>
 <hr />
 <h2 id="what-to-avoid">What to avoid</h2>
