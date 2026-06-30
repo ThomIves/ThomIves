@@ -55,29 +55,52 @@ has both the inside-PG&amp;E vocabulary AND the outside-PG&amp;E
 perspective. He's the kind of person who can spot a bullshitter in 60
 seconds and respect a real technologist in 30.</p>
 <hr />
-<h2 id="the-lens-for-a-15-minute-charles-screen">The lens for a
-15-minute Charles screen</h2>
-<p>Charles has 15 minutes. He's not running a deep technical interview
-today. He's running a <strong>fit-and-judgment screen</strong> to decide
-whether you're worth the panel's time. Specifically he's testing:</p>
+<h2 id="the-format-per-awais-2026-06-30">The format (per Awais,
+2026-06-30)</h2>
+<p>Awais shared this <strong>after</strong> the original prep was
+written, and it changes the priority:</p>
+<blockquote>
+<p><em>"I would spend 2 mins on setting up the stage for a computer
+vision modeler and give him the opportunity to ask questions. Feel free
+that I talk you briefly about the current work and how it relates to
+your experience. This 15 mins is with Charles; Adam went on with Erin —
+two different persons, two different personalities. CNNs, YOLO, or
+whatever you have used, feel free to be technical."</em></p>
+</blockquote>
+<p>Decoded:</p>
+<ul>
+<li><strong>Charles spends ~2 minutes</strong> briefing you on the
+current work and how it relates to your experience</li>
+<li><strong>You then drive ~13 minutes of conversation</strong> through
+your questions</li>
+<li><strong>Technical engagement is invited</strong> — CNNs, YOLO,
+foundation models, whatever maps to your real experience</li>
+</ul>
+<p><strong>This means your questions are now the primary signal Charles
+will use to judge you, not your answers.</strong></p>
+<h2 id="the-lens-for-the-conversation">The lens for the
+conversation</h2>
+<p>In this format, Charles is testing:</p>
 <ol type="1">
-<li><strong>Do you speak CV at a senior level fluently?</strong> (3-5
-minutes of probing)</li>
-<li><strong>Do you have production AI maturity, not just research
-AI?</strong> (deployment, evaluation, change-control thinking)</li>
-<li><strong>Do you have the judgment to operate in a high-visibility,
-high-stakes PG&amp;E project?</strong> (asking questions before
-proposing, respecting mission-critical context)</li>
-<li><strong>Are you somebody he could work with?</strong> (tone,
-posture, listening signal)</li>
+<li><strong>Quality of your questions</strong> — do you ask questions
+that reveal senior systems thinking, or do you ask surface-level "tell
+me about the role" stuff?</li>
+<li><strong>How you engage with what he describes</strong> — when he
+names a model or technique in his 2-min brief, do you light up
+substantively or nod blankly?</li>
+<li><strong>Technical depth deployed in context</strong> — can you talk
+CNNs, YOLO, VLLMs, evaluation, and production CV deployment without
+resume-reciting?</li>
+<li><strong>Senior posture</strong> — measured, peer-level, no
+eagerness-to-impress tells</li>
 </ol>
 <p>He's NOT testing:</p>
 <ul>
-<li>Salary expectations (that's recruiter territory)</li>
-<li>Logistics / start date (recruiter territory)</li>
-<li>Your full career history (he has your resume; he'll dip in
-selectively)</li>
-<li>Deep dive on any single project (15 minutes won't allow it)</li>
+<li>Salary, logistics, location (recruiter territory)</li>
+<li>Your career arc top-to-bottom (he has your resume)</li>
+<li>A deep dive on any single project (no time)</li>
+<li>Whether you've used specific PG&amp;E-internal tools (you haven't;
+that's fine)</li>
 </ul>
 <hr />
 <h2
@@ -254,26 +277,168 @@ shares your "production CV that matters" worldview.</li>
 the point, stop, let him drive.</li>
 </ul>
 <hr />
-<h2 id="questions-to-ask-charles-have-2-3-ready">Questions to ask
-Charles (have 2-3 ready)</h2>
-<p>He'll likely leave 2-3 minutes at the end. The best questions:</p>
+<h2
+id="questions-to-ask-charles-this-is-the-main-vehicle--have-6-8-ready">Questions
+to ask Charles (THIS IS THE MAIN VEHICLE — have 6-8 ready)</h2>
+<p>Per Awais's format intel, you'll drive ~13 minutes of conversation
+after his 2-min brief. Your questions are the signal. Have a deep bench
+so you can pivot based on what Charles describes in his brief.</p>
+<h3 id="tier-1--the-strongest-two-deploy-one-early-one-late">Tier 1 —
+The strongest two (deploy one early, one late)</h3>
 <ol type="1">
-<li><p><strong>★ <em>"You came back to PG&amp;E as a contractor after
-time away — what made you want to come back?"</em></strong> — Honors his
-journey, invites him to share what drives him. You learn what makes
-PG&amp;E mission-fit-worthy in his eyes.</p></li>
-<li><p><em>"What's the current state of the MIDA program — are we
-operating on a v0 pipeline, or earlier than that?"</em> — Positions you
-as partner, not candidate.</p></li>
-<li><p><em>"What VLLM(s) is the team currently using or evaluating —
-Claude with vision, GPT-4V, Gemini Vision, or something more
-specialized?"</em> — Signals technical engagement.</p></li>
-<li><p><strong>★ <em>"If I joined, what would success at 6 months look
-like from your seat — not from HR's?"</em></strong> — The strongest
-closer. Invites him to articulate his lens. Often surfaces the unsaid
-concern.</p></li>
+<li><p><strong>★ Opening question after his brief:</strong> <em>"That
+helps anchor the work. To make sure I'm thinking about it the way you
+are — what does the data acquisition mix look like? Fixed drone routes
+versus satellite passes versus handheld camera, and what's the
+cadence?"</em></p>
+<ul>
+<li>Signals: you immediately think in production-data terms. Imagery
+characteristics drive everything downstream.</li>
+</ul></li>
+<li><p><strong>★ The closer (last 2-3 min):</strong> <em>"If I joined,
+what would success at 6 months look like from your seat — not from
+HR's?"</em></p>
+<ul>
+<li>Invites him to articulate his actual lens. Often surfaces the unsaid
+concern.</li>
+</ul></li>
 </ol>
-<p>Use 2 of these, not 4. Charles has limited time.</p>
+<h3 id="tier-2--technical-depth-signals">Tier 2 — Technical depth
+signals</h3>
+<ol start="3" type="1">
+<li><p><em>"What's the current modeling stack — pure VLLM end-to-end
+(Gemini Vision, GPT-4V), or hybrid with fine-tuned heads on top? What's
+the per-image cost story at scale?"</em></p>
+<ul>
+<li>Signals: senior systems thinking. You know hybrid is usually the
+answer; you're asking him to confirm.</li>
+</ul></li>
+<li><p><em>"What's the labeling situation — pure VLLM auto-labels,
+human-supervised, or mixed? How are you tracking labeler consistency on
+rare classes?"</em></p>
+<ul>
+<li>Signals: you understand the labeling problem is often the actual
+problem, not the modeling problem.</li>
+</ul></li>
+<li><p><em>"How does MIDA sit relative to Waldo? Is it a sister system,
+a replacement, an augmentation layer?"</em></p>
+<ul>
+<li>Signals: PG&amp;E systems awareness. You know Waldo (per Awais) is
+the existing CV platform. This positions MIDA in context.</li>
+</ul></li>
+<li><p><em>"What does evaluation ownership look like — does the modeler
+own the eval set or is there a separate evaluation team?"</em></p>
+<ul>
+<li>Signals: production CV discipline. The answer matters because
+eval-as-modeler-discipline scales differently than
+eval-as-separate-team.</li>
+</ul></li>
+</ol>
+<h3 id="tier-3--program-and-mission-context">Tier 3 — Program and
+mission context</h3>
+<ol start="7" type="1">
+<li><p><em>"What downstream operational system consumes MIDA outputs?
+Are misses caught by humans in a downstream review or do they propagate
+to operations?"</em></p>
+<ul>
+<li>Signals: consequence-shape thinking. You know mission-critical CV
+depends on the failure-recovery loop, not just model accuracy.</li>
+</ul></li>
+<li><p><em>"What's the EPIC 4.22 v0 milestone — what does 'good enough
+to scale' look like for the program?"</em></p>
+<ul>
+<li>Signals: program awareness (per the EPIC 4.22 doc Awais shared).
+You're thinking past the model to the program outcome.</li>
+</ul></li>
+</ol>
+<h3 id="tier-4--the-human-question">Tier 4 — The human question</h3>
+<ol start="9" type="1">
+<li><strong>★ <em>"You came back to PG&amp;E as a contractor after time
+away — what made you want to come back?"</em></strong> — Honors his
+journey, invites him to share what drives him. Use if there's natural
+space; this is a human question, not a technical one.</li>
+</ol>
+<p><strong>Practical:</strong> open with #1, weave in 2-4 of the Tier
+2/3 questions based on what he describes in his brief, close with #2. If
+you have 30+ seconds of natural conversational space, slot in #9.</p>
+<hr />
+<h2 id="technical-engagement-primer--be-ready-to-talk-these">Technical
+engagement primer — be ready to talk these</h2>
+<p>Awais explicitly invited technical engagement on CNNs, YOLO, and
+"whatever you have used." When Charles mentions a specific model or
+technique in his 2-min brief, light up — don't nod blankly.</p>
+<h3 id="yolo-family">YOLO family</h3>
+<ul>
+<li><strong>What it is:</strong> Real-time single-shot object detection
+— input image → bounding boxes + class labels in one forward pass.
+Anchor-based (YOLOv5/v7) or anchor-free (YOLOv8/v9/v10).</li>
+<li><strong>Why it matters for PG&amp;E:</strong> Industrial CV
+applications run YOLO heavily for asset detection (poles, transformers,
+splices). Fast inference, mature ecosystem.</li>
+<li><strong>YOLO-World</strong> (2024): open-vocabulary YOLO — text
+prompts at inference, no fixed class list. Bridge between traditional
+YOLO and VLLM-style flexibility.</li>
+<li><strong>Your honest position:</strong> "I haven't deployed YOLO in
+production myself — my production CV work was the ON Semi Streak Test
+Auto-Detector, which was iterative robust regression + spatial
+clustering on the residual anomaly map rather than CNN-based detection.
+But the deployment-discipline patterns transfer: held-out test sets
+mirroring production, evaluation by per-class recall at fixed precision,
+release-cycle change-control, and human-in-the-loop for the long tail.
+I'd ramp on the specific YOLO variant the team is using quickly because
+the surrounding production scaffolding is what I bring."</li>
+</ul>
+<h3 id="cnns">CNNs</h3>
+<ul>
+<li><strong>What you know:</strong> Standard convolutional backbones
+(ResNet, EfficientNet, ConvNeXt). Used as feature extractors for
+detection (YOLO, Faster R-CNN), segmentation (Mask R-CNN, U-Net),
+classification.</li>
+<li><strong>Your honest position:</strong> "I came through the
+classical-CV-into-statistical-ML era at ON Semi, and then current
+production work is on the multimodal foundation model side. CNN
+backbones I treat as the well-understood layer in the stack; what I
+focus on is the production scaffolding around them — evaluation
+discipline, change control, observability."</li>
+</ul>
+<h3 id="vllms--multimodal-foundation-models">VLLMs / multimodal
+foundation models</h3>
+<ul>
+<li><strong>What you actually do every day:</strong> Microsoft Fabric AI
+Functions (gpt-4.1-mini) for classification at production scale. Same
+model family as VLLMs.</li>
+<li><strong>What you know about VLLM-for-CV:</strong> Gemini Vision,
+GPT-4V, Claude with vision, LLaVA, InternVL. Structured-output prompting
+for auto-labels. Confidence and reasoning fields in the output schema.
+Per-image cost is the constraint.</li>
+<li><strong>Your strongest framing:</strong> "VLLMs change the labeling
+economics. You can produce thousands of structured labels before
+training a thing. The architecture question for MIDA is whether the VLLM
+stays in the production inference path or whether you use it to
+bootstrap a labeled set and then fine-tune a specialized model for
+production cost / latency, with the VLLM remaining as the human-review
+escalation tier."</li>
+</ul>
+<h3 id="segmentation-if-it-comes-up">Segmentation, if it comes up</h3>
+<ul>
+<li><strong>SAM (Segment Anything)</strong> — zero-shot segmentation,
+prompt-based. Useful for asset boundary work without per-class
+training.</li>
+<li><strong>Mask R-CNN, U-Net</strong> — classical instance/semantic
+segmentation. Production-mature.</li>
+<li><strong>Your honest position:</strong> "Segmentation is on my
+reading list more than on my production resume. The Streak Test
+Auto-Detector was anomaly localization via clustering on the residual
+map rather than dense segmentation."</li>
+</ul>
+<h3 id="the-honest-meta-frame">The honest meta-frame</h3>
+<p><strong>You are NOT pretending to be a YOLO specialist.</strong> You
+are positioning as: production CV deployment discipline + current
+multimodal foundation model production work + 40 years of statistical
+methodology depth. Charles is senior enough to see through any
+pretending. The honest "I haven't deployed YOLO myself, but the
+production scaffolding is what I bring" lands better than any
+name-drop.</p>
 <hr />
 <h2 id="what-to-avoid">What to avoid</h2>
 <ul>

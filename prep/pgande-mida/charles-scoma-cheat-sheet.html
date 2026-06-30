@@ -36,16 +36,27 @@ for him.</li>
 </ul>
 <p>He's senior, measured, decisive. Don't ramble. Match his cadence.</p>
 <hr />
-<h2 id="2-what-this-15-min-screen-is-testing">2. What this 15-min screen
-is testing</h2>
+<h2 id="2-the-format-per-awais-updated-2026-06-30">2. The format (per
+Awais, updated 2026-06-30)</h2>
+<ul>
+<li><strong>Charles spends ~2 min</strong> briefing you on the work and
+how it relates to your experience</li>
+<li><strong>You then drive ~13 min</strong> of conversation through your
+questions</li>
+<li><strong>Be technical</strong> — CNNs, YOLO, foundation models,
+whatever maps to your real work</li>
+</ul>
+<p><strong>Your questions are the primary signal.</strong> Not your
+answers.</p>
+<p>What he's testing:</p>
 <ol type="1">
-<li><strong>Senior CV fluency</strong> (3-5 min of probing)</li>
-<li><strong>Production AI maturity</strong> (deployment + evaluation +
-change-control thinking)</li>
-<li><strong>Judgment in high-stakes context</strong> (asks questions
-before proposing)</li>
-<li><strong>Could he work with you</strong> (tone, posture, listening
-signal)</li>
+<li><strong>Quality of your questions</strong> (senior systems thinking
+or surface stuff?)</li>
+<li><strong>How you engage with what he describes</strong> (substantive
+light-up or nod?)</li>
+<li><strong>Technical depth in context</strong> (no
+resume-reciting)</li>
+<li><strong>Senior posture</strong> (measured, peer-level)</li>
 </ol>
 <p>NOT testing: salary, logistics, full career history.</p>
 <hr />
@@ -116,16 +127,69 @@ outcomes?</li>
 <p>THEN propose: foundation-model selection, structured-output design,
 evaluation scaffolding, human-in-the-loop, production observability.</p>
 <hr />
-<h2 id="7-questions-to-ask-charles-have-2-ready">7. Questions to ask
-Charles (have 2 ready)</h2>
-<p><strong>★ The strongest:</strong> <em>"You came back to PG&amp;E as a
-contractor after time away — what made you want to come back?"</em>
-(Honors his journey. Surfaces his mission lens.)</p>
-<p><strong>★ The closer:</strong> <em>"If I joined, what would success
-at 6 months look like from your seat — not from HR's?"</em></p>
-<p><strong>Backup:</strong> <em>"What's the current state of the MIDA
-program — v0 pipeline or earlier?"</em> or <em>"What VLLMs is the team
-currently using or evaluating?"</em></p>
+<h2
+id="7-questions-to-ask-charles-this-is-the-main-vehicle--have-5-6-ready">7.
+Questions to ask Charles (THIS IS THE MAIN VEHICLE — have 5-6
+ready)</h2>
+<p>After his 2-min brief, <strong>you drive</strong>. Open with #1,
+weave in #2-5 based on what he describes, close with #6.</p>
+<p><strong>1. ★ OPENING (right after his brief):</strong> <em>"That
+helps anchor the work. To make sure I'm thinking about it the way you
+are — what does the data acquisition mix look like? Fixed drone routes
+vs satellite passes vs handheld, and what's the cadence?"</em></p>
+<p><strong>2. Modeling stack signal:</strong> <em>"What's the current
+modeling stack — pure VLLM end-to-end (Gemini Vision, GPT-4V), or hybrid
+with fine-tuned heads on top? What's the per-image cost story at
+scale?"</em></p>
+<p><strong>3. Labeling depth:</strong> <em>"What's the labeling
+situation — pure VLLM auto-labels, human-supervised, or mixed? How are
+you tracking labeler consistency on rare classes?"</em></p>
+<p><strong>4. Systems awareness:</strong> <em>"How does MIDA sit
+relative to Waldo? Sister system, replacement, augmentation
+layer?"</em></p>
+<p><strong>5. Consequence shape:</strong> <em>"What downstream
+operational system consumes MIDA outputs? Are misses caught by humans in
+review or do they propagate to operations?"</em></p>
+<p><strong>6. ★ CLOSER (last 2-3 min):</strong> <em>"If I joined, what
+would success at 6 months look like from your seat — not from
+HR's?"</em></p>
+<p><strong>Bonus human question if natural space:</strong> <em>"You came
+back to PG&amp;E as a contractor after time away — what made you want to
+come back?"</em></p>
+<hr />
+<h2
+id="7b-technical-engagement--how-to-react-when-charles-mentions-something">7b.
+Technical engagement — how to react when Charles mentions something</h2>
+<p><strong>YOLO</strong> — Real-time single-shot object detection.
+YOLOv8/v9/v10 most current. YOLO-World = open-vocab variant.</p>
+<blockquote>
+<p><strong>Your honest line:</strong> <em>"I haven't deployed YOLO in
+production myself — my production CV at ON Semi was iterative robust
+regression + spatial clustering. But the surrounding production
+scaffolding — held-out test sets mirroring production, per-class recall
+at fixed precision, release-cycle change-control, human-in-the-loop —
+transfers. I'd ramp on the specific YOLO variant quickly."</em></p>
+</blockquote>
+<p><strong>CNNs</strong> — Backbones (ResNet, EfficientNet, ConvNeXt).
+Well-understood layer. Your focus is production scaffolding around
+them.</p>
+<p><strong>VLLMs (Gemini Vision, GPT-4V, Claude w/ vision)</strong> —
+Where you actually live. Microsoft Fabric AI Functions = same model
+family.</p>
+<blockquote>
+<p><strong>Your strongest framing:</strong> <em>"VLLMs change the
+labeling economics. Architecture question for MIDA is whether the VLLM
+stays in production inference, or bootstraps a labeled set you fine-tune
+from, with the VLLM as human-review escalation tier."</em></p>
+</blockquote>
+<p><strong>Segmentation (SAM, Mask R-CNN)</strong> — Reading list more
+than production. Be honest.</p>
+<p><strong>The honest meta-frame:</strong> You're NOT a YOLO specialist.
+You ARE 40 years of production CV deployment discipline + current
+multimodal foundation model production + statistical methodology depth.
+Charles will spot pretending instantly. Honest "I haven't deployed YOLO
+myself, but the production scaffolding is what I bring" lands better
+than any name-drop.</p>
 <hr />
 <h2 id="8-what-to-avoid">8. What to avoid</h2>
 <ul>
