@@ -1,0 +1,172 @@
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta name="robots" content="noindex, nofollow" />
+            <title>Charles Cram Sheet · PG&E MIDA · prep · thomives.com</title>
+            <link rel="stylesheet" href="../prep.css" />
+            <link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+        </head>
+        <body class="">
+            <div class="topbar">
+                <a class="brand" href="../index.html">prep · thomives.com</a>
+                <div class="spacer"></div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
+            </div>
+            <div class="container">
+                <div class="page-meta"><a href="../index.html">Prep</a> &raquo; <a href="index.html">PG&E MIDA</a> &raquo; <span>Charles Cram</span></div>
+                <h1 id="10-minute-charles-scoma-cram-cheat-sheet">10-Minute Charles
+Scoma Cram Cheat Sheet</h1>
+<p>Read this at 4:55 PM. Walk in at 5:05 PM.</p>
+<hr />
+<h2 id="1-who-charles-is-memorize-this">1. Who Charles is (memorize
+this)</h2>
+<ul>
+<li><strong>AI Lead at PG&amp;E</strong> for high-visibility projects
+including MIDA</li>
+<li><strong>PG&amp;E veteran:</strong> 6+ years employee → degree → came
+back as contractor</li>
+<li><strong>PG&amp;E "blindly trusts him"</strong> (Awais's words). His
+vote = the decision.</li>
+<li><strong>Will probe technical depth.</strong> "Charles will be in
+more technical."</li>
+<li><strong>He came back voluntarily.</strong> Mission belief is real
+for him.</li>
+</ul>
+<p>He's senior, measured, decisive. Don't ramble. Match his cadence.</p>
+<hr />
+<h2 id="2-what-this-15-min-screen-is-testing">2. What this 15-min screen
+is testing</h2>
+<ol type="1">
+<li><strong>Senior CV fluency</strong> (3-5 min of probing)</li>
+<li><strong>Production AI maturity</strong> (deployment + evaluation +
+change-control thinking)</li>
+<li><strong>Judgment in high-stakes context</strong> (asks questions
+before proposing)</li>
+<li><strong>Could he work with you</strong> (tone, posture, listening
+signal)</li>
+</ol>
+<p>NOT testing: salary, logistics, full career history.</p>
+<hr />
+<h2 id="3-the-opening-tell-me-about-yourself--50-seconds">3. The opening
+"tell me about yourself" — ~50 seconds</h2>
+<blockquote>
+<p><em>"Computer Vision Engineer and AI Applications Architect — 40
+years. M.S. at Texas A&amp;M on Robot Calibration and Computer Image
+Controlled Robotics; three IEEE Transactions on Robotics &amp;
+Automation publications followed. Built production CV at ON Semi on a
+semiconductor manufacturing line — image defect detection on imaging die
+using iterative robust regression and spatial clustering on residual
+anomaly maps. Right now at Microsoft via Unify Consulting on multimodal
+foundation model production AI. The thread that ties it together is
+production CV where the cost of being wrong is high. That's what drew me
+to PG&amp;E MIDA."</em></p>
+</blockquote>
+<hr />
+<h2 id="4-the-why-pge--30-seconds">4. The "why PG&amp;E" — ~30
+seconds</h2>
+<blockquote>
+<p><em>"PG&amp;E is mission-critical CV work where every detection or
+miss has downstream consequences — grid reliability, public safety,
+wildfire mitigation. That's the kind of CV work I want to be doing. The
+MIDA program specifically is at the edge of what multimodal foundation
+models can do — VLLM-based auto-labeling at scale — which is exactly
+where I'm operating now with Microsoft. It maps."</em></p>
+</blockquote>
+<hr />
+<h2
+id="5-the-on-semi-streak-test-story--90-seconds-use-if-he-asks-about-a-cv-project">5.
+The ON Semi Streak Test story — ~90 seconds (use if he asks about a CV
+project)</h2>
+<p>Parametric illumination model (5th-degree bivariate poly to
+background dome) → iterative robust regression with outlier suppression
+→ spatial clustering / connected-component analysis on residual anomaly
+map → 3-week PITAD production release cycle. Removed 2+ man-weeks manual
+tuning per product; matched experienced human inspectors without
+fatigue; stopped being a top-three RMA-driver. <strong>Engineering
+constraint: Python 2.5 + numpy only — wrote linear algebra and stats
+from scratch.</strong> (That constraint detail lands.)</p>
+<hr />
+<h2 id="6-quick-fire-technical-answers">6. Quick-fire technical
+answers</h2>
+<p><strong>CV evaluation metrics:</strong> Precision, Recall, F1,
+per-class recall at fixed precision. Object detection: mAP at multiple
+IoU thresholds. For PG&amp;E-scale: weight toward recall, watch
+precision as budget. Held-out test set mirroring production conditions
+(weather, season, time of day).</p>
+<p><strong>Validation split design:</strong> Split on time first (no
+leakage across acquisition periods), then on physical asset and camera.
+Synthetic data for training class balance; validation set stays
+real.</p>
+<p><strong>VLLMs vs fine-tuned:</strong> Cold-start / sparse-label →
+VLLMs. Lots-of-labels / cost-per-inference / low-latency → fine-tuned.
+<strong>Real answer is hybrid:</strong> VLLM auto-labels to bootstrap,
+fine-tune smaller specialized model for production inference, VLLM stays
+as human-review escalation tier.</p>
+<p><strong>"How would you approach MIDA?"</strong> — DO NOT propose
+immediately. Ask:</p>
+<ol type="1">
+<li>What does success look like at program level — labels or operational
+outcomes?</li>
+<li>Data volume and cadence — real-time, batch, both?</li>
+<li>Current state — augmenting an existing pipeline or greenfield?</li>
+<li>Consequence shape — what kind of misses are most expensive?</li>
+</ol>
+<p>THEN propose: foundation-model selection, structured-output design,
+evaluation scaffolding, human-in-the-loop, production observability.</p>
+<hr />
+<h2 id="7-questions-to-ask-charles-have-2-ready">7. Questions to ask
+Charles (have 2 ready)</h2>
+<p><strong>★ The strongest:</strong> <em>"You came back to PG&amp;E as a
+contractor after time away — what made you want to come back?"</em>
+(Honors his journey. Surfaces his mission lens.)</p>
+<p><strong>★ The closer:</strong> <em>"If I joined, what would success
+at 6 months look like from your seat — not from HR's?"</em></p>
+<p><strong>Backup:</strong> <em>"What's the current state of the MIDA
+program — v0 pipeline or earlier?"</em> or <em>"What VLLMs is the team
+currently using or evaluating?"</em></p>
+<hr />
+<h2 id="8-what-to-avoid">8. What to avoid</h2>
+<ul>
+<li>Don't lead with multi-physics PhD or 40-years framing</li>
+<li>Don't lead with operator credentials (real estate, financial
+services)</li>
+<li>Don't pretend to know PG&amp;E-internal tools or pipelines</li>
+<li>Don't pile credentials — he has your resume</li>
+<li>Don't volunteer opinions on Waldo, EPIC programs, or PG&amp;E
+politics</li>
+<li>Don't ramble — crisp answers, then stop</li>
+<li>Don't bring up salary, location, 1099, or Integrating
+Consulting</li>
+<li>Don't telegraph the Unify timeline</li>
+<li>Don't ask to record</li>
+</ul>
+<hr />
+<h2 id="9-closing-posture">9. Closing posture</h2>
+<p>Walk in calm. Camera + audio tested 5 min before. Glass of water
+nearby.</p>
+<p>Three things to demonstrate:</p>
+<ol type="1">
+<li><strong>Senior production CV fluency</strong> (ON Semi detail +
+VLLM/foundation-model thinking)</li>
+<li><strong>Mission-critical posture</strong> (consequence-shape
+framing)</li>
+<li><strong>Partner mindset</strong> (questions before proposing, peer
+respect)</li>
+</ol>
+<p>Match his cadence. Let him drive. End by asking him the strongest
+question.</p>
+<hr />
+<h2 id="charles-is-the-decision-maker">Charles is the
+decision-maker</h2>
+<p>Per Awais verbatim: <em>"if he says I need this guy, even though if
+he's expensive three times, I think they will gonna go and find some
+budget for that guy."</em></p>
+<p>This is 15 minutes that will decide whether the panel happens.</p>
+<p>You've got this.</p>
+
+            </div>
+            <script src="../prep.js"></script>
+        </body>
+        </html>
