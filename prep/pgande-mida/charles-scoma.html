@@ -115,10 +115,12 @@ Controlled Robotics; three IEEE Transactions on Robotics &amp;
 Automation publications followed. Built production CV at ON Semi on a
 semiconductor manufacturing line — image defect detection on imaging die
 using iterative robust regression and spatial clustering on residual
-anomaly maps. Right now at Microsoft via Unify Consulting building
-production foundation-model classification at million-row scale — Fabric
-AI Functions, gpt-4.1-mini, structured output, evaluation loops. Text
-classification, not vision. What ties it together is production AI where
+anomaly maps. At Microsoft via Unify, two threads: earlier meeting
+intelligence work using Gemini Flash and Pro on technical meeting video
+and in-meeting image analysis — diagrams, slides, screen-share content;
+and current work on the ABM AI team building production foundation-model
+classification at million-row scale with Fabric AI Functions and
+gpt-4.1-mini. The thread that ties it together is production AI where
 the cost of being wrong is high. That's what drew me to PG&amp;E
 MIDA."</em></p>
 </blockquote>
@@ -129,10 +131,12 @@ sequence:</p>
 — speaks to depth)</li>
 <li><strong>Production CV experience</strong> (ON Semi semiconductor
 line — speaks to "I've done real production CV")</li>
-<li><strong>Current production foundation-model work</strong> (Microsoft
-Fabric AI Functions text classification — speaks to "the
-production-scaffolding shape transfers; the modality at MIDA is
-different")</li>
+<li><strong>VLM hands-on at Microsoft</strong> (Gemini Flash/Pro meeting
+intelligence work — speaks to "I've used vision-LLMs on real client
+work, not just read about them")</li>
+<li><strong>Current production foundation-model work</strong> (ABM AI
+Fabric classification — speaks to "I deploy foundation models in
+production")</li>
 <li><strong>Mission alignment</strong> (cost of being wrong — speaks to
 "I understand why PG&amp;E matters")</li>
 </ul>
@@ -411,33 +415,60 @@ model regardless of what's under the hood — held-out test sets mirroring
 production, evaluation discipline, change control,
 observability."</em></li>
 </ul>
-<h3 id="vllms--multimodal-foundation-models">VLLMs / multimodal
-foundation models</h3>
-<ul>
-<li><strong>What you actually do every day:</strong> Microsoft Fabric AI
-Functions (gpt-4.1-mini) for <strong>text classification</strong> at
-production scale. Same provider ecosystem as VLLMs, same
-production-scaffolding discipline, <strong>different modality</strong>
-(text in, not images in).</li>
-<li><strong>What you know about VLLM-for-CV:</strong> Gemini Vision,
-GPT-4V, Claude with vision, LLaVA, InternVL. Structured-output prompting
-for auto-labels. Confidence and reasoning fields in the output schema.
-Per-image cost is the constraint.</li>
-<li><strong>Your honest framing:</strong> <em>"My production
-foundation-model work at Microsoft is text classification, not vision.
-What transfers cleanly to VLLM-based CV is the production scaffolding —
-structured output, evaluation loops, per-row cost and latency
-management, human-in-the-loop architecture. The vision-specific input
-handling and the vision-specific eval metrics — mAP, IoU — are where I'd
-ramp."</em></li>
-<li><strong>Your strongest architectural framing:</strong> <em>"VLLMs
-change the labeling economics. You can produce thousands of structured
-labels before training a thing. The architecture question for MIDA is
-whether the VLLM stays in the production inference path, or whether you
-use it to bootstrap a labeled set and then fine-tune a specialized model
-for production cost and latency, with the VLLM remaining as the
-human-review escalation tier."</em></li>
-</ul>
+<h3
+id="vllms--multimodal-foundation-models--your-actual-credentials">VLLMs
+/ multimodal foundation models — your actual credentials</h3>
+<p>You have THREE concrete VLM hands-on credentials. Use them.</p>
+<ol type="1">
+<li><p><strong>Microsoft meeting intelligence (paid client
+work):</strong> Gemini 3.x Flash and Pro on technical meeting video,
+including image analysis when diagrams, slides, or screen-share content
+was shared in meetings. Built a local video capture and analysis routine
+on your dev machine to support this work. Used regularly.</p></li>
+<li><p><strong>JosephCAD agent-visual-verification loop (personal
+research):</strong> Built a mode in your browser-based 3D CAD system
+where CAD command results are rendered to image files so a Claude-based
+agent can visually verify the geometry. This is a real architectural
+pattern — VLM in the agent feedback loop, not just at the
+input.</p></li>
+<li><p><strong>Current ABM AI production:</strong> gpt-4.1-mini for text
+classification at million-row scale. Same multimodal foundation model
+family as VLLMs; current production use is text, not vision. The
+production scaffolding discipline (structured output, evaluation loops,
+per-row cost/latency, human-in-the-loop) carries directly over to
+VLLM-based CV.</p></li>
+</ol>
+<p><strong>What you know about VLLM-for-CV:</strong> Gemini Vision (your
+daily driver for video/image analysis), GPT-4V/GPT-4o, Claude with
+vision, LLaVA, InternVL. Structured-output prompting for auto-labels.
+Confidence and reasoning fields in the output schema. Per-image cost is
+the constraint.</p>
+<p><strong>Your honest framing if Charles asks about your VLM
+work:</strong></p>
+<blockquote>
+<p><em>"My VLM hands-on credentials are three: at Microsoft I did
+meeting intelligence work using Gemini Flash and Pro on technical
+meeting video and in-meeting image content, and I built a local video
+capture and analysis routine to support that. In personal research on
+JosephCAD — a browser-based 3D CAD system — I have a mode that renders
+CAD command results to image files so a Claude-based agent can visually
+verify them. And on the current ABM AI engagement at Microsoft,
+production deployment is gpt-4.1-mini for text classification at scale —
+same multimodal foundation model family, the production scaffolding
+carries over even though the modality is text. What I'd ramp on for MIDA
+specifically is vision-specific eval metrics (mAP, IoU) and YOLO-family
+deployment patterns — I haven't deployed YOLO myself, but the
+surrounding production-scaffolding discipline is what I bring."</em></p>
+</blockquote>
+<p><strong>Your strongest architectural framing:</strong></p>
+<blockquote>
+<p><em>"VLLMs change the labeling economics. You can produce thousands
+of structured labels before training a thing. The architecture question
+for MIDA is whether the VLLM stays in the production inference path, or
+whether you use it to bootstrap a labeled set and then fine-tune a
+specialized model for production cost and latency, with the VLLM
+remaining as the human-review escalation tier."</em></p>
+</blockquote>
 <h3 id="segmentation-if-it-comes-up">Segmentation, if it comes up</h3>
 <ul>
 <li><strong>SAM (Segment Anything)</strong> — zero-shot segmentation,
@@ -452,16 +483,20 @@ map rather than dense segmentation."</li>
 </ul>
 <h3 id="the-honest-meta-frame">The honest meta-frame</h3>
 <p><strong>You are NOT pretending to be a YOLO specialist.</strong> You
-are NOT pretending your Microsoft work is vision/VLLM work. You ARE
-positioning as: production CV deployment discipline (ON Semi Streak
-Test) + current production foundation-model deployment discipline
-(Microsoft text classification at scale) + 40 years of statistical
-methodology depth. The bridge to MIDA is the <strong>production
-scaffolding shape</strong>, not the modality. Charles is senior enough
-to see through any pretending. The honest "I haven't deployed YOLO
-myself, my Microsoft work is text not vision, but the production
-scaffolding discipline is what I bring" lands better than any
-name-drop.</p>
+ARE positioning as: production CV deployment discipline (ON Semi Streak
+Test) + VLM hands-on (Microsoft meeting intelligence with Gemini
+Flash/Pro + JosephCAD agent-visual-verification loop) + current
+production foundation-model deployment discipline (ABM AI text
+classification at million-row scale) + 40 years of statistical
+methodology depth. The bridge to MIDA is the production scaffolding
+shape PLUS real multimodal hands-on. Charles is senior enough to see
+through pretending — but he's also senior enough to recognize that
+"Gemini Flash on meeting video + image analysis as paid client work" IS
+real VLM credentials. Honest "I haven't deployed YOLO myself, but I've
+done meeting intelligence with Gemini Flash/Pro and built
+VLM-in-the-loop verification for personal CAD research, and the
+production scaffolding I do daily is exactly what MIDA needs" lands
+strongest.</p>
 <hr />
 <h2 id="what-to-avoid">What to avoid</h2>
 <ul>

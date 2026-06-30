@@ -69,10 +69,12 @@ Controlled Robotics; three IEEE Transactions on Robotics &amp;
 Automation publications followed. Built production CV at ON Semi on a
 semiconductor manufacturing line — image defect detection on imaging die
 using iterative robust regression and spatial clustering on residual
-anomaly maps. Right now at Microsoft via Unify Consulting building
-production foundation-model classification at million-row scale — Fabric
-AI Functions, gpt-4.1-mini, structured output, evaluation loops. Text
-classification, not vision. What ties it together is production AI where
+anomaly maps. At Microsoft via Unify, two threads: earlier meeting
+intelligence work using Gemini Flash and Pro on technical meeting video
+and in-meeting image analysis — diagrams, slides, screen-share content;
+and current ABM AI team work on production foundation-model
+classification at million-row scale with Fabric AI Functions and
+gpt-4.1-mini. The thread that ties it together is production AI where
 the cost of being wrong is high. That's what drew me to PG&amp;E
 MIDA."</em></p>
 </blockquote>
@@ -186,17 +188,26 @@ I treat as a well-understood layer; my focus is the production
 scaffolding around the model."</em></p>
 </blockquote>
 <p><strong>VLLMs (Gemini Vision, GPT-4V, Claude w/ vision)</strong> —
-Adjacent territory, not your direct production work. Your Microsoft
-Fabric work is <strong>text classification</strong> with gpt-4.1-mini —
-same provider ecosystem, same production-scaffolding discipline,
-<strong>different modality</strong>.</p>
+You have THREE real credentials here.</p>
 <blockquote>
-<p><strong>Your honest line on modality:</strong> <em>"My production
-foundation-model work at Microsoft is text classification, not vision.
-What transfers is the scaffolding — structured output, evaluation loops,
-per-row cost/latency, human-in-the-loop. The vision-specific input
-handling and the vision-specific eval metrics — mAP, IoU — are where I'd
-ramp."</em> <strong>Your strongest architectural framing:</strong>
+<p><strong>(1) Microsoft meeting intelligence</strong> — Gemini 3.x
+Flash and Pro on technical meeting video + in-meeting image analysis
+(diagrams, slides, screen-share). Built a local video capture and
+analysis routine to support this. Used regularly. <strong>(2) JosephCAD
+agent-visual-verification</strong> — personal research; a mode that
+renders CAD command results to image files so a Claude-based agent can
+visually verify the geometry. VLM in the agent feedback loop.
+<strong>(3) Current ABM AI production</strong> — gpt-4.1-mini for text
+classification at million-row scale. Same multimodal foundation model
+family. Production scaffolding (structured output, evaluation,
+cost/latency, human-in-the-loop) transfers to VLLM-based CV.
+<strong>Your honest line if Charles asks:</strong> <em>"Gemini Flash and
+Pro on Microsoft meeting intelligence video + in-meeting image work,
+JosephCAD's VLM-in-the-loop CAD verification for personal research, and
+current production foundation-model deployment at million-row scale on
+the ABM AI team. What I'd ramp on for MIDA: vision-specific eval metrics
+— mAP, IoU — and YOLO-family deployment patterns. Production scaffolding
+is what I bring."</em> <strong>Architectural framing:</strong>
 <em>"VLLMs change the labeling economics. Architecture question for MIDA
 is whether the VLLM stays in production inference, or bootstraps a
 labeled set you fine-tune from, with the VLLM as human-review escalation
@@ -205,13 +216,14 @@ tier."</em></p>
 <p><strong>Segmentation (SAM, Mask R-CNN)</strong> — Reading list more
 than production. Be honest.</p>
 <p><strong>The honest meta-frame:</strong> You're NOT a YOLO specialist.
-Your Microsoft work is text classification, NOT VLLM/vision. You ARE 40
-years of production CV deployment discipline (ON Semi Streak Test) +
-current production foundation-model deployment discipline (Microsoft
-text classification at scale) + statistical methodology depth. Charles
-will spot pretending instantly. Honest "I haven't deployed YOLO myself,
-my Microsoft work is text not vision, but the production scaffolding
-discipline is what I bring" lands better than any name-drop.</p>
+You ARE: 40 years of production CV deployment discipline (ON Semi Streak
+Test) + real VLM hands-on (Microsoft meeting intelligence with Gemini
+Flash/Pro + JosephCAD VLM-in-the-loop) + current production
+foundation-model deployment at scale (ABM AI text classification) +
+statistical methodology depth. Honest <em>"haven't deployed YOLO myself,
+but Gemini Flash/Pro meeting intelligence at Microsoft, VLM-in-the-loop
+on JosephCAD, and production foundation-model deployment daily — that's
+what I bring"</em> lands strongest.</p>
 <hr />
 <h2 id="8-what-to-avoid">8. What to avoid</h2>
 <ul>
