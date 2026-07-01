@@ -4,7 +4,7 @@
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="robots" content="noindex, nofollow" />
-            <title>Slide 6 · Results & Production Impact · prep · thomives.com</title>
+            <title>Slide 6 · The Methodology in Pictures — Two Cases · prep · thomives.com</title>
             <link rel="stylesheet" href="../../prep.css" />
             <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
         </head>
@@ -18,22 +18,23 @@
                 <div class="page-meta"><a href="../../index.html">Prep</a> &raquo; <a href="../index.html">PG&E MIDA</a> &raquo; <a href="index.html">Presentation</a> &raquo; <span>Slide 6</span></div>
                 <div class="slide-nav">
             <a href="slide-05.html">&larr; Prev</a>
-            <span class="counter">Slide 6 of 9</span>
+            <span class="counter">Slide 6 of 10</span>
             <a href="slide-07.html">Next &rarr;</a>
         </div>
         <div class="slide-container">
-            <h1>Results & Production Impact</h1>
-<ul><li>Compared my own manual grading vs. the auto-detector on the same die images</li><li>Auto-detector matched my grading — and caught defects I might have missed</li><li>No inspection or visual-grading fatigue — hour-eight performance equal to hour-one</li><li>Removed the 2+ man-weeks of manual tuning per product</li><li>Addressed the largest RMA-driving defect class on the production line</li><li>Released through PITAD's standard 3-week production code release cycle</li><li>Pre-release code test program validated against production-grade evaluation</li></ul>
+            <h1>The Methodology in Pictures — Two Cases</h1>
+<div class="callout"><p>Case A: No defect — polynomial fits cleanly; residual essentially zero. Case B: Streak defect present — polynomial captures the dome; the streak stands out in the residual and feeds PGA clustering downstream. Real ON Semi AR0132 imaging die capture; illustrative streak synthesized to demonstrate what a real defect looks like in the residual.</p></div>
+<figure class="slide-image"><img src="Streak_Methodology_Two_Case_Grid.png" alt="Two-case grid. Case A (no defect): raw die + polynomial fit + near-zero residual. Case B (streak defect): raw die + polynomial fit + streak visible in residual with annotation." /><figcaption>Case A (top): No defect — polynomial fits cleanly; residual essentially zero. Case B (bottom): Streak defect present — polynomial captures the dome; streak stands out in the residual and feeds PGA clustering downstream. Real ON Semi AR0132 die; illustrative streak synthesized.</figcaption></figure>
 
             <details class="speaker-notes">
                 <summary></summary>
-                <div class="speaker-notes-body"><p>The validation approach: I ran the method on the set of die images I was already using for manual tuning, then compared my grading against the auto-detector's grading. It matched me on the ones I graded confidently — and on hard cases it caught some things I might have missed. That's the honest framing from my own write-up at the time.</p><p>Two operational wins on top of that. First — it didn't fatigue. Eight hours into a shift it scored the same as it did at hour one. Second — it removed the 2+ man-weeks of per-product manual tuning that had been the cost of operating the Streak Test.</p><p>The release path was standard PITAD — three-week production code release cycle with a pre-release code test program. The discipline that gets production CV deployed reliably.</p><p>Brief Q&A: "Anything you want to dig into on results or release process before I move to the bridge?"</p><p>NOTE: If you're stopping here (no slides 7/8), this is your natural close. Pause briefly, then transition to: "Happy to dig into anything else from this project — what questions do you have?"</p></div>
+                <div class="speaker-notes-body"><p>Speaker cue for this slide (talk over it — audience follows along):</p><p>"This is the same methodology I described on the previous slide, applied to two real cases. Top row is the 'Not White Snake' image from the previous slide — the case that looked streak-like but wasn't. Raw die on the left, 5th-degree bivariate polynomial fit in the middle as the wireframe with actual pixel intensities as scatter dots on it, and the residual on the right — essentially zero. The algorithm correctly says 'no defect.'"</p><p>"Bottom row is an AR0132 imaging die with an illustrative streak added so you can see what a real defect looks like in the residual. Same polynomial fit captures the dome. The streak stands out cleanly on the right — that's the input to PGA clustering. Groups exceeding the SOD threshold would fail the die."</p><p>IMPORTANT DISCLAIMER (say it once, briefly):</p><p>"To be transparent — the raw die images are real production captures I archived from my time at ON Semi. The streak on the bottom right is synthetic — added on top of a real image to illustrate the pattern the residual reveals. I don't have ON Semi's original defect images with me, but this shows the shape of what the algorithm sees."</p><p>Q&A CUE: "Questions on how the polynomial captures the dome, or how the residual hands off to the clustering step?"</p></div>
             </details>
 
         </div>
         <div class="slide-nav">
             <a href="slide-05.html">&larr; Prev</a>
-            <span class="counter">Slide 6 of 9</span>
+            <span class="counter">Slide 6 of 10</span>
             <a href="slide-07.html">Next &rarr;</a>
         </div>
             </div>

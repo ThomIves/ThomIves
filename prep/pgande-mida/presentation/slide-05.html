@@ -4,7 +4,7 @@
             <meta charset="utf-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <meta name="robots" content="noindex, nofollow" />
-            <title>Slide 5 · The Methodology in Pictures — Two Cases · prep · thomives.com</title>
+            <title>Slide 5 · The Fit — Polynomial Wireframe Riding on the Pixel Intensity Surface · prep · thomives.com</title>
             <link rel="stylesheet" href="../../prep.css" />
             <link rel="icon" type="image/svg+xml" href="../../../favicon.svg" />
         </head>
@@ -18,23 +18,23 @@
                 <div class="page-meta"><a href="../../index.html">Prep</a> &raquo; <a href="../index.html">PG&E MIDA</a> &raquo; <a href="index.html">Presentation</a> &raquo; <span>Slide 5</span></div>
                 <div class="slide-nav">
             <a href="slide-04.html">&larr; Prev</a>
-            <span class="counter">Slide 5 of 9</span>
+            <span class="counter">Slide 5 of 10</span>
             <a href="slide-06.html">Next &rarr;</a>
         </div>
         <div class="slide-container">
-            <h1>The Methodology in Pictures — Two Cases</h1>
-<div class="callout"><p>Case A: No defect — polynomial fits cleanly; residual essentially zero. Case B: Streak defect present — polynomial captures the dome; the streak stands out in the residual and feeds PGA clustering downstream. Real ON Semi AR0132 imaging die capture; illustrative streak synthesized to demonstrate what a real defect looks like in the residual.</p></div>
-<figure class="slide-image"><img src="Streak_Methodology_Two_Case_Grid.png" alt="Two-case grid: Case A (no defect) shows raw die + polynomial fit + near-zero residual. Case B (streak defect) shows raw die + polynomial fit + streak visible in residual with annotation." /><figcaption>Case A (top): No defect — polynomial fits cleanly; residual essentially zero. Case B (bottom): Streak defect present — polynomial captures the dome; the streak stands out in the residual and feeds PGA clustering downstream. Real ON Semi AR0132 imaging die capture; illustrative streak synthesized to demonstrate what a real defect looks like.</figcaption></figure>
+            <h1>The Fit — Polynomial Wireframe Riding on the Pixel Intensity Surface</h1>
+<div class="callout"><p>5th-degree bivariate polynomial (wireframe) fit to the pixel intensity surface. Where the wireframe rides above or below the surface, the residual is nonzero — that's where defects hide. Illustrative — synthetic mid-light illumination dome + realistic sensor noise, representative of the raw sensor data the archived production PNGs no longer retain.</p></div>
+<figure class="slide-image"><img src="Streak_Wireframe_Over_Surface.png" alt="5th-degree bivariate polynomial fit shown as black wireframe overlaid on a colored pixel intensity surface with a dome shape and sensor noise. Plasma colormap." /><figcaption>5th-degree bivariate polynomial (wireframe) over the pixel intensity surface. Illustrative synthetic dome + noise — representative of the raw sensor data before display processing.</figcaption></figure>
 
             <details class="speaker-notes">
                 <summary></summary>
-                <div class="speaker-notes-body"><p>Speaker cue for this slide (talk over it — audience follows along):</p><p>"This is the same methodology I described on the previous slide, applied to two real cases. Top row is the 'Not White Snake' image from the previous slide — the case that looked streak-like but wasn't. Raw die on the left, 5th-degree bivariate polynomial fit in the middle as the wireframe with actual pixel intensities as scatter dots on it, and the residual on the right — essentially zero. The algorithm correctly says 'no defect.'"</p><p>"Bottom row is an AR0132 imaging die with an illustrative streak added so you can see what a real defect looks like in the residual. Same polynomial fit captures the dome. The streak stands out cleanly on the right — that's the input to PGA clustering. Groups exceeding the SOD threshold would fail the die."</p><p>IMPORTANT DISCLAIMER (say it once, briefly):</p><p>"To be transparent — the raw die images are real production captures I archived from my time at ON Semi. The streak on the bottom right is synthetic — added on top of a real image to illustrate the pattern the residual reveals. I don't have ON Semi's original defect images with me, but this shows the shape of what the algorithm sees."</p><p>Q&A CUE: "Questions on how the polynomial captures the dome, or how the residual hands off to the clustering step?"</p></div>
+                <div class="speaker-notes-body"><p>This is the visualization I used to use to explain the method — the polynomial fit as a wireframe riding on the pixel intensity surface. The audience gets the whole method in one image.</p><p>Speaker cue:</p><p>"Think about the pixel intensities across a die at mid-light as a surface — it looks like this. There's a dome shape from the imaging system's illumination profile with sensor noise on top. The wireframe you see is the 5th-degree bivariate polynomial I fit through that surface. Where the wireframe rides above the actual pixels, or dips below them, the residual is nonzero. That's where defects would live — after iterative outlier suppression converges."</p><p>PRE-PROCESSING NOTES (say if the room asks about robustness):</p><p>"Two things I did in production that aren't shown in this abstract picture. First, I contrast-enhanced the pixel intensities before fitting so the dome variation was strong enough to model. Second, I fit on an over-extended domain — beyond the actual die crop — and then cropped back to the analysis region. That let the polynomial's edge behavior stabilize on data I was going to throw away, rather than skewing the interior fit."</p><p>IMPORTANT DISCLAIMER (say once):</p><p>"This visualization is illustrative — a synthetic dome and noise. The archived production PNGs I have from ON Semi are already-processed 8-bit displays whose interior pixels are saturated at 255, so the raw dome doesn't survive in them. What you're looking at is representative of what the sensor data looked like at capture time, before display processing."</p><p>Q&A CUE: "Questions on the fit surface, the edge handling, or how the residual feeds the clustering step?"</p></div>
             </details>
 
         </div>
         <div class="slide-nav">
             <a href="slide-04.html">&larr; Prev</a>
-            <span class="counter">Slide 5 of 9</span>
+            <span class="counter">Slide 5 of 10</span>
             <a href="slide-06.html">Next &rarr;</a>
         </div>
             </div>
