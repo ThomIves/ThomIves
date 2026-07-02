@@ -19,24 +19,28 @@
             <h1>Panel Presentation · Web Version</h1>
 <p class="page-meta">From <code>Thom_Ives_PGandE_MIDA_Presentation.pptx</code> · Last updated 2026-07-01</p>
 
-<p>The 8-slide ON Semi Streak Test Auto-Detector presentation, rendered as web pages with speaker notes collapsible
-on each slide. Useful for rehearsing on phone or tablet.</p>
+<p>The 10-slide ON Semi Streak Test Auto-Detector presentation, rendered as web pages with speaker
+notes collapsible on each slide. Useful for rehearsing on phone or tablet.</p>
 
 <div class="slide-nav">
-    <span class="counter">8 slides · ~10 min content + Q&amp;A breakpoints</span>
+    <span class="counter">10 slides · ~10 min content + Q&amp;A breakpoints</span>
     <a href="slide-01.html">Start &rarr;</a>
 </div>
+
+<p><strong>Download the source deck:</strong>
+   <a href="Thom_Ives_PGandE_MIDA_Presentation.pptx">Thom_Ives_PGandE_MIDA_Presentation.pptx</a>
+   — grab a local copy for offline practice or to present from directly.</p>
 
 <h2>Slides</h2>
 
 <div class="card-grid">
 
     <div class="card">
-        <h3><a href="slide-01.html">Slide 1 · From Manual Tuning to Auto-Detection</a></h3>
+        <h3><a href="slide-01.html">Slide 1 · From Manual Tuning to </a></h3>
     </div>
 
     <div class="card">
-        <h3><a href="slide-02.html">Slide 2 · PITAD — Production Image Test Algorithm Development at ON Semi</a></h3>
+        <h3><a href="slide-02.html">Slide 2 · PITAD</a></h3>
     </div>
 
     <div class="card">
@@ -48,11 +52,11 @@ on each slide. Useful for rehearsing on phone or tablet.</p>
     </div>
 
     <div class="card">
-        <h3><a href="slide-05.html">Slide 5 · The Fit — Polynomial Wireframe Riding on the Pixel Intensity Surface</a></h3>
+        <h3><a href="slide-05.html">Slide 5 · Polynomial Wire Frame & Pixel Intensity Surface</a></h3>
     </div>
 
     <div class="card">
-        <h3><a href="slide-06.html">Slide 6 · The Methodology in Pictures — Two Cases</a></h3>
+        <h3><a href="slide-06.html">Slide 6 · Same dome, same fit, two outcomes. Case A: no defect — the polynomial captures the dome cleanly and the residual is just sensor noise with no coherent structure. Case B: a streak defect is present — the polynomial still captures the dome (streak is too localized to skew the fit), and the residual reveals the streak as a coherent spatial pattern that PGA clustering catches. Illustrative synthetic dome throughout — same underlying model as Slide 5.</a></h3>
     </div>
 
     <div class="card">
@@ -78,10 +82,12 @@ on each slide. Useful for rehearsing on phone or tablet.</p>
 <div class="callout">
     <p class="callout-title">Memorize the SHAPE of this</p>
     <p><em>"I built a defect detector based on a parametric illumination model — a 5th-degree bivariate polynomial
-    surface fit to the imaging system's background dome. Defects live in the residual map between the model
-    and the actual pixels. I iterated robust regression — fit, suppress outliers, refit — until convergence,
-    then ran spatial clustering on the residual anomalies with size and density thresholds borrowed from
-    related cluster-defect tests."</em></p>
+    surface fit to the imaging system's background dome. Pixels were contrast-enhanced first; defects live in
+    the residual map between the model and the actual pixels. I iterated robust regression until convergence
+    using a Delta-E-informed test to define the acceptable intensity range. The suspect pixels — those still
+    outside the range at convergence — were clustered using a novel method I called Pseudo Gravitational
+    Attraction, with per-pixel Pseudo Mass based on model deviation. Groups exceeding each product's Smallest
+    Objectionable Defect threshold failed the die."</em></p>
 </div>
         </div>
         <script src="../../prep.js"></script>
