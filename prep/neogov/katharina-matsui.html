@@ -237,29 +237,47 @@ strongest opening — "Tell me about yourself" tuned for Katharina</h2>
 (likely first 1-2 minutes):</p>
 <blockquote>
 <p><em>"AI Solutions Architect with 40 years across manufacturing,
-R&amp;D, and enterprise AI — currently a Senior AI Consultant at Unify,
-most recently on the Microsoft ABM AI team building production
+R&amp;D, and enterprise AI — currently a Senior AI Consultant at Unify.
+Most recently on the Microsoft ABM AI team building production
 classification at million-row scale on Fabric. Before that, at Echo
 Global Logistics — a freight brokerage — I built two LLM-based Outlook
 Add-Ins for sellers and carriers, and ran the full LLM lifecycle:
 sales-rep feedback loops, prompt drift monitoring as models evolved,
-versioned releases verified against labeled sets. Now inside Unify I'm
-also on a revenue-intelligence AI project — building the operational
-infrastructure for a revenue engine. That's the shape of work I'd want
-to bring to NEOGOV."</em></p>
+versioned releases verified against labeled sets. Right now inside Unify
+I'm architecting and building an enterprise-grade agentic AI platform
+end to end — modular adapter-based integration layer that puts external
+systems of record like Salesforce CRM behind a single connector
+contract, LLM agent-evaluation frameworks with human-in-the-loop safety
+invariants that keep agent output grounded, controlled-access
+cloud-native deployment with federated identity. Owning the DevOps and
+delivery architecture across the program. That's the shape of work I'd
+want to bring to NEOGOV."</em></p>
 </blockquote>
-<p>About <strong>60 seconds spoken.</strong> Lands three things in
+<p>About <strong>70-75 seconds spoken.</strong> Lands four things in
 sequence:</p>
 <ul>
 <li><strong>Enterprise-AI credibility</strong> (Microsoft ABM AI,
 Fabric, production scale)</li>
-<li><strong>Direct revenue-intelligence AI experience</strong> (Echo +
-your current Vigil work — both directly relevant to her Falkon
-interest)</li>
-<li><strong>The "operational infrastructure for a revenue engine"
-framing</strong> — which is her exact vocabulary</li>
+<li><strong>Direct LLM lifecycle experience</strong> (Echo — sales-rep
+feedback, drift monitoring, versioned releases)</li>
+<li><strong>Current enterprise-grade agentic AI platform work</strong> —
+the vocabulary is precisely what Katharina wants to hear: adapter-based,
+Salesforce integration, human-in-the-loop safety invariants, federated
+identity, DevOps ownership</li>
+<li><strong>Current relevance to her world</strong> — she advises Falkon
+(revenue-intel AI startup); this platform work is the exact
+category</li>
 </ul>
-<p>Memorize the SHAPE, not the words.</p>
+<p><strong>The single most powerful phrase in this opening</strong> is
+<em>"human-in-the-loop safety invariants that keep agent output
+grounded"</em> — this is Katharina's assistive-not-agentic posture in
+her own vocabulary. Say it clearly. Let it land.</p>
+<p><strong>Salesforce mention closes the Zach gap.</strong> Zach probed
+on your Salesforce experience in Round 3. That gap is now closed —
+you're actively integrating Salesforce CRM into an agentic AI platform
+right now.</p>
+<p>Memorize the SHAPE, not the words. You can shorten if she signals
+time pressure.</p>
 <hr />
 <h2 id="the-strongest-single-sentence-to-have-ready">The strongest
 single sentence to have ready</h2>
@@ -290,12 +308,89 @@ id="question-3--walk-me-through-a-production-ai-system-youve-built-end-to-end">Q
 3 — "Walk me through a production AI system you've built
 end-to-end"</h3>
 <p><strong>Apply the <a
-href="../../Knowledge_Base/Interview_Patterns/E2E_Pipeline_Question_Template.md">E2E
+href="../../Knowledge_Base/Interview_Patterns/E2E_Pipeline_Query_Template.md">E2E
 pipeline template</a>.</strong> Do NOT narrow to a specific piece. Walk
 the full 10 steps. <strong>This is the specific failure mode that cost
 you at PG&amp;E.</strong> Don't repeat it here.</p>
-<p>Suggested example: <strong>Echo Outlook Add-Ins</strong> (mapped to
-her interest — revenue AI for sellers):</p>
+<p><strong>You have TWO strong options.</strong> Pick based on what
+she's probing for:</p>
+<p><strong>Option A — the current Unify enterprise agentic AI platform
+work (Vigil-shape).</strong> More recent, more directly relevant to her
+Falkon interest, exact vocabulary match to her assistive-AI posture.
+<strong>Stay at architectural level — do NOT disclose client business
+specifics.</strong> Suggested walkthrough:</p>
+<ol type="1">
+<li><strong>Problem</strong> — build an enterprise-grade agentic AI
+platform for a revenue-intelligence use case; the platform has to be
+trustworthy enough for enterprise use, integrate with existing systems
+of record, and be operable by the client's team after handoff</li>
+<li><strong>Data pipeline</strong> — modular adapter-based integration
+layer that puts each external system of record (Salesforce CRM live,
+others as needed) behind a single connector contract; enterprise data
+flows in and out through the adapter surface</li>
+<li><strong>Data prep</strong> — normalized through the adapter
+contract; each connector handles the source-specific translation so the
+agent layer sees consistent shapes</li>
+<li><strong>Architecture</strong> — agentic AI platform with LLM
+agent-evaluation frameworks as first-class citizens (not bolted on);
+human-in-the-loop safety invariants as design constraints, not
+after-thought guardrails</li>
+<li><strong>Adaptation</strong> — prompt engineering with structured
+output; agent-evaluation harness runs continuously</li>
+<li><strong>Evaluation</strong> — the agent-evaluation framework IS the
+CI; safety-invariant checks fail the build if agent output would violate
+the invariants</li>
+<li><strong>Deployment</strong> — controlled-access, cloud-native, with
+federated identity so enterprise IAM policies extend into the platform
+without duplication</li>
+<li><strong>Monitoring</strong> — grounded-ness of agent output tracked
+continuously; drift monitoring across model providers and prompt
+versions</li>
+<li><strong>Feedback loops</strong> — human-in-the-loop reviewers
+correct agent output; corrections feed back into the evaluation harness
+and prompt tuning</li>
+<li><strong>Refresh + methodology</strong> — I've also pioneered a
+multi-agent development methodology spanning research, drafting, and
+adversarial review that shapes how the whole team builds against this
+platform. Refresh is continuous.</li>
+</ol>
+<p><strong>Option B — Echo Outlook Add-Ins</strong> (safer to detail,
+past employer, complete). Use if she wants specific business-outcome
+numbers or if the conversation drifts toward "show me sales-facing AI
+adoption":</p>
+<ol type="1">
+<li><strong>Problem</strong> — sellers at a freight brokerage were
+spending 5+ min per email quoting rates and hunting shipments; deal
+velocity was the constraint on revenue</li>
+<li><strong>Data pipeline</strong> — real-time email intake via Outlook,
+historical rate data from data warehouse, shipment inventory from the
+marketplace</li>
+<li><strong>Data prep</strong> — normalize customer / lane / shipment
+features; RAG index over historical quotes and current inventory</li>
+<li><strong>Architecture</strong> — Claude Instant 1.0 with
+structured-output prompting; RAG over the fixed reference material;
+user-side Add-Ins for both sales-rep and carrier flows</li>
+<li><strong>Adaptation</strong> — prompt engineering with few-shot
+examples; as-needed prompt version updates</li>
+<li><strong>Evaluation</strong> — labeled set of gold-standard
+responses; measured against sales-rep-reviewed corrections</li>
+<li><strong>Deployment</strong> — beta production rollout within
+Outlook, so it lived where sellers already worked</li>
+<li><strong>Monitoring</strong> — drift observation (Claude Instant
+1.0's behavior shifted as Anthropic refined training); user feedback
+rates; time-to-response distribution</li>
+<li><strong>Feedback loops</strong> — sales-rep correction mechanism I
+built into the flow — corrections flowed back into golden set and drove
+prompt updates</li>
+<li><strong>Refresh</strong> — supervised junior data scientists in
+evaluating newer Claude models as they became available</li>
+</ol>
+<p><strong>Which to pick:</strong> Option A (Vigil-shape) is stronger
+for the CRO/platform-architect framing. Option B (Echo) is safer if she
+asks about "sales-facing" specifically or wants a completed shipped
+system.</p>
+<p><strong>Whatever you pick — walk it end-to-end. Do not narrow. Do not
+skip the basics.</strong></p>
 <ol type="1">
 <li><strong>Problem</strong> — sellers at a freight brokerage were
 spending 5+ min per email quoting rates and hunting shipments; deal
@@ -336,11 +431,16 @@ today, understanding what they actually do all day. And by talking with
 your RevOps team about where forecast slips and where signal is missing.
 And by understanding the public-safety cross-sell picture — because
 that's where the highest-leverage AI signals probably live for your
-sponsors. Once I have that context, then I'd talk
-architecture."</em></p>
+sponsors. I do bring a specific pattern from what I'm building right now
+— enterprise agentic AI platform with Salesforce-behind-adapter
+integration, LLM agent-evaluation frameworks, human-in-the-loop safety
+invariants. That's an operational blueprint I could adapt for NEOGOV.
+But the priority in the first 90 days is context, not blueprint. Once I
+have that context, then I'd talk architecture."</em></p>
 </blockquote>
 <p>The public-safety cross-sell reference signals homework. The
-"sellers-first" posture signals partnership.</p>
+Vigil-shape platform reference signals <em>"I bring proven architecture,
+not theory."</em> The "sellers-first" posture signals partnership.</p>
 <h3
 id="question-5--whats-your-view-on-assistive-ai-vs-agentic-ai-for-revops">Question
 5 — "What's your view on assistive AI vs. agentic AI for RevOps?"</h3>
@@ -355,12 +455,20 @@ bad action are recoverable. Revenue conversations don't have that shape
 Assistive AI amplifies the seller's judgment; agentic AI substitutes for
 it. For NEOGOV specifically — public-sector buyers who are risk-averse —
 assistive is the only defensible posture. That doesn't mean
-unsophisticated: assistive done right requires evaluation loops, drift
-monitoring, versioned releases, and observability that's as rigorous as
-anything agentic."</em></p>
+unsophisticated: what I'm building right now at Unify is an agentic AI
+platform with human-in-the-loop safety invariants as first-class design
+constraints — the invariants keep agent output grounded and trustworthy.
+Assistive done right requires the same rigor as anything agentic:
+evaluation harnesses, drift monitoring, versioned releases, and
+observability."</em></p>
 </blockquote>
-<p>That signals: you agree with her, you understand the reasoning, AND
-you're not intellectually captured by AI hype.</p>
+<p>That signals: you agree with her, you understand the reasoning,
+you're not intellectually captured by AI hype, AND you're currently
+building the exact operational shape she'd want for NEOGOV —
+human-in-the-loop safety invariants at the platform layer.</p>
+<p><strong>The Vigil framing here is especially powerful</strong>
+because it says <em>"the current work I'm doing is architecturally
+aligned with your posture."</em></p>
 <h3
 id="question-6--how-do-you-measure-whether-the-ai-is-working">Question 6
 — "How do you measure whether the AI is working?"</h3>
