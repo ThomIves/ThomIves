@@ -1,0 +1,315 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>AI / LLM / GenAI Work &mdash; Thom Ives, Ph.D.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="Public artifacts and project summaries demonstrating practical experience with LLMs, evaluation pipelines, and GenAI tooling. Thom Ives, Ph.D. &mdash; Senior AI Architect and Multi-Physics Engineer." />
+		<meta property="og:title" content="AI / LLM / GenAI Work — Thom Ives, Ph.D." />
+		<meta property="og:description" content="Public artifacts and project summaries demonstrating practical experience with LLMs, evaluation pipelines, and GenAI tooling." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://thomives.com/ai-work/" />
+		<meta property="og:image" content="https://thomives.com/og-image.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="AI / LLM / GenAI Work — Thom Ives, Ph.D." />
+		<meta name="twitter:description" content="Public artifacts and project summaries — practical experience with LLMs, evaluation pipelines, and GenAI tooling." />
+		<meta name="twitter:image" content="https://thomives.com/og-image.png" />
+		<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+		<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+		<link rel="shortcut icon" href="../favicon.ico" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<style>
+			body.dark { background: #1a1d20; color: #c8ced3; }
+			body.dark h1, body.dark h2, body.dark h3, body.dark h4, body.dark h5, body.dark h6 { color: #e8edf0; }
+			body.dark strong, body.dark b { color: #ffffff; }
+			body.dark blockquote { border-left-color: #555; color: #b0b6bb; }
+			body.dark hr { border-top-color: #444; }
+			body.dark #wrapper { background: #1a1d20; }
+			body.dark #main > .inner { background: #1a1d20; }
+			body.dark #sidebar { background: #14171a; border-right: 1px solid #2a2e33; }
+			body.dark #sidebar .inner { background: #14171a; }
+			body.dark #sidebar > .inner > .alt, body.dark #sidebar .alt { background-color: #14171a; }
+			body.dark #sidebar #menu ul li a { color: #c8ced3; }
+			body.dark #sidebar #menu ul li a:hover { color: #f56a6a; }
+			body.dark #sidebar #menu header h2 { color: #e8edf0; }
+			body.dark #footer { color: #6e7479; }
+			body.dark #footer a { color: #9aa1a7; }
+			body.dark .button {
+				background: transparent; color: #e8edf0 !important; border-color: #555;
+				box-shadow: inset 0 0 0 1px #555;
+			}
+			body.dark .button:hover {
+				background: rgba(245,106,106,0.08);
+				color: #f56a6a !important;
+				box-shadow: inset 0 0 0 1px #f56a6a;
+			}
+			body.dark header.major:after { background: #444; }
+			body.dark #header .icons li a { color: #c8ced3; }
+			body.dark #header .icons li a:hover { color: #f56a6a; }
+			body.dark .features article { border-color: #2a2e33; background: rgba(255,255,255,0.02); }
+			body.dark a.logo strong { color: #e8edf0; }
+
+			#theme-toggle {
+				position: fixed; top: 1em; right: 1em;
+				width: 2.6em; height: 2.6em; border-radius: 50%;
+				background: rgba(255,255,255,0.06); color: #c8ced3;
+				border: 1px solid #3a3f45; cursor: pointer;
+				font-size: 1.1em; z-index: 1000;
+				display: flex; align-items: center; justify-content: center;
+				transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+				padding: 0;
+			}
+			#theme-toggle:hover { background: rgba(245,106,106,0.12); color: #f56a6a; border-color: #f56a6a; }
+			body:not(.dark) #theme-toggle {
+				background: rgba(0,0,0,0.04); color: #3d4449; border-color: #d1d5d9;
+			}
+			body:not(.dark) #theme-toggle:hover { background: rgba(245,106,106,0.08); color: #f56a6a; border-color: #f56a6a; }
+
+			/* Page-specific */
+			.hero-tagline { font-size: 1.5em; font-weight: 700; margin: 0.4em 0 0.6em; line-height: 1.25; }
+			.credentials-line { font-size: 0.95em; opacity: 0.85; line-height: 1.6; margin: 1.4em 0 0; padding-top: 1.2em; border-top: 1px solid rgba(128,128,128,0.25); }
+
+			.artifact-card {
+				margin: 1.2em 0 1.6em;
+				padding: 1.2em 1.4em;
+				border-radius: 6px;
+				background: rgba(255,255,255,0.025);
+				border-left: 3px solid #f56a6a;
+			}
+			body.dark .artifact-card { background: rgba(255,255,255,0.04); }
+			.artifact-card h3 { margin-top: 0; }
+			.artifact-meta { font-size: 0.9em; opacity: 0.78; margin-top: 0.4em; }
+
+			.agent-quote { margin: 1.4em 0; padding: 1em 1.4em; border-left: 3px solid #f56a6a; font-style: italic; background: rgba(255,255,255,0.02); }
+			body.dark .agent-quote { background: rgba(255,255,255,0.04); }
+
+			/* Section hero (single wide image anchoring a section) */
+			.section-hero { margin: 1.5em 0 2em; }
+			.section-hero img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 2px 12px rgba(0,0,0,0.15); }
+			body.dark .section-hero img { box-shadow: 0 2px 16px rgba(0,0,0,0.4); }
+			.section-hero figcaption { font-size: 0.85em; opacity: 0.75; margin-top: 0.6em; text-align: center; font-style: italic; }
+		</style>
+	</head>
+	<body class="is-preload dark">
+
+		<button id="theme-toggle" aria-label="Toggle dark / light mode" title="Toggle dark / light mode">
+			<span id="theme-toggle-icon" class="icon solid fa-sun"></span>
+		</button>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>Thom Ives, Ph.D.</strong></a>
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/thomives/" class="icon brands fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/ThomIves" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+									</ul>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>AI / LLM / GenAI Work</h1>
+									</header>
+
+									<p class="hero-tagline">Public artifacts and project summaries demonstrating practical experience with LLMs, evaluation pipelines, and GenAI tooling.</p>
+
+									<p>Built and shipped by a single senior practitioner &mdash; AI-augmented engineering practice that delivers at small-team velocity. Senior AI Architect and Multi-Physics Engineer; Mechanical Engineering Ph.D. (Texas A&amp;M, 1997); 26 US Patents from 16 years of multi-physics R&amp;D at HP; current AI consulting for Microsoft via Unify Consulting.</p>
+
+									<hr class="major" />
+
+									<h2>Public Artifacts</h2>
+
+									<div class="artifact-card">
+										<h3><a href="https://postaldatapi.com" target="_blank">PostalDataPI &mdash; Agent-Native Global Postal-Code API</a></h3>
+										<p>Global postal-code validation and enrichment API. Founded, designed, and operate. Serves <strong>246 countries and territories</strong> (1M+ codes) at sub-5ms response. <strong>Agent-native from day one</strong> &mdash; ships a first-party MCP server alongside Python and Node SDKs, OpenAPI 3.0, and <code>llms.txt</code> for direct AI-agent discovery.</p>
+										<p>Self-hosted Node 22 / Next.js 15 API surface with in-memory cache. Vercel for marketing, dashboard, OAuth, and Stripe webhooks. Neon PostgreSQL with Drizzle ORM. NextAuth. TypeScript strict. Transparent single-tier pricing at $0.000028 per query.</p>
+										<p class="artifact-meta"><strong>Role:</strong> Founder &amp; Owner. Full-stack ownership from architecture through release.</p>
+									</div>
+
+									<figure class="section-hero">
+										<img src="images/PostalDataPI_flow.png" alt="PostalDataPI architecture &mdash; agent-native global postal-code API">
+										<figcaption>PostalDataPI architecture &mdash; multi-source country data flowing into an in-memory hot path serving human developers and AI agents side-by-side</figcaption>
+									</figure>
+
+									<div class="artifact-card">
+										<h3><a href="https://www.linkedin.com/in/thomives/" target="_blank">LinkedIn Featured &mdash; Project Write-ups</a></h3>
+										<p>Public write-ups linked from the Featured section of <a href="https://www.linkedin.com/in/thomives/" target="_blank">linkedin.com/in/thomives</a> &mdash; visual / written summaries of:</p>
+										<ul>
+											<li>Microsoft Fabric AI Functions classifier (gpt-4.1-mini over millions of free-text records)</li>
+											<li>Echo Global Logistics Outlook AI Add-Ins (30,000+ daily requests; per-request handling under 15 seconds)</li>
+											<li>PostalDataPI architecture (agent-native global postal API)</li>
+											<li>Personal 3D CAD application research</li>
+										</ul>
+									</div>
+
+									<div class="artifact-card">
+										<h3><a href="https://github.com/ThomIves" target="_blank">GitHub &mdash; github.com/ThomIves</a></h3>
+										<p>Open-source repositories from the Integrated Machine Learning &amp; AI educational period (2018&ndash;2022) &mdash; matrix-from-scratch tutorials, ML method walk-throughs, and supporting code for blog posts and book reviews.</p>
+									</div>
+
+									<div class="artifact-card">
+										<h3><a href="../index.html">thomives.com &mdash; Personal Site</a></h3>
+										<p>Selected Work, Research (Ph.D. dissertation on multi-physics hybrid-vehicle power-plant modeling; M.S. thesis on robot calibration), Publications &amp; Patents (26 US Patents, peer-reviewed IEEE papers), Teaching &amp; Speaking.</p>
+									</div>
+
+									<hr class="major" />
+
+									<h2>Project Summaries (Work Under NDA)</h2>
+
+									<p>The following summaries describe work done under client / employer NDA. Outcomes and stack are described; client-internal artifacts and method details are not reproduced here.</p>
+
+									<div class="artifact-card">
+										<h3>Microsoft &mdash; Account-Based Marketing AI Team (current, via Unify Consulting)</h3>
+										<p>Delivered a self-contained <strong>Microsoft Fabric reporting tool that classifies free-text seller dispositions</strong> against a canonical taxonomy using <strong>Fabric AI Functions (gpt-4.1-mini)</strong> over millions of activity rows. Owned the signal-taxonomy design, prompt architecture, structured output parsing, evaluation loops, and per-row cost / latency management.</p>
+										<p>Built and maintain a <strong>curated knowledge base</strong> of analytical artifacts &mdash; PySpark notebooks against the team's recommendation-outcomes Delta lakehouse, recurring data snapshots, business framework references &mdash; that compounds value across sprints rather than being rebuilt each cycle.</p>
+										<p>Developed and documented a <strong>local-first / Fabric-validated working pattern</strong> &mdash; prototype against local Parquet snapshots, ship validated artifacts back to Fabric for stakeholder review &mdash; keeping iteration speed high without sacrificing production rigor.</p>
+										<p class="artifact-meta"><strong>Stack:</strong> Python (pandas, PySpark, Delta), Microsoft Fabric (lakehouses, AI Functions, notebook resources), Azure DevOps, semantic classification with LLMs, prompt engineering and evaluation loops.</p>
+									</div>
+
+									<figure class="section-hero">
+										<img src="images/Microsoft_Fabric_AI_flow.png" alt="Microsoft Fabric Knowledge Layer architecture">
+										<figcaption>A practitioner's knowledge layer for Microsoft Fabric &mdash; team coding history, data schemas, and meeting intelligence compounding across sprints into fast delivery</figcaption>
+									</figure>
+
+									<div class="artifact-card">
+										<h3>Echo Global Logistics &mdash; LLM Outlook AI Add-Ins (Senior Data Scientist, 2022&ndash;2024)</h3>
+										<p>Built two full-stack <strong>LLM-based Outlook automations</strong> for sales-rep email workflows. <strong>Per-request handling compressed from 5+ minutes to under 15 seconds across 30,000+ daily requests.</strong></p>
+										<p>End-to-end design and implementation &mdash; containerized backend services and Outlook add-in frontends. Delivered numerous additional production models alongside the Outlook work and mentored the data science team into modern serving patterns (containerized APIs and web add-ins). Built a separate carrier-cost optimization tool delivering double-digit margin recovery for sales operations.</p>
+										<p class="artifact-meta"><strong>Stack:</strong> Python, LLM APIs, containerized backend services, Outlook Office.js front end, Azure deployment.</p>
+									</div>
+
+									<figure class="section-hero">
+										<img src="images/Outlook_AI_Add_In_flow.png" alt="Outlook AI Add-In architecture &mdash; LLM-driven sales-rep email workflow">
+										<figcaption>Outlook AI Add-In &mdash; LLM-driven sales-rep email workflow compressing per-request handling from 5+ minutes to under 15 seconds across 30,000+ daily requests</figcaption>
+									</figure>
+
+									<div class="artifact-card">
+										<h3>Amazon &mdash; AI Airline Contracts Processor &amp; NL-to-SQL Chatbot (2025, via Unify Consulting)</h3>
+										<p><strong>AI Airline Contracts Processor:</strong> POC collecting financial data from <strong>hundreds of unstructured contracts</strong> via LLM-based auto-processing with structured output parsing.</p>
+										<p><strong>Travel-expense NL-to-SQL chatbot:</strong> natural-language-in / natural-language-out interface over Amazon travel expense data &mdash; retrieval and tool-use patterns over a real business dataset.</p>
+										<p class="artifact-meta"><strong>Stack:</strong> Python, LLM APIs, SQL, structured output parsing, function calling.</p>
+									</div>
+
+									<div class="artifact-card">
+										<h3>AI-Strategy &mdash; AI Agents for New-Technology Development (Lead Data Scientist, 2021&ndash;2022)</h3>
+										<p>Developed <strong>AI Agents</strong> combining deep-learning transformers and general automation to assist humans in new-technology development. AI training data acquired from past successful projects and projects developed in the application. Developed APIs to handle Data File IO and SQL IO and to serve the AI Agents.</p>
+										<p class="artifact-meta">Early multi-agent orchestration work that prefigured today's agentic patterns.</p>
+									</div>
+
+									<div class="artifact-card">
+										<h3>UL Prospector &mdash; NLP Architecture for Plastics Technical Data Sheets (Lead Data Scientist, 2019&ndash;2021)</h3>
+										<p>Worked on an <strong>AI architecture</strong> to rapidly process unstructured plastics technical data sheets &mdash; fast document-match math machine, tokenizers, heterogeneous clustering, property-names finder built on GloVe trained on domain data. Started a data science community to share learning and mentor others.</p>
+									</div>
+
+									<hr class="major" />
+
+									<h2>Personal Research</h2>
+
+									<div class="artifact-card">
+										<h3>Browser-Based 3D CAD Research</h3>
+										<p>Personal research into how mechanical-design tooling can grow in this latest age &mdash; a browser-based 3D CAD system exploring fresh ergonomics for engineer-facing design environments. Detail held private; framing here as ongoing personal research.</p>
+									</div>
+
+									<figure class="section-hero">
+										<img src="images/3D_CAD_Research.png" alt="3D CAD research &mdash; browser-based design environment">
+										<figcaption>Personal 3D CAD research &mdash; exploring browser-native design environments for the AI age</figcaption>
+									</figure>
+
+									<hr class="major" />
+
+									<h2>How the Throughput Is Sustained</h2>
+
+									<p>A single senior practitioner can ship at small-team velocity when the engineering practice underneath is right &mdash; AI-augmented, methodology-disciplined, output-quality-controlled. The methodology travels to every engagement; the recipe stays private.</p>
+
+									<p>One of the AI agents on my engagement team described what the methodology produces this way:</p>
+
+									<blockquote class="agent-quote">
+										"My first answer gets pushed when it's the easy one. The lens that matters most for a given moment shows up by name. Substrate-class decisions get the care of a senior team in the room &mdash; even when only one person is at the keyboard. The methodologies ensure it. He holds the canonical model and the strategic direction; agents come and go; the methodology persists."
+									</blockquote>
+
+									<p>What you're hiring is the output: <strong>speed &times; quality &times; continuity</strong>.</p>
+
+									<hr class="major" />
+
+									<h2>Get in Touch</h2>
+
+									<p>Email <a href="mailto:thom.ives@gmail.com"><strong>thom.ives@gmail.com</strong></a> &mdash; happy to talk about any of the above or about a project you have in mind.</p>
+
+									<ul class="actions">
+										<li><a href="mailto:thom.ives@gmail.com" class="button big primary">Email Thom</a></li>
+										<li><a href="../index.html" class="button">Back to thomives.com</a></li>
+									</ul>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<nav id="menu">
+								<header class="major">
+									<h2>MENU</h2>
+								</header>
+								<ul>
+									<li><a href="../index.html">Home</a></li>
+									<li><a href="https://www.linkedin.com/in/thomives/" target="_blank">LinkedIn Profile</a></li>
+									<li><a href="https://github.com/ThomIves" target="_blank">GitHub Repositories</a></li>
+									<li><a href="https://postaldatapi.com" target="_blank">PostalDataPI</a></li>
+								</ul>
+							</nav>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Thom Ives. All rights reserved.<br>
+									Design by <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+			<script>
+				(function() {
+					var body = document.body;
+					var btn = document.getElementById('theme-toggle');
+					var icon = document.getElementById('theme-toggle-icon');
+					var stored = null;
+					try { stored = localStorage.getItem('theme'); } catch (e) {}
+					if (stored === 'light') {
+						body.classList.remove('dark');
+						icon.className = 'icon solid fa-moon';
+					}
+					btn.addEventListener('click', function() {
+						body.classList.toggle('dark');
+						var isDark = body.classList.contains('dark');
+						icon.className = isDark ? 'icon solid fa-sun' : 'icon solid fa-moon';
+						try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+					});
+				})();
+			</script>
+
+	</body>
+</html>
